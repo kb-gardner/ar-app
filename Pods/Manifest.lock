@@ -1,0 +1,52 @@
+PODS:
+  - Alamofire (5.6.1)
+  - AWSAuthCore (2.27.9):
+    - AWSCore (= 2.27.9)
+  - AWSCognitoIdentityProvider (2.27.9):
+    - AWSCognitoIdentityProviderASF (= 2.27.9)
+    - AWSCore (= 2.27.9)
+  - AWSCognitoIdentityProviderASF (2.27.9):
+    - AWSCore (= 2.27.9)
+  - AWSCore (2.27.9)
+  - AWSMobileClient (2.27.9):
+    - AWSAuthCore (= 2.27.9)
+    - AWSCognitoIdentityProvider (= 2.27.9)
+    - AWSCognitoIdentityProviderASF (= 2.27.9)
+    - AWSCore (= 2.27.9)
+  - Kingfisher (7.2.2)
+  - R.swift (6.1.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AWSMobileClient
+  - Kingfisher
+  - R.swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AWSAuthCore
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSMobileClient
+    - Kingfisher
+    - R.swift
+    - R.swift.Library
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  AWSAuthCore: 5d43a450e93ff6c9a5218c90e1cdb1069cd1f3a4
+  AWSCognitoIdentityProvider: 7b4835e094cec4f35a988c5eabea5b8980fb7953
+  AWSCognitoIdentityProviderASF: 3adc532f5f7e3641ea954cd30adc2e7b5768488f
+  AWSCore: 3419bcaeec8d7809efa32f0e83f151ef8e93ad78
+  AWSMobileClient: f942269e300b23031fbd62892e5642d3cf35cb97
+  Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
+  R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+
+PODFILE CHECKSUM: fba3f281e722a74687856889aa547bd466dd7ad3
+
+COCOAPODS: 1.11.3
