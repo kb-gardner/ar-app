@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  ar-app
+
+  Created by Kyle Gardner on 5/16/22.
+  
+*/
+
+// MARK: - Instantiation
+"start.identifier" = "StartViewController";
+"start.fatalError" = "Could not instantiate StartViewController";
+"preview.identifier" = "PreviewViewController";
+"preview.fatalError" = "Could not instantiate PreviewViewController";
+"signUp.identifier" = "SignUpViewController";
+"signUp.fatalError" = "Could not instantiate SignUpViewController";
+"login.identifier" = "LoginViewController";
+"login.fatalError" = "Could not instantiate LoginViewController";
+"forgotPassword.identifier" = "ForgotPasswordViewController";
+"forgotPassword.fatalError" = "Could not instantiate ForgotPasswordViewController";
+"resetPassword.identifier" = "ForgotPasswordViewController";
+"resetPassword.fatalError" = "Could not instantiate ForgotPasswordViewController";
+"terms.identifier" = "TermsViewController";
+"terms.fatalError" = "Could not instantiate TermsViewController";

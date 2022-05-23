@@ -10,11 +10,14 @@ import UIKit
 
 class PreviewViewController: UIViewController {
     // MARK: - Properties
+    private var previews = [Preview]()
+    private var onLogin: (()->())?
     
     // MARK: - Outlets
     @IBOutlet var getStartedButton: UIButton!
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var previewCollection: UICollectionView!
+    @IBOutlet var pageControl: UIPageControl!
     
     // MARK: - Actions
     @IBAction func getStartedClicked(_ sender: Any) {
@@ -32,19 +35,59 @@ class PreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        previewCollection.delegate = self
+        previewCollection.dataSource = self
+        previewCollection.register(R.nib.previewCollectionViewCell)
+        requestPreviews()
     }
 }
 
 private extension PreviewViewController {
     // MARK: - Navigation
-    func showSignUp() {}
+    func showSignUp() {
+        guard let controller = SignUpViewController.instantiate (onSuccess: { [weak self] in
+            // SignUp and Login Complete
+            self?.onLogin?()
+        }, onLogin: { [weak self] in
+            // Login Complete
+            self?.showLogin()
+        }) else { return }
+        navigationController?.pushViewController(controller, animated: true)
+
+    }
+    
     func showLogin() {}
+    
+    // MARK: - Requests
+    func requestPreviews() {
+        // request previews
+        pageControl.numberOfPages = previews.count
+    }
+}
+
+extension PreviewViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        previews.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.previewCollectionViewCell, for: indexPath)!
+        cell.setup(preview: previews[indexPath.row])
+        return cell
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
+        pageControl.currentPage = Int(pageNumber)
+    }
+    
 }
 
 // MARK: - Instantiation
 extension PreviewViewController {
-    class func instantiate() -> PreviewViewController {
-        let controller = PreviewViewController()
+    class func instantiate(onLogin: (()->())?) -> PreviewViewController? {
+        let controller = UIStoryboard(name: R.storyboard.previewViewController.name, bundle: nil).instantiateViewController(withIdentifier: R.string.localizable.previewIdentifier()) as? PreviewViewController
+        controller?.onLogin = onLogin
         return controller
     }
 }

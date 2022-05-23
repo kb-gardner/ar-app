@@ -10,6 +10,6 @@ target 'ar-app' do
   pod 'Alamofire'
   pod 'AWSMobileClient'
   pod 'R.swift'
-  
+  pod 'SwiftyJSON'
 
 end
