@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B52FE3D01C1EB78D61AB2CA0 /* Pods_ar_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D877C839F3992403B7B29A /* Pods_ar_app.framework */; };
+		D22D32CC283D02C600E80062 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32CB283D02C600E80062 /* UIViewExtension.swift */; };
+		D22D32CE283D05D200E80062 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32CD283D05D200E80062 /* HomeViewController.swift */; };
+		D22D32D0283D062E00E80062 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22D32CF283D062E00E80062 /* HomeViewController.storyboard */; };
+		D22D32D3283D193100E80062 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32D2283D193100E80062 /* FieldValidation.swift */; };
+		D22D32D6283D221C00E80062 /* LoginOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32D5283D221C00E80062 /* LoginOptionCollectionViewCell.swift */; };
+		D22D32D8283D222500E80062 /* LoginOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D22D32D7283D222500E80062 /* LoginOptionCollectionViewCell.xib */; };
 		D2313BFA283BB90A004D6C1C /* CognitoNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2313BF9283BB90A004D6C1C /* CognitoNetworkingService.swift */; };
 		D2313BFF283BBF18004D6C1C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2313BFE283BBF18004D6C1C /* StringExtension.swift */; };
 		D2313C02283BE119004D6C1C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2313C01283BE119004D6C1C /* ResetPasswordViewController.swift */; };
@@ -58,6 +64,12 @@
 		539DD7DBD4CA76A378B7051F /* Pods-ar-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ar-app.debug.xcconfig"; path = "Target Support Files/Pods-ar-app/Pods-ar-app.debug.xcconfig"; sourceTree = "<group>"; };
 		673117DB0812178E824FB6A3 /* Pods-ar-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ar-app.release.xcconfig"; path = "Target Support Files/Pods-ar-app/Pods-ar-app.release.xcconfig"; sourceTree = "<group>"; };
 		78D877C839F3992403B7B29A /* Pods_ar_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ar_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22D32CB283D02C600E80062 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		D22D32CD283D05D200E80062 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D22D32CF283D062E00E80062 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		D22D32D2283D193100E80062 /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
+		D22D32D5283D221C00E80062 /* LoginOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		D22D32D7283D222500E80062 /* LoginOptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginOptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		D2313BF9283BB90A004D6C1C /* CognitoNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitoNetworkingService.swift; sourceTree = "<group>"; };
 		D2313BFE283BBF18004D6C1C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D2313C01283BE119004D6C1C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +146,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D22D32D1283D191900E80062 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D22D32D2283D193100E80062 /* FieldValidation.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D22D32D4283D220800E80062 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D22D32D5283D221C00E80062 /* LoginOptionCollectionViewCell.swift */,
+				D22D32D7283D222500E80062 /* LoginOptionCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D2313C00283BE095004D6C1C /* ResetPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +184,7 @@
 		D231BAE628353143009DD137 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D22D32D4283D220800E80062 /* Cells */,
 				D231BAED28353191009DD137 /* LoginViewController.swift */,
 				D231BAEF28353199009DD137 /* LoginViewController.storyboard */,
 			);
@@ -246,6 +276,7 @@
 		D2B2232028327AC9003D2C2D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D22D32D1283D191900E80062 /* Utilities */,
 				D2B2235D2832A884003D2C2D /* Store */,
 				D2B2232C28327CC0003D2C2D /* Models */,
 				D2B2232B28327CAD003D2C2D /* Extensions */,
@@ -297,6 +328,8 @@
 		D2B2232528327C51003D2C2D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D22D32CD283D05D200E80062 /* HomeViewController.swift */,
+				D22D32CF283D062E00E80062 /* HomeViewController.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -347,6 +380,7 @@
 			children = (
 				D2B2235B28329F2C003D2C2D /* NSErrorExtension.swift */,
 				D2313BFE283BBF18004D6C1C /* StringExtension.swift */,
+				D22D32CB283D02C600E80062 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -496,10 +530,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22D32D0283D062E00E80062 /* HomeViewController.storyboard in Resources */,
 				D231BAF028353199009DD137 /* LoginViewController.storyboard in Resources */,
 				D2B223632832AF62003D2C2D /* StartViewController.storyboard in Resources */,
 				D2B22319283274F5003D2C2D /* LaunchScreen.storyboard in Resources */,
 				D2B223652832AF75003D2C2D /* PreviewViewController.storyboard in Resources */,
+				D22D32D8283D222500E80062 /* LoginOptionCollectionViewCell.xib in Resources */,
 				D231BAEC28353184009DD137 /* SignUpViewController.storyboard in Resources */,
 				D2B223612832AA16003D2C2D /* Localizable.strings in Resources */,
 				D2313C04283BE17B004D6C1C /* ResetPasswordViewController.storyboard in Resources */,
@@ -582,11 +618,13 @@
 				D231BAEE28353191009DD137 /* LoginViewController.swift in Sources */,
 				D2B2233E28328D8E003D2C2D /* Material.swift in Sources */,
 				D2B2230F283274F4003D2C2D /* ViewController.swift in Sources */,
+				D22D32CE283D05D200E80062 /* HomeViewController.swift in Sources */,
 				D2B2234C28328F82003D2C2D /* TierAPIService.swift in Sources */,
 				D2313BFF283BBF18004D6C1C /* StringExtension.swift in Sources */,
 				D231BAE12835202A009DD137 /* PreviewCollectionViewCell.swift in Sources */,
 				D2B2232E28327D15003D2C2D /* StartViewController.swift in Sources */,
 				D2B2235828328FD0003D2C2D /* UserNetworkingService.swift in Sources */,
+				D22D32D3283D193100E80062 /* FieldValidation.swift in Sources */,
 				D2B2235F2832A891003D2C2D /* Store.swift in Sources */,
 				D231BAF2283531AA009DD137 /* ForgotPasswordViewController.swift in Sources */,
 				D2B2230D283274F4003D2C2D /* AppDelegate.swift in Sources */,
@@ -603,10 +641,12 @@
 				D2B2233A28328D7E003D2C2D /* User.swift in Sources */,
 				D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */,
 				D2B2233828328D75003D2C2D /* Project.swift in Sources */,
+				D22D32CC283D02C600E80062 /* UIViewExtension.swift in Sources */,
 				D2B2234528328F23003D2C2D /* ProjectAPIService.swift in Sources */,
 				D2B2234228328DE5003D2C2D /* ProjectNetworkingService.swift in Sources */,
 				D2B2235428328FB7003D2C2D /* SpaceNetworkingService.swift in Sources */,
 				D2B2235028328F9C003D2C2D /* MaterialAPIService.swift in Sources */,
+				D22D32D6283D221C00E80062 /* LoginOptionCollectionViewCell.swift in Sources */,
 				D2B22336283284B8003D2C2D /* R.generated.swift in Sources */,
 				D2B2235A28328FEE003D2C2D /* UserAPIService.swift in Sources */,
 				D231BAEA2835317B009DD137 /* SignUpViewController.swift in Sources */,

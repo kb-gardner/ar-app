@@ -11,17 +11,17 @@ extension String {
     var isValidEmail: Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: self)
+        return emailTest.evaluate(with: self) && !self.isEmpty
     }
     
     var isValidPassword: Bool {
         let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[ !\"\\\\#$%&'\\(\\)\\*+,\\-\\./:;<=>?@\\[\\]^_`\\{|\\}~])[A-Za-z\\d !\"\\\\#$%&'\\(\\)\\*+,\\-\\./:;<=>?@\\[\\]^_`\\{|\\}~]{8,}"
-        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self) && !self.isEmpty
     }
     
     func isValidSsn(_ ssn: String) -> Bool {
       let ssnRegext = "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
-      return ssn.range(of: ssnRegext, options: .regularExpression, range: nil, locale: nil) != nil
+      return ssn.range(of: ssnRegext, options: .regularExpression, range: nil, locale: nil) != nil && !self.isEmpty
     }
 
     var isValidPhoneNumber: Bool {

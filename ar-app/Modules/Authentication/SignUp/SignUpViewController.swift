@@ -11,7 +11,7 @@ import UIKit
 class SignUpViewController: UIViewController {
     // MARK: - Properties
     private var user = User()
-    private var onLogin: (()->())?
+    private var onShowLogin: (()->())?
     private var onSuccess: (()->())?
     
     // MARK: - Outlets
@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
 private extension SignUpViewController {
     // MARK: - Navigation
     func showLogin() {
-        onLogin?()
+        onShowLogin?()
     }
     
     func showTerms() {
@@ -64,14 +64,9 @@ private extension SignUpViewController {
     
     // MARK: - Requests
     func requestSignUp() {
-        guard user.email?.isValidEmail == true,
-        user.phone?.isValidPhoneNumber == true,
-        passwordField.text?.isValidPassword == true
-        else {
-            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-            present(alert, animated: true)
-            return
-        }
+        guard FieldValidation.validateFields(email: emailField, phone: phoneField, password: passwordField, completion: { alert in
+            if let alert = alert { present(alert, animated: true) }
+        }) else { return }
         CognitoNetworkingService.signUp(username: user.email!, password: passwordField.text!, email: user.email!) { [weak self] error in
             if let error = error {
                 print(error)
@@ -82,13 +77,9 @@ private extension SignUpViewController {
     }
     
     func requestLogin() {
-        guard user.email?.isValidEmail == true,
-        passwordField.text?.isValidPassword == true
-        else {
-            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-            present(alert, animated: true)
-            return
-        }
+        guard FieldValidation.validateFields(email: emailField, phone: phoneField, password: passwordField, completion: { alert in
+            if let alert = alert { present(alert, animated: true) }
+        }) else { return }
         CognitoNetworkingService.login(password: passwordField.text!, email: user.email!) { [weak self] error in
             if let error = error {
                 print(error)
@@ -143,9 +134,9 @@ extension SignUpViewController: UITextFieldDelegate {
 
 // MARK: - Instantiation
 extension SignUpViewController {
-    class func instantiate(onSuccess: (()->())?, onLogin: (()->())?) -> SignUpViewController? {
+    class func instantiate(onSuccess: (()->())?, onShowLogin: (()->())?) -> SignUpViewController? {
         let controller = UIStoryboard(name: R.storyboard.signUpViewController.name, bundle: nil).instantiateViewController(withIdentifier: R.string.localizable.signUpIdentifier()) as? SignUpViewController
-        controller?.onLogin = onLogin
+        controller?.onShowLogin = onShowLogin
         controller?.onSuccess = onSuccess
         return controller
     }

@@ -13,29 +13,36 @@ class StartViewController: UIViewController {
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        requestUser()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.requestUser()
+        }
     }
 }
 
 private extension StartViewController {
     // MARK: - Navigation
     func showPreview() {
-        guard let controller = PreviewViewController.instantiate(onLogin: { [weak self] in
+        guard let controller = PreviewViewController.instantiate(onSuccess: { [weak self] in
             self?.showHome()
+        }, onShowLogin: { [weak self] in
+            self?.showLogin()
         }) else { fatalError(R.string.localizable.previewFatalError()) }
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    func showHome() {}
+    func showHome() {
+        
+    }
     
     func showLogin() {
-        guard let controller = LoginViewController.instantiate(onLogin: { [weak self] in
+        guard let controller = LoginViewController.instantiate(onSuccess: { [weak self] in
             self?.showHome()
-        }, onSignUp: { [weak self] in
+        }, onShowSignUp: { [weak self] in
             self?.showPreview()
         }) else { return }
         navigationController?.pushViewController(controller, animated: true)

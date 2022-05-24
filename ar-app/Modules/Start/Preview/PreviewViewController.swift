@@ -11,7 +11,8 @@ import UIKit
 class PreviewViewController: UIViewController {
     // MARK: - Properties
     private var previews = [Preview]()
-    private var onLogin: (()->())?
+    private var onSuccess: (()->())?
+    private var onShowLogin: (()->())?
     
     // MARK: - Outlets
     @IBOutlet var getStartedButton: UIButton!
@@ -47,8 +48,8 @@ private extension PreviewViewController {
     func showSignUp() {
         guard let controller = SignUpViewController.instantiate (onSuccess: { [weak self] in
             // SignUp and Login Complete
-            self?.onLogin?()
-        }, onLogin: { [weak self] in
+            self?.onSuccess?()
+        }, onShowLogin: { [weak self] in
             // Login Complete
             self?.showLogin()
         }) else { return }
@@ -56,7 +57,9 @@ private extension PreviewViewController {
 
     }
     
-    func showLogin() {}
+    func showLogin() {
+        onShowLogin?()
+    }
     
     // MARK: - Requests
     func requestPreviews() {
@@ -85,9 +88,10 @@ extension PreviewViewController: UICollectionViewDelegate, UICollectionViewDataS
 
 // MARK: - Instantiation
 extension PreviewViewController {
-    class func instantiate(onLogin: (()->())?) -> PreviewViewController? {
+    class func instantiate(onSuccess: (()->())?, onShowLogin: (()->())?) -> PreviewViewController? {
         let controller = UIStoryboard(name: R.storyboard.previewViewController.name, bundle: nil).instantiateViewController(withIdentifier: R.string.localizable.previewIdentifier()) as? PreviewViewController
-        controller?.onLogin = onLogin
+        controller?.onSuccess = onSuccess
+        controller?.onShowLogin = onShowLogin
         return controller
     }
 }

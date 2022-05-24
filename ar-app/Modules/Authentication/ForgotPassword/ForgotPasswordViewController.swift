@@ -7,12 +7,14 @@
 
 import Foundation
 import UIKit
+import AWSMobileClient
 
 class ForgotPasswordViewController: UIViewController {
     // MARK: - Properties
     private var onSuccess: ((String?)->())?
     
     // MARK: - Outlets
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var submitButton: UIButton!
     @IBOutlet var forgotView: UIView!
@@ -20,6 +22,10 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet var forgotViewBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Actions
+    @IBAction func backClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func submitClicked(_ sender: Any) {
         requestCode()
     }
@@ -35,21 +41,38 @@ private extension ForgotPasswordViewController {
     func showCodeView() {
         guard let email = emailField.text, let controller = ResetPasswordViewController.instantiate(email: email, onSuccess: { [weak self] password in
             self?.onSuccess?(password)
+            self?.hideResetPasswordView()
         }, onFailure: { [weak self] in
             let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
             self?.present(alert, animated: true)
+            self?.hideResetPasswordView()
         }) else { return }
-        
+        controller.view?.embed(in: forgotView)
+        showResetPasswordView()
+    }
+    
+    func showResetPasswordView() {
+        forgotViewBottomConstraint?.isActive = true
+        forgotViewTopConstraint?.isActive = false
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
+    func hideResetPasswordView() {
+        forgotViewTopConstraint?.isActive = true
+        forgotViewBottomConstraint?.isActive = false
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            self?.view.layoutIfNeeded()
+        }
     }
     
     // MARK: - Requests
     func requestCode() {
-        guard emailField.text?.isValidEmail == true else {
-            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-            present(alert, animated: true)
-            return
-        }
-        CognitoNetworkingService.forgotPassword(email: emailField.text!) { [weak self] error in
+        guard FieldValidation.validateFields(email: emailField, completion: { alert in
+            if let alert = alert { present(alert, animated: true) }
+        }), let email = emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() else { return }
+        CognitoNetworkingService.forgotPassword(email: email) { [weak self] error in
             if let error = error {
                 print(error)
             } else {

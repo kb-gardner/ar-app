@@ -5,6 +5,7 @@
   Created by Kyle Gardner on 5/16/22.
   
 */
+"ok" = "Ok";
 
 // MARK: - Instantiation
 "start.identifier" = "StartViewController";
@@ -21,3 +22,29 @@
 "resetPassword.fatalError" = "Could not instantiate ForgotPasswordViewController";
 "terms.identifier" = "TermsViewController";
 "terms.fatalError" = "Could not instantiate TermsViewController";
+"home.identifier" = "HomeViewController";
+"home.fatalError" = "Could not instantiate HomeViewController";
+
+// MARK: - Validation
+"validation.error.validation.email.title" = "Invalid Email";
+"validation.error.validation.email.message" = "Enter a valid email and try again";
+"validation.error.validation.password.title" = "Invalid Password";
+"validation.error.validation.password.message" = "Your password must contain at least 8 characters including 1 uppercase letter, 1 number, and 1 symbol";
+"validation.error.validation.phone.title" = "Invalid Phone Number";
+"validation.error.validation.phone.message" = "Enter a valid phone number and try again";
+
+// MARK: - Start
+
+// MARK: - Preview
+
+// MARK: - SignUp
+
+// MARK: - Login
+
+// MARK: - ForgotPassword
+
+// MARK: - ResetPassword
+
+// MARK: - Terms
+
+// MARK: - Home

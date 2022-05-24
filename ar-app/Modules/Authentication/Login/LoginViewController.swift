@@ -11,8 +11,8 @@ import AWSMobileClient
 
 class LoginViewController: UIViewController {
     // MARK: - Properties
-    private var onLogin: (()->())?
-    private var onSignUp: (()->())?
+    private var onSuccess: (()->())?
+    private var onShowSignUp: (()->())?
     
     // MARK: - Outlets
     @IBOutlet var emailField: UITextField!
@@ -32,29 +32,37 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpClicked(_ sender: Any) {
-        onSignUp?()
+        showSignUp()
     }
     
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        signInCollection.delegate = self
+        signInCollection.dataSource = self
+        signInCollection.register(R.nib.loginOptionCollectionViewCell)
+        signInCollection.reloadData()
     }
 }
 
 private extension LoginViewController {
     // MARK: - Navigation
     func showForgotPassword() {
-        
+        guard let controller = ForgotPasswordViewController.instantiate(onSuccess: { [weak self] password in
+            self?.passwordField.text = password
+        }) else { return }
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func showSignUp() {
+        onShowSignUp?()
     }
     
     // MARK: - Requests
     func requestLogin() {
-        guard emailField.text?.isValidEmail == true,
-              passwordField.text?.isValidPassword == true else {
-            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-            present(alert, animated: true)
-            return
-        }
+        guard FieldValidation.validateFields(email: emailField, password: passwordField, completion: { alert in
+            if let alert = alert { present(alert, animated: true) }
+        }) else { return }
         CognitoNetworkingService.login(password: passwordField.text!, email: emailField.text!) { [weak self] error in
             if let error = error {
                 print(error)
@@ -71,19 +79,61 @@ private extension LoginViewController {
                 print(error)
             } else {
                 Store.shared.user = user
-                self?.onLogin?()
+                self?.onSuccess?()
             }
         }
     }
     
 }
 
+extension LoginViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    enum LoginOptions: CaseIterable {
+        case apple, google, facebook
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        LoginOptions.allCases.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch LoginOptions.allCases[indexPath.row] {
+        case .apple:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.loginOptionCollectionViewCell, for: indexPath)!
+            cell.setup(image: R.image.appleIcon())
+            return cell
+        case .google:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.loginOptionCollectionViewCell, for: indexPath)!
+            cell.setup(image: R.image.googleIcon())
+            return cell
+        case .facebook:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.loginOptionCollectionViewCell, for: indexPath)!
+            cell.setup(image: R.image.facebookIcon())
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch LoginOptions.allCases[indexPath.row] {
+        case .apple:
+            print("")
+        case .google:
+            print("")
+        case .facebook:
+            print("")
+        }
+    }
+}
+
 // MARK: - Properties
 extension LoginViewController {
-    class func instantiate(onLogin: (()->())?, onSignUp: (()->())?) -> LoginViewController? {
+    class func instantiate(onSuccess: (()->())?, onShowSignUp: (()->())?) -> LoginViewController? {
         let controller = UIStoryboard(name: R.storyboard.loginViewController.name, bundle: nil).instantiateViewController(withIdentifier: R.string.localizable.loginIdentifier()) as? LoginViewController
-        controller?.onLogin = onLogin
-        controller?.onSignUp = onSignUp
+        controller?.onSuccess = onSuccess
+        controller?.onShowSignUp = onShowSignUp
         return controller
     }
 }
