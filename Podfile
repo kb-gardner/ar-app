@@ -11,5 +11,6 @@ target 'ar-app' do
   pod 'AWSMobileClient'
   pod 'R.swift'
   pod 'SwiftyJSON'
+  pod 'IQKeyboardManagerSwift'
 
 end

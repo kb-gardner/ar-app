@@ -36,7 +36,8 @@ private extension StartViewController {
     }
     
     func showHome() {
-        
+        guard let controller = HomeViewController.instantiate() else { return }
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func showLogin() {

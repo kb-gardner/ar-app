@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Project View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddProjectViewController" id="Y6W-OH-hqX" customClass="AddProjectViewController" customModule="ar_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yh-WZ-7X2">
+                                <rect key="frame" x="30" y="20" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="G9j-cw-zzZ"/>
+                                    <constraint firstAttribute="height" constant="25" id="x1N-Kl-6ZO"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YY3-ch-Ypf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW PROJECT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrl-zz-ub3">
+                                <rect key="frame" x="149" y="44" width="116.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFg-TA-OX8" customClass="LineTextView" customModule="ar_app" customModuleProvider="target">
+                                <rect key="frame" x="60" y="95" width="294" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="b9R-dB-wfc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwT-lG-Z3I" customClass="LineTextView" customModule="ar_app" customModuleProvider="target">
+                                <rect key="frame" x="60" y="185" width="294" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="4XS-0b-ZPb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8o-JD-TAP">
+                                <rect key="frame" x="60" y="320" width="294" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="b5r-PU-Mbm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start Scanning"/>
+                                <connections>
+                                    <action selector="startScanningClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nfi-Z9-TZX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i8o-JD-TAP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="60" id="6Lx-kL-3Po"/>
+                            <constraint firstItem="4yh-WZ-7X2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="7jo-NV-ZsN"/>
+                            <constraint firstItem="wwT-lG-Z3I" firstAttribute="leading" secondItem="VFg-TA-OX8" secondAttribute="leading" id="Bdf-ag-MEd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VFg-TA-OX8" secondAttribute="trailing" constant="60" id="Ega-yD-cgr"/>
+                            <constraint firstItem="wwT-lG-Z3I" firstAttribute="trailing" secondItem="VFg-TA-OX8" secondAttribute="trailing" id="R9c-LC-lxc"/>
+                            <constraint firstItem="wwT-lG-Z3I" firstAttribute="top" secondItem="VFg-TA-OX8" secondAttribute="bottom" constant="30" id="aYf-sc-dvG"/>
+                            <constraint firstItem="vrl-zz-ub3" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="fzh-cK-Gvx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i8o-JD-TAP" secondAttribute="trailing" constant="60" id="h44-v6-ua8"/>
+                            <constraint firstItem="vrl-zz-ub3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="nAN-Wt-bc8"/>
+                            <constraint firstItem="VFg-TA-OX8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="60" id="oFE-qc-YhG"/>
+                            <constraint firstItem="4yh-WZ-7X2" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="20" id="ric-Eb-ugh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="i8o-JD-TAP" secondAttribute="bottom" constant="40" id="tmQ-b8-gz4"/>
+                            <constraint firstItem="VFg-TA-OX8" firstAttribute="top" secondItem="vrl-zz-ub3" secondAttribute="bottom" constant="30" id="ulu-md-Wu9"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="400"/>
+                    <connections>
+                        <outlet property="addressView" destination="wwT-lG-Z3I" id="wZ3-aR-Af6"/>
+                        <outlet property="closeButton" destination="4yh-WZ-7X2" id="fvT-Db-RlN"/>
+                        <outlet property="nameView" destination="VFg-TA-OX8" id="0w9-u2-pX6"/>
+                        <outlet property="startScanningButton" destination="i8o-JD-TAP" id="lx7-Ej-BRe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="117"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

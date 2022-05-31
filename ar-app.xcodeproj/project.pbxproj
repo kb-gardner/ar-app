@@ -29,6 +29,16 @@
 		D231BAF4283531B3009DD137 /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D231BAF3283531B3009DD137 /* ForgotPasswordViewController.storyboard */; };
 		D231BAF828354FB7009DD137 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231BAF728354FB7009DD137 /* TermsViewController.swift */; };
 		D231BAFA28354FBD009DD137 /* TermsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D231BAF928354FBD009DD137 /* TermsViewController.storyboard */; };
+		D28A8F2B2846457900EF4A15 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */; };
+		D28A8F2D2846468A00EF4A15 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */; };
+		D28A8F30284651BD00EF4A15 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2F284651BD00EF4A15 /* LineTextField.swift */; };
+		D28A8F332846540600EF4A15 /* LineTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28A8F322846540600EF4A15 /* LineTextField.xib */; };
+		D28CF54A284510AE0057C231 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF549284510AE0057C231 /* MenuViewController.swift */; };
+		D28CF54C284510C50057C231 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF54B284510C50057C231 /* MenuViewController.storyboard */; };
+		D28CF550284520190057C231 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF54F284520190057C231 /* AddProjectViewController.swift */; };
+		D28CF5522845206C0057C231 /* AddProjectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */; };
+		D28CF555284526FE0057C231 /* SpaceARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF554284526FE0057C231 /* SpaceARViewController.swift */; };
+		D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF556284527640057C231 /* SpaceARViewController.storyboard */; };
 		D2B2230D283274F4003D2C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2230C283274F4003D2C2D /* AppDelegate.swift */; };
 		D2B2230F283274F4003D2C2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2230E283274F4003D2C2D /* ViewController.swift */; };
 		D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = D2B22310283274F4003D2C2D /* Experience.rcproject */; };
@@ -85,6 +95,16 @@
 		D231BAF3283531B3009DD137 /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
 		D231BAF728354FB7009DD137 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		D231BAF928354FBD009DD137 /* TermsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsViewController.storyboard; sourceTree = "<group>"; };
+		D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		D28A8F2F284651BD00EF4A15 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		D28A8F322846540600EF4A15 /* LineTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineTextField.xib; sourceTree = "<group>"; };
+		D28CF549284510AE0057C231 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D28CF54B284510C50057C231 /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
+		D28CF54F284520190057C231 /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
+		D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddProjectViewController.storyboard; sourceTree = "<group>"; };
+		D28CF554284526FE0057C231 /* SpaceARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceARViewController.swift; sourceTree = "<group>"; };
+		D28CF556284527640057C231 /* SpaceARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpaceARViewController.storyboard; sourceTree = "<group>"; };
 		D2B22309283274F4003D2C2D /* ar-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ar-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B2230C283274F4003D2C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2B2230E283274F4003D2C2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +169,7 @@
 		D22D32D1283D191900E80062 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D28A8F2E2846519300EF4A15 /* CustomUI */,
 				D22D32D2283D193100E80062 /* FieldValidation.swift */,
 			);
 			path = Utilities;
@@ -227,6 +248,64 @@
 			path = Terms;
 			sourceTree = "<group>";
 		};
+		D28A8F292846456500EF4A15 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */,
+				D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D28A8F2E2846519300EF4A15 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				D28A8F31284653F000EF4A15 /* LineTextField */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		D28A8F31284653F000EF4A15 /* LineTextField */ = {
+			isa = PBXGroup;
+			children = (
+				D28A8F2F284651BD00EF4A15 /* LineTextField.swift */,
+				D28A8F322846540600EF4A15 /* LineTextField.xib */,
+			);
+			path = LineTextField;
+			sourceTree = "<group>";
+		};
+		D28CF54D28451FF10057C231 /* AddProject */ = {
+			isa = PBXGroup;
+			children = (
+				D28CF54F284520190057C231 /* AddProjectViewController.swift */,
+				D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */,
+			);
+			path = AddProject;
+			sourceTree = "<group>";
+		};
+		D28CF54E284520060057C231 /* ProjectList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectList;
+			sourceTree = "<group>";
+		};
+		D28CF553284526C70057C231 /* SpaceAR */ = {
+			isa = PBXGroup;
+			children = (
+				D28CF554284526FE0057C231 /* SpaceARViewController.swift */,
+				D28CF556284527640057C231 /* SpaceARViewController.storyboard */,
+			);
+			path = SpaceAR;
+			sourceTree = "<group>";
+		};
+		D28CF55828452ABE0057C231 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
 		D2B22300283274F4003D2C2D = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +345,7 @@
 				D2B2232428327B90003D2C2D /* Menu */,
 				D2B2232528327C51003D2C2D /* Home */,
 				D2B2232628327C5D003D2C2D /* Projects */,
+				D28CF553284526C70057C231 /* SpaceAR */,
 				D2B2232728327C63003D2C2D /* Materials */,
 				D2B2232828327C69003D2C2D /* Account */,
 				D2B2232928327C6E003D2C2D /* About */,
@@ -321,6 +401,9 @@
 		D2B2232428327B90003D2C2D /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				D28A8F292846456500EF4A15 /* Cells */,
+				D28CF549284510AE0057C231 /* MenuViewController.swift */,
+				D28CF54B284510C50057C231 /* MenuViewController.storyboard */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -337,6 +420,9 @@
 		D2B2232628327C5D003D2C2D /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				D28CF55828452ABE0057C231 /* Project */,
+				D28CF54E284520060057C231 /* ProjectList */,
+				D28CF54D28451FF10057C231 /* AddProject */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -530,13 +616,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28A8F332846540600EF4A15 /* LineTextField.xib in Resources */,
+				D28A8F2D2846468A00EF4A15 /* MenuTableViewCell.xib in Resources */,
 				D22D32D0283D062E00E80062 /* HomeViewController.storyboard in Resources */,
+				D28CF5522845206C0057C231 /* AddProjectViewController.storyboard in Resources */,
 				D231BAF028353199009DD137 /* LoginViewController.storyboard in Resources */,
 				D2B223632832AF62003D2C2D /* StartViewController.storyboard in Resources */,
 				D2B22319283274F5003D2C2D /* LaunchScreen.storyboard in Resources */,
 				D2B223652832AF75003D2C2D /* PreviewViewController.storyboard in Resources */,
 				D22D32D8283D222500E80062 /* LoginOptionCollectionViewCell.xib in Resources */,
 				D231BAEC28353184009DD137 /* SignUpViewController.storyboard in Resources */,
+				D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */,
 				D2B223612832AA16003D2C2D /* Localizable.strings in Resources */,
 				D2313C04283BE17B004D6C1C /* ResetPasswordViewController.storyboard in Resources */,
 				D2B22316283274F5003D2C2D /* Assets.xcassets in Resources */,
@@ -544,6 +634,7 @@
 				D231BAF4283531B3009DD137 /* ForgotPasswordViewController.storyboard in Resources */,
 				D231BAE3283526BD009DD137 /* PreviewCollectionViewCell.xib in Resources */,
 				D2B22314283274F4003D2C2D /* Main.storyboard in Resources */,
+				D28CF54C284510C50057C231 /* MenuViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +716,7 @@
 				D2B2232E28327D15003D2C2D /* StartViewController.swift in Sources */,
 				D2B2235828328FD0003D2C2D /* UserNetworkingService.swift in Sources */,
 				D22D32D3283D193100E80062 /* FieldValidation.swift in Sources */,
+				D28A8F30284651BD00EF4A15 /* LineTextField.swift in Sources */,
 				D2B2235F2832A891003D2C2D /* Store.swift in Sources */,
 				D231BAF2283531AA009DD137 /* ForgotPasswordViewController.swift in Sources */,
 				D2B2230D283274F4003D2C2D /* AppDelegate.swift in Sources */,
@@ -635,21 +727,25 @@
 				D231BAE528352B13009DD137 /* Preview.swift in Sources */,
 				D2313BFA283BB90A004D6C1C /* CognitoNetworkingService.swift in Sources */,
 				D231BAF828354FB7009DD137 /* TermsViewController.swift in Sources */,
+				D28CF550284520190057C231 /* AddProjectViewController.swift in Sources */,
 				D2B2234E28328F8D003D2C2D /* TierNetworkingService.swift in Sources */,
 				D2313C02283BE119004D6C1C /* ResetPasswordViewController.swift in Sources */,
 				D2B2234028328D95003D2C2D /* Tier.swift in Sources */,
 				D2B2233A28328D7E003D2C2D /* User.swift in Sources */,
 				D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */,
 				D2B2233828328D75003D2C2D /* Project.swift in Sources */,
+				D28CF54A284510AE0057C231 /* MenuViewController.swift in Sources */,
 				D22D32CC283D02C600E80062 /* UIViewExtension.swift in Sources */,
 				D2B2234528328F23003D2C2D /* ProjectAPIService.swift in Sources */,
 				D2B2234228328DE5003D2C2D /* ProjectNetworkingService.swift in Sources */,
 				D2B2235428328FB7003D2C2D /* SpaceNetworkingService.swift in Sources */,
 				D2B2235028328F9C003D2C2D /* MaterialAPIService.swift in Sources */,
 				D22D32D6283D221C00E80062 /* LoginOptionCollectionViewCell.swift in Sources */,
+				D28A8F2B2846457900EF4A15 /* MenuTableViewCell.swift in Sources */,
 				D2B22336283284B8003D2C2D /* R.generated.swift in Sources */,
 				D2B2235A28328FEE003D2C2D /* UserAPIService.swift in Sources */,
 				D231BAEA2835317B009DD137 /* SignUpViewController.swift in Sources */,
+				D28CF555284526FE0057C231 /* SpaceARViewController.swift in Sources */,
 				D2B2233C28328D86003D2C2D /* Space.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

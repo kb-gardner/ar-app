@@ -7,4 +7,7 @@
 
 import Foundation
 
-struct Project: Codable {}
+struct Project: Codable {
+    var name: String?
+    var address: String?
+}

@@ -22,8 +22,14 @@
 "resetPassword.fatalError" = "Could not instantiate ForgotPasswordViewController";
 "terms.identifier" = "TermsViewController";
 "terms.fatalError" = "Could not instantiate TermsViewController";
+"menu.identifier" = "MenuViewController";
+"menu.fatalError" = "Could not instantiate MenuViewController";
 "home.identifier" = "HomeViewController";
 "home.fatalError" = "Could not instantiate HomeViewController";
+"addProject.identifier" = "AddProjectViewController";
+"addProject.fatalError" = "Could not instantiate AddProjectViewController";
+"spaceAR.identifier" = "SpaceARViewController";
+"spaceAR.fatalError" = "Could not instantiate SpaceARViewController";
 
 // MARK: - Validation
 "validation.error.validation.email.title" = "Invalid Email";
