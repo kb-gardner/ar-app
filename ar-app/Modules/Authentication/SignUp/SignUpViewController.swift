@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AWSMobileClient
 
 class SignUpViewController: UIViewController {
     // MARK: - Properties
@@ -68,10 +69,14 @@ private extension SignUpViewController {
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
         CognitoNetworkingService.signUp(username: user.email!, password: passwordField.text!, email: user.email!) { [weak self] error in
-            if let error = error {
-                print(error)
-            } else {
-                self?.requestLogin()
+            DispatchQueue.main.async {
+                if let error = error as? AWSMobileClientError {
+                    let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .default))
+                    self?.present(alert, animated: true)
+                } else {
+                    self?.requestLogin()
+                }
             }
         }
     }
@@ -81,21 +86,27 @@ private extension SignUpViewController {
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
         CognitoNetworkingService.login(password: passwordField.text!, email: user.email!) { [weak self] error in
-            if let error = error {
-                print(error)
-            } else {
-                self?.createUser()
+            DispatchQueue.main.async {
+                if let error = error as? AWSMobileClientError {
+                    let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .default))
+                    self?.present(alert, animated: true)
+                } else {
+                    self?.createUser()
+                }
             }
         }
     }
     
     func createUser() {
         UserNetworkingService.saveUser(user: user) { [weak self] newUser, error in
-            if let error = error {
-                print(error)
-            } else {
-                Store.shared.user = newUser
-                self?.onSuccess?()
+            DispatchQueue.main.async {
+                if let error = error {
+                    print(error)
+                } else {
+                    Store.shared.user = newUser
+                    self?.onSuccess?()
+                }
             }
         }
     }

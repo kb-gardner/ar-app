@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AWSMobileClient
 
 class ResetPasswordViewController: UIViewController {
     // MARK: - Properties
@@ -45,11 +46,16 @@ private extension ResetPasswordViewController {
             return
         }
         CognitoNetworkingService.submitForgotPasswordCode(email: email, password: passwordField.text!, code: codeField.text!) { [weak self] error in
-            if let error = error {
-                print(error)
-                self?.onFailure?()
-            } else {
-                self?.onSuccess?(self?.passwordField.text)
+            DispatchQueue.main.async {
+                if let error = error as? AWSMobileClientError {
+                    let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .default) { _ in
+                        self?.onFailure?()
+                    })
+                    self?.present(alert, animated: true)
+                } else {
+                    self?.onSuccess?(self?.passwordField.text)
+                }
             }
         }
     }

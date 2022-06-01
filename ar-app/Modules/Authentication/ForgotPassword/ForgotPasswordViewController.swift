@@ -73,10 +73,14 @@ private extension ForgotPasswordViewController {
             if let alert = alert { present(alert, animated: true) }
         }), let email = emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() else { return }
         CognitoNetworkingService.forgotPassword(email: email) { [weak self] error in
-            if let error = error {
-                print(error)
-            } else {
-                self?.showCodeView()
+            DispatchQueue.main.async {
+                if let error = error as? AWSMobileClientError {
+                    let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .default))
+                    self?.present(alert, animated: true)
+                } else {
+                    self?.showCodeView()
+                }
             }
         }
     }

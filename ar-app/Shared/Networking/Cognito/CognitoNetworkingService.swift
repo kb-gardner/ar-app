@@ -48,4 +48,21 @@ class CognitoNetworkingService {
             }
         }
     }
+    
+    class func initSession(completion: ((Error?)->())?) {
+        AWSMobileClient.default().initialize { state, error in
+            if let error = error {
+                completion?(error)
+            } else if let state = state {
+                switch state {
+                case .signedIn:
+                    completion?(nil)
+                default:
+                    completion?(NSError.standard(message: "Login error.", code: 401))
+                }
+            } else {
+                completion?(NSError.standard(message: "Unknown error.", code: -1))
+            }
+        }
+    }
 }

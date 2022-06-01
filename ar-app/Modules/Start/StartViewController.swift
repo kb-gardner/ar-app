@@ -10,6 +10,9 @@ import UIKit
 import AWSMobileClient
 
 class StartViewController: UIViewController {
+    // MARK: - Outlets
+    @IBOutlet var titleLabel: UILabel!
+    
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -18,7 +21,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.requestUser()
         }
     }
@@ -55,16 +58,18 @@ private extension StartViewController {
             showPreview()
             return
         }
-        UserNetworkingService.getUserByCognitoId(id: id) { [weak self] user, error in
-            if let error = error {
-                print(error)
-                self?.showPreview()
-            } else {
-                Store.shared.user = user
-                if AWSMobileClient.default().isSignedIn {
-                    self?.showHome()
+        CognitoNetworkingService.initSession { error in
+            UserNetworkingService.getUserByCognitoId(id: id) { [weak self] user, error in
+                if let error = error {
+                    print(error)
+                    self?.showPreview()
                 } else {
-                    self?.showLogin()
+                    Store.shared.user = user
+                    if AWSMobileClient.default().isSignedIn {
+                        self?.showHome()
+                    } else {
+                        self?.showLogin()
+                    }
                 }
             }
         }

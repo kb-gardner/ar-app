@@ -68,6 +68,8 @@
 		D2B223612832AA16003D2C2D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2B223602832AA16003D2C2D /* Localizable.strings */; };
 		D2B223632832AF62003D2C2D /* StartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B223622832AF62003D2C2D /* StartViewController.storyboard */; };
 		D2B223652832AF75003D2C2D /* PreviewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B223642832AF75003D2C2D /* PreviewViewController.storyboard */; };
+		D2C062752847A1930022A6DD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D2C062742847A1930022A6DD /* awsconfiguration.json */; };
+		D2C062782847A56B0022A6DD /* AWSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C062772847A56B0022A6DD /* AWSErrorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +137,8 @@
 		D2B223602832AA16003D2C2D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D2B223622832AF62003D2C2D /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
 		D2B223642832AF75003D2C2D /* PreviewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreviewViewController.storyboard; sourceTree = "<group>"; };
+		D2C062742847A1930022A6DD /* awsconfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		D2C062772847A56B0022A6DD /* AWSErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSErrorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +378,7 @@
 				D2B22317283274F5003D2C2D /* LaunchScreen.storyboard */,
 				D2B22335283284B8003D2C2D /* R.generated.swift */,
 				D2B223602832AA16003D2C2D /* Localizable.strings */,
+				D2C062742847A1930022A6DD /* awsconfiguration.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 		D2B2232B28327CAD003D2C2D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D2C062762847A5450022A6DD /* Errors */,
 				D2B2235B28329F2C003D2C2D /* NSErrorExtension.swift */,
 				D2313BFE283BBF18004D6C1C /* StringExtension.swift */,
 				D22D32CB283D02C600E80062 /* UIViewExtension.swift */,
@@ -555,6 +561,14 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		D2C062762847A5450022A6DD /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D2C062772847A56B0022A6DD /* AWSErrorExtension.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -616,6 +630,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C062752847A1930022A6DD /* awsconfiguration.json in Resources */,
 				D28A8F332846540600EF4A15 /* LineTextField.xib in Resources */,
 				D28A8F2D2846468A00EF4A15 /* MenuTableViewCell.xib in Resources */,
 				D22D32D0283D062E00E80062 /* HomeViewController.storyboard in Resources */,
@@ -706,6 +721,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2C062782847A56B0022A6DD /* AWSErrorExtension.swift in Sources */,
 				D231BAEE28353191009DD137 /* LoginViewController.swift in Sources */,
 				D2B2233E28328D8E003D2C2D /* Material.swift in Sources */,
 				D2B2230F283274F4003D2C2D /* ViewController.swift in Sources */,

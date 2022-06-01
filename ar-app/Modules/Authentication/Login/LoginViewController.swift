@@ -63,11 +63,15 @@ private extension LoginViewController {
         guard FieldValidation.validateFields(email: emailField, password: passwordField, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
-        CognitoNetworkingService.login(password: passwordField.text!, email: emailField.text!) { [weak self] error in
-            if let error = error {
-                print(error)
-            } else {
-                self?.requestUser()
+        CognitoNetworkingService.login(password: self.passwordField.text!, email: self.emailField.text!) { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error as? AWSMobileClientError {
+                    let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .default))
+                    self?.present(alert, animated: true)
+                } else {
+                    self?.requestUser()
+                }
             }
         }
     }
@@ -75,11 +79,13 @@ private extension LoginViewController {
     func requestUser() {
         guard let cognitoId = AWSMobileClient.default().username else { return }
         UserNetworkingService.getUserByCognitoId(id: cognitoId) { [weak self] user, error in
-            if let error = error {
-                print(error)
-            } else {
-                Store.shared.user = user
-                self?.onSuccess?()
+            DispatchQueue.main.async {
+                if let error = error {
+                    print(error)
+                } else {
+                    Store.shared.user = user
+                    self?.onSuccess?()
+                }
             }
         }
     }
