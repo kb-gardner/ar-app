@@ -9,8 +9,8 @@ import Foundation
 import AWSMobileClient
 
 class CognitoNetworkingService {
-    class func signUp(username: String, password: String, email: String, completion: @escaping ((Error?)->())) {
-        AWSMobileClient.default().signUp(username: username, password: password) { result, error in
+    class func signUp(username: String, password: String, email: String, attributes: [String: String], completion: @escaping ((Error?)->())) {
+        AWSMobileClient.default().signUp(username: username, password: password, userAttributes: attributes) { result, error in
             if let error = error {
                 completion(error)
             } else {

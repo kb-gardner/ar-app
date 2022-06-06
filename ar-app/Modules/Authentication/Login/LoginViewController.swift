@@ -77,8 +77,8 @@ private extension LoginViewController {
     }
     
     func requestUser() {
-        guard let cognitoId = AWSMobileClient.default().username else { return }
-        UserNetworkingService.getUserByCognitoId(id: cognitoId) { [weak self] user, error in
+        guard let email = AWSMobileClient.default().username else { return }
+        UserNetworkingService.getUserByEmail(email: email) { [weak self] user, error in
             DispatchQueue.main.async {
                 if let error = error {
                     print(error)

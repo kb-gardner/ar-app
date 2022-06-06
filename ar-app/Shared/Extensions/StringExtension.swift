@@ -28,6 +28,10 @@ extension String {
         digitsOnly.count == 10
     }
     
+    var cognitoFormattedPhoneNumber: String {
+        return self.first == "+" ? self : "+1\(self.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression))"
+    }
+    
     var formattedPhoneNumber: String {
         let phoneMask = "(XXX) XXX-XXXX" //US
         let phone = self.stringByTrimmingCountryCode

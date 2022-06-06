@@ -10,24 +10,24 @@ import Alamofire
 import SwiftyJSON
 
 class UserAPIService {
-    func list(params: Parameters) -> DataRequest? {
-        return nil
+    func get(id: String) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "users/\(id)", method: .get, headers: HTTPHeaders.default)
+    }
+
+    func getByEmail(email: String) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "users/byEmail/\(email)", method: .get, headers: HTTPHeaders.default)
     }
     
-    func get(id: String) -> DataRequest? {
-        return nil
+    func update(id: String, params: Parameters) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "users/\(id)", method: .put, parameters: params, encoding: JSONEncoding.default, headers: HTTPHeaders.default)
     }
     
-    func getByCognitoId(id: String) -> DataRequest? {
-        return nil
+    func create(params: Parameters) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "users", method: .post, parameters: params, encoding: JSONEncoding.default, headers: HTTPHeaders.default)
     }
     
-    func save(params: Parameters) -> DataRequest? {
-        return nil
-    }
-    
-    func delete(id: String) -> DataRequest? {
-        return nil
+    func delete(id: String) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "users/\(id)", method: .delete, headers: HTTPHeaders.default)
     }
     
 }

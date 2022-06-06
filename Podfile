@@ -12,5 +12,6 @@ target 'ar-app' do
   pod 'R.swift'
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
+  pod 'SVProgressHUD'
 
 end

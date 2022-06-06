@@ -18,6 +18,7 @@ PODS:
   - R.swift (6.1.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher
   - R.swift
+  - SVProgressHUD
   - SwiftyJSON
 
 SPEC REPOS:
@@ -40,6 +42,7 @@ SPEC REPOS:
     - Kingfisher
     - R.swift
     - R.swift.Library
+    - SVProgressHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -53,8 +56,9 @@ SPEC CHECKSUMS:
   Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 038b06cce52a07b411fa2b576ec89cd56a4940a2
+PODFILE CHECKSUM: 47d7e13f860569a404cd6f6a153f0662d8391fd4
 
 COCOAPODS: 1.11.3

@@ -54,14 +54,16 @@ private extension StartViewController {
     
     // MARK: - Requests
     func requestUser() {
-        guard let id = AWSMobileClient.default().username else {
+        guard let email = AWSMobileClient.default().username else {
+            AWSMobileClient.default().signOut()
             showPreview()
             return
         }
         CognitoNetworkingService.initSession { error in
-            UserNetworkingService.getUserByCognitoId(id: id) { [weak self] user, error in
+            UserNetworkingService.getUserByEmail(email: email) { [weak self] user, error in
                 if let error = error {
                     print(error)
+                    AWSMobileClient.default().signOut()
                     self?.showPreview()
                 } else {
                     Store.shared.user = user

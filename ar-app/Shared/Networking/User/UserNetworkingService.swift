@@ -8,11 +8,9 @@
 import Foundation
 
 class UserNetworkingService {
-    class func getUsers() {}
-    
     class func getUser(id: String, completion: ((User?, Error?)->())?) {
-        let request = UserAPIService().get(id: id)?.validate()
-        request?.response(completionHandler: { data in
+        let request = UserAPIService().get(id: id).validate()
+        request.response(completionHandler: { data in
             switch data.result {
             case.success:
                 if let jsonData = data.data, let result = try? JSONDecoder().decode(User?.self, from: jsonData) {
@@ -26,9 +24,9 @@ class UserNetworkingService {
         })
     }
     
-    class func getUserByCognitoId(id: String, completion: ((User?, Error?)->())?) {
-        let request = UserAPIService().get(id: id)?.validate()
-        request?.response(completionHandler: { data in
+    class func getUserByEmail(email: String, completion: ((User?, Error?)->())?) {
+        let request = UserAPIService().getByEmail(email: email).validate()
+        request.response(completionHandler: { data in
             switch data.result {
             case.success:
                 if let jsonData = data.data, let result = try? JSONDecoder().decode(User?.self, from: jsonData) {
@@ -42,7 +40,7 @@ class UserNetworkingService {
         })
     }
     
-    class func saveUser(user: User?, completion:((User?, Error?)->())?) {
+    class func createUser(user: User?, completion:((User?, Error?)->())?) {
         guard let user = user,
               let data = try? JSONEncoder().encode(user),
               let parameters = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
@@ -50,8 +48,8 @@ class UserNetworkingService {
             completion?(nil, NSError.standard(message: "Data encoding error.", code: -1))
             return
         }
-        let request = UserAPIService().save(params: parameters)?.validate()
-        request?.response(completionHandler: { data in
+        let request = UserAPIService().create(params: parameters).validate()
+        request.response(completionHandler: { data in
             switch data.result {
             case .success:
                 if let jsonData = data.data, let result = try? JSONDecoder().decode(User?.self, from: jsonData) {
@@ -65,6 +63,40 @@ class UserNetworkingService {
         })
     }
     
-    class func deleteUser() {}
+    class func updateUser(user: User?, completion:((User?, Error?)->())?) {
+        guard let user = user,
+              let id = user.id,
+              let data = try? JSONEncoder().encode(user),
+              let parameters = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+        else {
+            completion?(nil, NSError.standard(message: "Data encoding error.", code: -1))
+            return
+        }
+        let request = UserAPIService().update(id: id, params: parameters).validate()
+        request.response(completionHandler: { data in
+            switch data.result {
+            case .success:
+                if let jsonData = data.data, let result = try? JSONDecoder().decode(User?.self, from: jsonData) {
+                    completion?(result, nil)
+                } else {
+                    completion?(nil, NSError.standard(message: "Data error.", code: -1))
+                }
+            case .failure(let error):
+                completion?(nil, error)
+            }
+        })
+    }
+    
+    class func deleteUser(id: String, completion:((Error?)->())?) {
+        let request = UserAPIService().delete(id: id).validate()
+        request.response(completionHandler: { data in
+            switch data.result {
+            case.success:
+                completion?(nil)
+            case .failure(let error):
+                completion?(error)
+            }
+        })
+    }
     
 }

@@ -68,7 +68,16 @@ private extension SignUpViewController {
         guard FieldValidation.validateFields(email: emailField, phone: phoneField, password: passwordField, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
-        CognitoNetworkingService.signUp(username: user.email!, password: passwordField.text!, email: user.email!) { [weak self] error in
+        showHUD()
+        var attributes = [String: String]()
+        if let phone = user.phone {
+            attributes["phone_number"] = phone.cognitoFormattedPhoneNumber
+        }
+        if let email = user.email {
+            attributes["email"] = email
+        }
+        CognitoNetworkingService.signUp(username: user.email!, password: passwordField.text!, email: user.email!, attributes: attributes) { [weak self] error in
+            self?.hideHUD()
             DispatchQueue.main.async {
                 if let error = error as? AWSMobileClientError {
                     let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
@@ -85,13 +94,16 @@ private extension SignUpViewController {
         guard FieldValidation.validateFields(email: emailField, phone: phoneField, password: passwordField, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
+        showHUD()
         CognitoNetworkingService.login(password: passwordField.text!, email: user.email!) { [weak self] error in
+            self?.hideHUD()
             DispatchQueue.main.async {
                 if let error = error as? AWSMobileClientError {
                     let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .default))
                     self?.present(alert, animated: true)
                 } else {
+                    self?.user.id = AWSMobileClient.default().userSub
                     self?.createUser()
                 }
             }
@@ -99,7 +111,7 @@ private extension SignUpViewController {
     }
     
     func createUser() {
-        UserNetworkingService.saveUser(user: user) { [weak self] newUser, error in
+        UserNetworkingService.createUser(user: user) { [weak self] newUser, error in
             DispatchQueue.main.async {
                 if let error = error {
                     print(error)
@@ -122,7 +134,7 @@ extension SignUpViewController: UITextFieldDelegate {
         case nameField:
             user.name = textField.text
         case phoneField:
-            user.phone = textField.text
+            user.phone = textField.text?.cognitoFormattedPhoneNumber
         default:
             break
         }
@@ -136,7 +148,20 @@ extension SignUpViewController: UITextFieldDelegate {
         case nameField:
             user.name = textField.text
         case phoneField:
-            user.phone = textField.text
+            user.phone = textField.text?.cognitoFormattedPhoneNumber
+        default:
+            break
+        }
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        switch textField {
+        case emailField:
+            break
+        case nameField:
+            break
+        case phoneField:
+            textField.text = textField.text?.formattedPhoneNumber
         default:
             break
         }

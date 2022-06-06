@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B52FE3D01C1EB78D61AB2CA0 /* Pods_ar_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D877C839F3992403B7B29A /* Pods_ar_app.framework */; };
+		D211C2BC284E246C00189244 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211C2BB284E246C00189244 /* Global.swift */; };
+		D211C2BE284E271E00189244 /* AFSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211C2BD284E271E00189244 /* AFSessionManager.swift */; };
 		D22D32CC283D02C600E80062 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32CB283D02C600E80062 /* UIViewExtension.swift */; };
 		D22D32CE283D05D200E80062 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32CD283D05D200E80062 /* HomeViewController.swift */; };
 		D22D32D0283D062E00E80062 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22D32CF283D062E00E80062 /* HomeViewController.storyboard */; };
@@ -39,6 +41,7 @@
 		D28CF5522845206C0057C231 /* AddProjectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */; };
 		D28CF555284526FE0057C231 /* SpaceARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF554284526FE0057C231 /* SpaceARViewController.swift */; };
 		D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF556284527640057C231 /* SpaceARViewController.storyboard */; };
+		D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */; };
 		D2B2230D283274F4003D2C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2230C283274F4003D2C2D /* AppDelegate.swift */; };
 		D2B2230F283274F4003D2C2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2230E283274F4003D2C2D /* ViewController.swift */; };
 		D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = D2B22310283274F4003D2C2D /* Experience.rcproject */; };
@@ -76,6 +79,8 @@
 		539DD7DBD4CA76A378B7051F /* Pods-ar-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ar-app.debug.xcconfig"; path = "Target Support Files/Pods-ar-app/Pods-ar-app.debug.xcconfig"; sourceTree = "<group>"; };
 		673117DB0812178E824FB6A3 /* Pods-ar-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ar-app.release.xcconfig"; path = "Target Support Files/Pods-ar-app/Pods-ar-app.release.xcconfig"; sourceTree = "<group>"; };
 		78D877C839F3992403B7B29A /* Pods_ar_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ar_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D211C2BB284E246C00189244 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		D211C2BD284E271E00189244 /* AFSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionManager.swift; sourceTree = "<group>"; };
 		D22D32CB283D02C600E80062 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		D22D32CD283D05D200E80062 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D22D32CF283D062E00E80062 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddProjectViewController.storyboard; sourceTree = "<group>"; };
 		D28CF554284526FE0057C231 /* SpaceARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceARViewController.swift; sourceTree = "<group>"; };
 		D28CF556284527640057C231 /* SpaceARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpaceARViewController.storyboard; sourceTree = "<group>"; };
+		D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		D2B22309283274F4003D2C2D /* ar-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ar-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B2230C283274F4003D2C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2B2230E283274F4003D2C2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -462,6 +468,7 @@
 				D2B2234728328F3F003D2C2D /* User */,
 				D2B2234628328F3A003D2C2D /* Cognito */,
 				D2B2234328328F0A003D2C2D /* Project */,
+				D211C2BD284E271E00189244 /* AFSessionManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -473,6 +480,7 @@
 				D2B2235B28329F2C003D2C2D /* NSErrorExtension.swift */,
 				D2313BFE283BBF18004D6C1C /* StringExtension.swift */,
 				D22D32CB283D02C600E80062 /* UIViewExtension.swift */,
+				D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -557,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B2235E2832A891003D2C2D /* Store.swift */,
+				D211C2BB284E246C00189244 /* Global.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -588,6 +597,8 @@
 			dependencies = (
 			);
 			name = "ar-app";
+			packageProductDependencies = (
+			);
 			productName = "ar-app";
 			productReference = D2B22309283274F4003D2C2D /* ar-app.app */;
 			productType = "com.apple.product-type.application";
@@ -616,6 +627,8 @@
 				Base,
 			);
 			mainGroup = D2B22300283274F4003D2C2D;
+			packageReferences = (
+			);
 			productRefGroup = D2B2230A283274F4003D2C2D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -731,6 +744,7 @@
 				D231BAE12835202A009DD137 /* PreviewCollectionViewCell.swift in Sources */,
 				D2B2232E28327D15003D2C2D /* StartViewController.swift in Sources */,
 				D2B2235828328FD0003D2C2D /* UserNetworkingService.swift in Sources */,
+				D211C2BE284E271E00189244 /* AFSessionManager.swift in Sources */,
 				D22D32D3283D193100E80062 /* FieldValidation.swift in Sources */,
 				D28A8F30284651BD00EF4A15 /* LineTextField.swift in Sources */,
 				D2B2235F2832A891003D2C2D /* Store.swift in Sources */,
@@ -749,6 +763,8 @@
 				D2B2234028328D95003D2C2D /* Tier.swift in Sources */,
 				D2B2233A28328D7E003D2C2D /* User.swift in Sources */,
 				D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */,
+				D211C2BC284E246C00189244 /* Global.swift in Sources */,
+				D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */,
 				D2B2233828328D75003D2C2D /* Project.swift in Sources */,
 				D28CF54A284510AE0057C231 /* MenuViewController.swift in Sources */,
 				D22D32CC283D02C600E80062 /* UIViewExtension.swift in Sources */,
