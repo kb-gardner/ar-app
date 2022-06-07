@@ -43,6 +43,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        projectsCollection.delegate = self
+        projectsCollection.dataSource = self
+        materialsCollection.delegate = self
+        materialsCollection.dataSource = self
+        spacesCollection.delegate = self
+        spacesCollection.dataSource = self
     }
 }
 
@@ -50,7 +56,8 @@ private extension HomeViewController {
     // MARK: - Navigation
     func showMenu() {
         guard let controller = MenuViewController.instantiate() else { return }
-        navigationController?.pushViewController(controller, animated: true)
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true)
     }
     
     func showNewProjectView() {}

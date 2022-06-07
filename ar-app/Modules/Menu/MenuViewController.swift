@@ -17,7 +17,7 @@ class MenuViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func menuClicked(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
     
     
@@ -27,6 +27,7 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(R.nib.menuTableViewCell)
         tableView.reloadData()
     }
 }

@@ -21,7 +21,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.requestUser()
         }
     }
@@ -43,9 +43,14 @@ private extension StartViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    func showTabBarMenu() {
+        guard let controller = MenuTabBarController.instantiate() else { return }
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func showLogin() {
         guard let controller = LoginViewController.instantiate(onSuccess: { [weak self] in
-            self?.showHome()
+            self?.showTabBarMenu()
         }, onShowSignUp: { [weak self] in
             self?.showPreview()
         }) else { return }
@@ -54,24 +59,26 @@ private extension StartViewController {
     
     // MARK: - Requests
     func requestUser() {
-        guard let email = AWSMobileClient.default().username else {
-            AWSMobileClient.default().signOut()
-            showPreview()
-            return
-        }
-        CognitoNetworkingService.initSession { error in
-            UserNetworkingService.getUserByEmail(email: email) { [weak self] user, error in
-                if let error = error {
-                    print(error)
+        CognitoNetworkingService.initSession { [weak self] error in
+            DispatchQueue.main.async {
+                if let id = AWSMobileClient.default().userSub {
+                    UserNetworkingService.getUser(id: id) { user, error in
+                        if let error = error {
+                            print(error)
+                            AWSMobileClient.default().signOut()
+                            self?.showPreview()
+                        } else {
+                            Store.shared.user = user
+                            if AWSMobileClient.default().isSignedIn {
+                                self?.showTabBarMenu()
+                            } else {
+                                self?.showLogin()
+                            }
+                        }
+                    }
+                } else {
                     AWSMobileClient.default().signOut()
                     self?.showPreview()
-                } else {
-                    Store.shared.user = user
-                    if AWSMobileClient.default().isSignedIn {
-                        self?.showHome()
-                    } else {
-                        self?.showLogin()
-                    }
                 }
             }
         }

@@ -63,6 +63,7 @@ private extension LoginViewController {
         guard FieldValidation.validateFields(email: emailField, password: passwordField, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
+        showHUD()
         CognitoNetworkingService.login(password: self.passwordField.text!, email: self.emailField.text!) { [weak self] error in
             DispatchQueue.main.async {
                 if let error = error as? AWSMobileClientError {
@@ -73,20 +74,24 @@ private extension LoginViewController {
                     self?.requestUser()
                 }
             }
+            self?.hideHUD()
         }
     }
     
     func requestUser() {
-        guard let email = AWSMobileClient.default().username else { return }
-        UserNetworkingService.getUserByEmail(email: email) { [weak self] user, error in
+        guard let id = AWSMobileClient.default().userSub else { return }
+        showHUD()
+        UserNetworkingService.getUser(id: id) { [weak self] user, error in
             DispatchQueue.main.async {
                 if let error = error {
                     print(error)
+                    AWSMobileClient.default().signOut()
                 } else {
                     Store.shared.user = user
                     self?.onSuccess?()
                 }
             }
+            self?.hideHUD()
         }
     }
     

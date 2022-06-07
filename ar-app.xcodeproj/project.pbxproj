@@ -73,6 +73,14 @@
 		D2B223652832AF75003D2C2D /* PreviewViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B223642832AF75003D2C2D /* PreviewViewController.storyboard */; };
 		D2C062752847A1930022A6DD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D2C062742847A1930022A6DD /* awsconfiguration.json */; };
 		D2C062782847A56B0022A6DD /* AWSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C062772847A56B0022A6DD /* AWSErrorExtension.swift */; };
+		D2C9E9D9284F8F0E006E3E25 /* MenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C9E9D8284F8F0E006E3E25 /* MenuTabBarController.swift */; };
+		D2C9E9DB284F8F6A006E3E25 /* MenuTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C9E9DA284F8F6A006E3E25 /* MenuTabBarController.storyboard */; };
+		D2C9E9DD284F9468006E3E25 /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C9E9DC284F9468006E3E25 /* ProjectListViewController.swift */; };
+		D2C9E9DF284F94CA006E3E25 /* ProjectListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C9E9DE284F94CA006E3E25 /* ProjectListViewController.storyboard */; };
+		D2C9E9E3284F9538006E3E25 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C9E9E2284F9538006E3E25 /* MaterialListViewController.swift */; };
+		D2C9E9E5284F958B006E3E25 /* MaterialListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C9E9E4284F958B006E3E25 /* MaterialListViewController.storyboard */; };
+		D2C9E9E7284F9686006E3E25 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C9E9E6284F9686006E3E25 /* AccountViewController.swift */; };
+		D2C9E9E9284F96A7006E3E25 /* AccountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C9E9E8284F96A7006E3E25 /* AccountViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +153,14 @@
 		D2B223642832AF75003D2C2D /* PreviewViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreviewViewController.storyboard; sourceTree = "<group>"; };
 		D2C062742847A1930022A6DD /* awsconfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		D2C062772847A56B0022A6DD /* AWSErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSErrorExtension.swift; sourceTree = "<group>"; };
+		D2C9E9D8284F8F0E006E3E25 /* MenuTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabBarController.swift; sourceTree = "<group>"; };
+		D2C9E9DA284F8F6A006E3E25 /* MenuTabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuTabBarController.storyboard; sourceTree = "<group>"; };
+		D2C9E9DC284F9468006E3E25 /* ProjectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
+		D2C9E9DE284F94CA006E3E25 /* ProjectListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectListViewController.storyboard; sourceTree = "<group>"; };
+		D2C9E9E2284F9538006E3E25 /* MaterialListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialListViewController.swift; sourceTree = "<group>"; };
+		D2C9E9E4284F958B006E3E25 /* MaterialListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MaterialListViewController.storyboard; sourceTree = "<group>"; };
+		D2C9E9E6284F9686006E3E25 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		D2C9E9E8284F96A7006E3E25 /* AccountViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +312,8 @@
 		D28CF54E284520060057C231 /* ProjectList */ = {
 			isa = PBXGroup;
 			children = (
+				D2C9E9DC284F9468006E3E25 /* ProjectListViewController.swift */,
+				D2C9E9DE284F94CA006E3E25 /* ProjectListViewController.storyboard */,
 			);
 			path = ProjectList;
 			sourceTree = "<group>";
@@ -352,13 +370,14 @@
 				D2B2232228327B20003D2C2D /* Start */,
 				D2B2232328327B84003D2C2D /* Authentication */,
 				D231BAF528354F8F009DD137 /* Legal */,
-				D2B2232428327B90003D2C2D /* Menu */,
+				D2C9E9D7284F8EE0006E3E25 /* TabMenu */,
 				D2B2232528327C51003D2C2D /* Home */,
 				D2B2232628327C5D003D2C2D /* Projects */,
 				D28CF553284526C70057C231 /* SpaceAR */,
 				D2B2232728327C63003D2C2D /* Materials */,
 				D2B2232828327C69003D2C2D /* Account */,
 				D2B2232928327C6E003D2C2D /* About */,
+				D2B2232428327B90003D2C2D /* Menu */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -441,6 +460,8 @@
 		D2B2232728327C63003D2C2D /* Materials */ = {
 			isa = PBXGroup;
 			children = (
+				D2C9E9E0284F94FF006E3E25 /* Material */,
+				D2C9E9E1284F9509006E3E25 /* MaterialList */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -448,6 +469,8 @@
 		D2B2232828327C69003D2C2D /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				D2C9E9E6284F9686006E3E25 /* AccountViewController.swift */,
+				D2C9E9E8284F96A7006E3E25 /* AccountViewController.storyboard */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -578,6 +601,31 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		D2C9E9D7284F8EE0006E3E25 /* TabMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D2C9E9D8284F8F0E006E3E25 /* MenuTabBarController.swift */,
+				D2C9E9DA284F8F6A006E3E25 /* MenuTabBarController.storyboard */,
+			);
+			path = TabMenu;
+			sourceTree = "<group>";
+		};
+		D2C9E9E0284F94FF006E3E25 /* Material */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Material;
+			sourceTree = "<group>";
+		};
+		D2C9E9E1284F9509006E3E25 /* MaterialList */ = {
+			isa = PBXGroup;
+			children = (
+				D2C9E9E2284F9538006E3E25 /* MaterialListViewController.swift */,
+				D2C9E9E4284F958B006E3E25 /* MaterialListViewController.storyboard */,
+			);
+			path = MaterialList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -654,6 +702,10 @@
 				D2B223652832AF75003D2C2D /* PreviewViewController.storyboard in Resources */,
 				D22D32D8283D222500E80062 /* LoginOptionCollectionViewCell.xib in Resources */,
 				D231BAEC28353184009DD137 /* SignUpViewController.storyboard in Resources */,
+				D2C9E9DF284F94CA006E3E25 /* ProjectListViewController.storyboard in Resources */,
+				D2C9E9DB284F8F6A006E3E25 /* MenuTabBarController.storyboard in Resources */,
+				D2C9E9E5284F958B006E3E25 /* MaterialListViewController.storyboard in Resources */,
+				D2C9E9E9284F96A7006E3E25 /* AccountViewController.storyboard in Resources */,
 				D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */,
 				D2B223612832AA16003D2C2D /* Localizable.strings in Resources */,
 				D2313C04283BE17B004D6C1C /* ResetPasswordViewController.storyboard in Resources */,
@@ -752,6 +804,7 @@
 				D2B2230D283274F4003D2C2D /* AppDelegate.swift in Sources */,
 				D2B2235628328FC0003D2C2D /* SpaceAPIService.swift in Sources */,
 				D2B2235C28329F2C003D2C2D /* NSErrorExtension.swift in Sources */,
+				D2C9E9DD284F9468006E3E25 /* ProjectListViewController.swift in Sources */,
 				D2B2233028327EAD003D2C2D /* PreviewViewController.swift in Sources */,
 				D2B2235228328FAC003D2C2D /* MaterialNetworkingService.swift in Sources */,
 				D231BAE528352B13009DD137 /* Preview.swift in Sources */,
@@ -763,6 +816,7 @@
 				D2B2234028328D95003D2C2D /* Tier.swift in Sources */,
 				D2B2233A28328D7E003D2C2D /* User.swift in Sources */,
 				D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */,
+				D2C9E9E7284F9686006E3E25 /* AccountViewController.swift in Sources */,
 				D211C2BC284E246C00189244 /* Global.swift in Sources */,
 				D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */,
 				D2B2233828328D75003D2C2D /* Project.swift in Sources */,
@@ -775,8 +829,10 @@
 				D22D32D6283D221C00E80062 /* LoginOptionCollectionViewCell.swift in Sources */,
 				D28A8F2B2846457900EF4A15 /* MenuTableViewCell.swift in Sources */,
 				D2B22336283284B8003D2C2D /* R.generated.swift in Sources */,
+				D2C9E9E3284F9538006E3E25 /* MaterialListViewController.swift in Sources */,
 				D2B2235A28328FEE003D2C2D /* UserAPIService.swift in Sources */,
 				D231BAEA2835317B009DD137 /* SignUpViewController.swift in Sources */,
+				D2C9E9D9284F8F0E006E3E25 /* MenuTabBarController.swift in Sources */,
 				D28CF555284526FE0057C231 /* SpaceARViewController.swift in Sources */,
 				D2B2233C28328D86003D2C2D /* Space.swift in Sources */,
 			);

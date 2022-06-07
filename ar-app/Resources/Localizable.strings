@@ -24,12 +24,22 @@
 "terms.fatalError" = "Could not instantiate TermsViewController";
 "menu.identifier" = "MenuViewController";
 "menu.fatalError" = "Could not instantiate MenuViewController";
+"tabMenu.identifier" = "MenuTabBarController";
+"tabMenu.fatalError" = "Could not instantiate MenuTabBarController";
 "home.identifier" = "HomeViewController";
 "home.fatalError" = "Could not instantiate HomeViewController";
+"projectList.identifier" = "ProjectListViewController";
+"projectList.fatalError" = "Could not instantiate ProjectListViewController";
 "addProject.identifier" = "AddProjectViewController";
 "addProject.fatalError" = "Could not instantiate AddProjectViewController";
 "spaceAR.identifier" = "SpaceARViewController";
 "spaceAR.fatalError" = "Could not instantiate SpaceARViewController";
+"materialList.identifier" = "MaterialListViewController";
+"materialList.fatalError" = "Could not instantiate MaterialListViewController";
+"addMaterial.identifier" = "AddMaterialViewController";
+"addMaterial.fatalError" = "Could not instantiate AddMaterialViewController";
+"account.identifier" = "AccountViewController";
+"account.fatalError" = "Could not instantiate AccountViewController";
 
 // MARK: - Validation
 "validation.error.validation.email.title" = "Invalid Email";
@@ -54,3 +64,7 @@
 // MARK: - Terms
 
 // MARK: - Home
+"home.title" = "Home";
+"projectList.title" = "Projects";
+"materialList.title" = "Materials";
+"account.title" = "Account";
