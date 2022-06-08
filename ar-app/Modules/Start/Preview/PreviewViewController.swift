@@ -39,6 +39,9 @@ class PreviewViewController: UIViewController {
         previewCollection.delegate = self
         previewCollection.dataSource = self
         previewCollection.register(R.nib.previewCollectionViewCell)
+        getStartedButton.layer.cornerRadius = 8
+        signInButton.layer.cornerRadius = 8
+        
         requestPreviews()
     }
 }
@@ -63,8 +66,19 @@ private extension PreviewViewController {
     
     // MARK: - Requests
     func requestPreviews() {
-        // request previews
-        pageControl.numberOfPages = previews.count
+        showHUD()
+        PreviewNetworkingService.getPreviews { [weak self] previews, error in
+            self?.hideHUD()
+            DispatchQueue.main.async {
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.previews = previews ?? []
+                    self?.pageControl.numberOfPages = previews?.count ?? 0
+                    self?.previewCollection.reloadData()
+                }
+            }
+        }
     }
 }
 

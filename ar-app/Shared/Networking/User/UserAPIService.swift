@@ -7,7 +7,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 class UserAPIService {
     func get(id: String) -> DataRequest {

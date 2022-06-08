@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Preview View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -33,51 +38,69 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-Hs-Iii">
-                                <rect key="frame" x="141" y="587" width="132.5" height="26"/>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="currentPageIndicatorTintColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL5-N8-p9E">
-                                <rect key="frame" x="60" y="653" width="294" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqL-Ut-7A3">
+                                <rect key="frame" x="0.0" y="587" width="414" height="275"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-Hs-Iii">
+                                        <rect key="frame" x="141" y="20" width="132.5" height="26"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL5-N8-p9E">
+                                        <rect key="frame" x="82" y="85" width="250" height="50"/>
+                                        <color key="backgroundColor" red="0.0078431372549019607" green="0.32156862745098036" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JWy-Mh-cA9"/>
+                                            <constraint firstAttribute="width" constant="250" id="LKV-g9-z8q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Get Started"/>
+                                        <connections>
+                                            <action selector="getStartedClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qir-FZ-b0t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUN-yu-FPS">
+                                        <rect key="frame" x="82" y="155" width="250" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="pcr-1g-Gjp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="efQ-EQ-RJg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="JWy-Mh-cA9"/>
+                                    <constraint firstItem="JzX-Hs-Iii" firstAttribute="centerX" secondItem="QqL-Ut-7A3" secondAttribute="centerX" id="4dn-9G-i5j"/>
+                                    <constraint firstItem="eUN-yu-FPS" firstAttribute="centerX" secondItem="kL5-N8-p9E" secondAttribute="centerX" id="Bm1-Xm-7T1"/>
+                                    <constraint firstItem="eUN-yu-FPS" firstAttribute="top" secondItem="kL5-N8-p9E" secondAttribute="bottom" constant="20" id="KGB-FO-aNE"/>
+                                    <constraint firstItem="JzX-Hs-Iii" firstAttribute="top" secondItem="QqL-Ut-7A3" secondAttribute="top" constant="20" id="aAX-Ja-78n"/>
+                                    <constraint firstItem="kL5-N8-p9E" firstAttribute="centerX" secondItem="QqL-Ut-7A3" secondAttribute="centerX" id="j64-Q6-wA4"/>
+                                    <constraint firstItem="eUN-yu-FPS" firstAttribute="width" secondItem="kL5-N8-p9E" secondAttribute="width" id="p5A-x0-iCr"/>
+                                    <constraint firstItem="kL5-N8-p9E" firstAttribute="centerY" secondItem="QqL-Ut-7A3" secondAttribute="centerY" multiplier="0.8" id="tbv-9A-4gD"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Get Started"/>
-                                <connections>
-                                    <action selector="getStartedClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qir-FZ-b0t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUN-yu-FPS">
-                                <rect key="frame" x="60" y="713" width="294" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="pcr-1g-Gjp"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
-                                <connections>
-                                    <action selector="signInClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="efQ-EQ-RJg"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="kL5-N8-p9E" firstAttribute="top" secondItem="JzX-Hs-Iii" secondAttribute="bottom" constant="40" id="9Ha-aA-lOO"/>
                             <constraint firstItem="aem-Pj-2yX" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.45" id="AVt-Kk-lRb"/>
-                            <constraint firstItem="kL5-N8-p9E" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="60" id="Nu8-yT-gte"/>
-                            <constraint firstItem="JzX-Hs-Iii" firstAttribute="centerX" secondItem="aem-Pj-2yX" secondAttribute="centerX" id="Q91-jF-qLd"/>
+                            <constraint firstItem="QqL-Ut-7A3" firstAttribute="top" secondItem="aem-Pj-2yX" secondAttribute="bottom" id="GF6-9J-B6U"/>
+                            <constraint firstItem="QqL-Ut-7A3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="May-st-rh4"/>
                             <constraint firstItem="aem-Pj-2yX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RMY-c2-Hu2"/>
                             <constraint firstItem="aem-Pj-2yX" firstAttribute="top" secondItem="vde-t9-VOM" secondAttribute="bottom" constant="40" id="SPJ-ux-9pG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aem-Pj-2yX" secondAttribute="trailing" id="Xb7-aq-b6m"/>
                             <constraint firstItem="vde-t9-VOM" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="ZDI-oR-Uzi"/>
-                            <constraint firstItem="eUN-yu-FPS" firstAttribute="centerX" secondItem="kL5-N8-p9E" secondAttribute="centerX" id="a7Q-Y1-FaN"/>
-                            <constraint firstItem="JzX-Hs-Iii" firstAttribute="top" secondItem="aem-Pj-2yX" secondAttribute="bottom" id="ghL-ll-QLT"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kL5-N8-p9E" secondAttribute="trailing" constant="60" id="l0n-ec-Kdo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="QqL-Ut-7A3" secondAttribute="bottom" id="Zmo-gh-ONN"/>
                             <constraint firstItem="vde-t9-VOM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="nGz-7e-4CH"/>
-                            <constraint firstItem="eUN-yu-FPS" firstAttribute="width" secondItem="kL5-N8-p9E" secondAttribute="width" id="vZM-0t-bqh"/>
-                            <constraint firstItem="eUN-yu-FPS" firstAttribute="top" secondItem="kL5-N8-p9E" secondAttribute="bottom" constant="20" id="wU9-ig-pap"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QqL-Ut-7A3" secondAttribute="trailing" id="pSC-QK-gMg"/>
                         </constraints>
                     </view>
                     <connections>

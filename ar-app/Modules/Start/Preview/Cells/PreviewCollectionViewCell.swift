@@ -15,6 +15,10 @@ class PreviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
+    override func layoutSubviews() {
+        contentView.layer.cornerRadius = 15
+    }
+    
     func setup(preview: Preview) {
         guard let stringUrl = preview.stringUrl else { return }
         switch preview.type {
@@ -34,6 +38,6 @@ class PreviewCollectionViewCell: UICollectionViewCell {
             }
         }
         titleLabel.text = preview.title
-        descriptionLabel.text = preview.description
+        descriptionLabel.text = preview.message
     }
 }

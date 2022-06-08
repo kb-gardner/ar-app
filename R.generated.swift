@@ -85,6 +85,7 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
@@ -274,15 +275,912 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 1 files.
+  /// This `R.file` struct is generated, and contains static references to 60 files.
   struct file {
+    /// Resource file `BarlowCondensed-Black.ttf`.
+    static let barlowCondensedBlackTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-Black", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-BlackItalic.ttf`.
+    static let barlowCondensedBlackItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-BlackItalic", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-Bold.ttf`.
+    static let barlowCondensedBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-Bold", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-BoldItalic.ttf`.
+    static let barlowCondensedBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-BoldItalic", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-ExtraBold.ttf`.
+    static let barlowCondensedExtraBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-ExtraBold", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-ExtraBoldItalic.ttf`.
+    static let barlowCondensedExtraBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-ExtraBoldItalic", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-ExtraLight.ttf`.
+    static let barlowCondensedExtraLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-ExtraLight", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-ExtraLightItalic.ttf`.
+    static let barlowCondensedExtraLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-ExtraLightItalic", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-Italic.ttf`.
+    static let barlowCondensedItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-Italic", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-Light.ttf`.
+    static let barlowCondensedLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-Light", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-LightItalic.ttf`.
+    static let barlowCondensedLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-LightItalic", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-Medium.ttf`.
+    static let barlowCondensedMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-Medium", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-MediumItalic.ttf`.
+    static let barlowCondensedMediumItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-MediumItalic", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-Regular.ttf`.
+    static let barlowCondensedRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-Regular", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-SemiBold.ttf`.
+    static let barlowCondensedSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-SemiBold", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-SemiBoldItalic.ttf`.
+    static let barlowCondensedSemiBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-SemiBoldItalic", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-Thin.ttf`.
+    static let barlowCondensedThinTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-Thin", pathExtension: "ttf")
+    /// Resource file `BarlowCondensed-ThinItalic.ttf`.
+    static let barlowCondensedThinItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "BarlowCondensed-ThinItalic", pathExtension: "ttf")
+    /// Resource file `LICENSE.txt`.
+    static let licenseTxt = Rswift.FileResource(bundle: R.hostingBundle, name: "LICENSE", pathExtension: "txt")
+    /// Resource file `OFL.txt`.
+    static let oflTxt = Rswift.FileResource(bundle: R.hostingBundle, name: "OFL", pathExtension: "txt")
+    /// Resource file `OpenSans-Bold.ttf`.
+    static let openSansBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-Bold", pathExtension: "ttf")
+    /// Resource file `OpenSans-BoldItalic.ttf`.
+    static let openSansBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-BoldItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans-ExtraBold.ttf`.
+    static let openSansExtraBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-ExtraBold", pathExtension: "ttf")
+    /// Resource file `OpenSans-ExtraBoldItalic.ttf`.
+    static let openSansExtraBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-ExtraBoldItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans-Italic-VariableFont_wdth,wght.ttf`.
+    static let openSansItalicVariableFont_wdthWghtTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-Italic-VariableFont_wdth,wght", pathExtension: "ttf")
+    /// Resource file `OpenSans-Italic.ttf`.
+    static let openSansItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-Italic", pathExtension: "ttf")
+    /// Resource file `OpenSans-Light.ttf`.
+    static let openSansLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-Light", pathExtension: "ttf")
+    /// Resource file `OpenSans-LightItalic.ttf`.
+    static let openSansLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-LightItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans-Medium.ttf`.
+    static let openSansMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-Medium", pathExtension: "ttf")
+    /// Resource file `OpenSans-MediumItalic.ttf`.
+    static let openSansMediumItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-MediumItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans-Regular.ttf`.
+    static let openSansRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-Regular", pathExtension: "ttf")
+    /// Resource file `OpenSans-SemiBold.ttf`.
+    static let openSansSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-SemiBold", pathExtension: "ttf")
+    /// Resource file `OpenSans-SemiBoldItalic.ttf`.
+    static let openSansSemiBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-SemiBoldItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans-VariableFont_wdth,wght.ttf`.
+    static let openSansVariableFont_wdthWghtTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans-VariableFont_wdth,wght", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-Bold.ttf`.
+    static let openSans_CondensedBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-Bold", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-BoldItalic.ttf`.
+    static let openSans_CondensedBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-BoldItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-ExtraBold.ttf`.
+    static let openSans_CondensedExtraBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-ExtraBold", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-ExtraBoldItalic.ttf`.
+    static let openSans_CondensedExtraBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-ExtraBoldItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-Italic.ttf`.
+    static let openSans_CondensedItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-Italic", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-Light.ttf`.
+    static let openSans_CondensedLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-Light", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-LightItalic.ttf`.
+    static let openSans_CondensedLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-LightItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-Medium.ttf`.
+    static let openSans_CondensedMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-Medium", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-MediumItalic.ttf`.
+    static let openSans_CondensedMediumItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-MediumItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-Regular.ttf`.
+    static let openSans_CondensedRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-Regular", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-SemiBold.ttf`.
+    static let openSans_CondensedSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-SemiBold", pathExtension: "ttf")
+    /// Resource file `OpenSans_Condensed-SemiBoldItalic.ttf`.
+    static let openSans_CondensedSemiBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_Condensed-SemiBoldItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-Bold.ttf`.
+    static let openSans_SemiCondensedBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-Bold", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-BoldItalic.ttf`.
+    static let openSans_SemiCondensedBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-BoldItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-ExtraBold.ttf`.
+    static let openSans_SemiCondensedExtraBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-ExtraBold", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-ExtraBoldItalic.ttf`.
+    static let openSans_SemiCondensedExtraBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-ExtraBoldItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-Italic.ttf`.
+    static let openSans_SemiCondensedItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-Italic", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-Light.ttf`.
+    static let openSans_SemiCondensedLightTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-Light", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-LightItalic.ttf`.
+    static let openSans_SemiCondensedLightItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-LightItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-Medium.ttf`.
+    static let openSans_SemiCondensedMediumTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-Medium", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-MediumItalic.ttf`.
+    static let openSans_SemiCondensedMediumItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-MediumItalic", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-Regular.ttf`.
+    static let openSans_SemiCondensedRegularTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-Regular", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-SemiBold.ttf`.
+    static let openSans_SemiCondensedSemiBoldTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-SemiBold", pathExtension: "ttf")
+    /// Resource file `OpenSans_SemiCondensed-SemiBoldItalic.ttf`.
+    static let openSans_SemiCondensedSemiBoldItalicTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "OpenSans_SemiCondensed-SemiBoldItalic", pathExtension: "ttf")
+    /// Resource file `README.txt`.
+    static let readmeTxt = Rswift.FileResource(bundle: R.hostingBundle, name: "README", pathExtension: "txt")
     /// Resource file `awsconfiguration.json`.
     static let awsconfigurationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "awsconfiguration", pathExtension: "json")
+
+    /// `bundle.url(forResource: "BarlowCondensed-Black", withExtension: "ttf")`
+    static func barlowCondensedBlackTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedBlackTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-BlackItalic", withExtension: "ttf")`
+    static func barlowCondensedBlackItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedBlackItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-Bold", withExtension: "ttf")`
+    static func barlowCondensedBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-BoldItalic", withExtension: "ttf")`
+    static func barlowCondensedBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-ExtraBold", withExtension: "ttf")`
+    static func barlowCondensedExtraBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedExtraBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-ExtraBoldItalic", withExtension: "ttf")`
+    static func barlowCondensedExtraBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedExtraBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-ExtraLight", withExtension: "ttf")`
+    static func barlowCondensedExtraLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedExtraLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-ExtraLightItalic", withExtension: "ttf")`
+    static func barlowCondensedExtraLightItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedExtraLightItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-Italic", withExtension: "ttf")`
+    static func barlowCondensedItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-Light", withExtension: "ttf")`
+    static func barlowCondensedLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-LightItalic", withExtension: "ttf")`
+    static func barlowCondensedLightItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedLightItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-Medium", withExtension: "ttf")`
+    static func barlowCondensedMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-MediumItalic", withExtension: "ttf")`
+    static func barlowCondensedMediumItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedMediumItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-Regular", withExtension: "ttf")`
+    static func barlowCondensedRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-SemiBold", withExtension: "ttf")`
+    static func barlowCondensedSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-SemiBoldItalic", withExtension: "ttf")`
+    static func barlowCondensedSemiBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedSemiBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-Thin", withExtension: "ttf")`
+    static func barlowCondensedThinTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedThinTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "BarlowCondensed-ThinItalic", withExtension: "ttf")`
+    static func barlowCondensedThinItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.barlowCondensedThinItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "LICENSE", withExtension: "txt")`
+    static func licenseTxt(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.licenseTxt
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OFL", withExtension: "txt")`
+    static func oflTxt(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.oflTxt
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-Bold", withExtension: "ttf")`
+    static func openSansBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-BoldItalic", withExtension: "ttf")`
+    static func openSansBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-ExtraBold", withExtension: "ttf")`
+    static func openSansExtraBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansExtraBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-ExtraBoldItalic", withExtension: "ttf")`
+    static func openSansExtraBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansExtraBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-Italic", withExtension: "ttf")`
+    static func openSansItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-Italic-VariableFont_wdth,wght", withExtension: "ttf")`
+    static func openSansItalicVariableFont_wdthWghtTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansItalicVariableFont_wdthWghtTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-Light", withExtension: "ttf")`
+    static func openSansLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-LightItalic", withExtension: "ttf")`
+    static func openSansLightItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansLightItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-Medium", withExtension: "ttf")`
+    static func openSansMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-MediumItalic", withExtension: "ttf")`
+    static func openSansMediumItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansMediumItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-Regular", withExtension: "ttf")`
+    static func openSansRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-SemiBold", withExtension: "ttf")`
+    static func openSansSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-SemiBoldItalic", withExtension: "ttf")`
+    static func openSansSemiBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansSemiBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans-VariableFont_wdth,wght", withExtension: "ttf")`
+    static func openSansVariableFont_wdthWghtTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSansVariableFont_wdthWghtTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-Bold", withExtension: "ttf")`
+    static func openSans_CondensedBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-BoldItalic", withExtension: "ttf")`
+    static func openSans_CondensedBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-ExtraBold", withExtension: "ttf")`
+    static func openSans_CondensedExtraBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedExtraBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-ExtraBoldItalic", withExtension: "ttf")`
+    static func openSans_CondensedExtraBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedExtraBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-Italic", withExtension: "ttf")`
+    static func openSans_CondensedItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-Light", withExtension: "ttf")`
+    static func openSans_CondensedLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-LightItalic", withExtension: "ttf")`
+    static func openSans_CondensedLightItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedLightItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-Medium", withExtension: "ttf")`
+    static func openSans_CondensedMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-MediumItalic", withExtension: "ttf")`
+    static func openSans_CondensedMediumItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedMediumItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-Regular", withExtension: "ttf")`
+    static func openSans_CondensedRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-SemiBold", withExtension: "ttf")`
+    static func openSans_CondensedSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_Condensed-SemiBoldItalic", withExtension: "ttf")`
+    static func openSans_CondensedSemiBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_CondensedSemiBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-Bold", withExtension: "ttf")`
+    static func openSans_SemiCondensedBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-BoldItalic", withExtension: "ttf")`
+    static func openSans_SemiCondensedBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-ExtraBold", withExtension: "ttf")`
+    static func openSans_SemiCondensedExtraBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedExtraBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-ExtraBoldItalic", withExtension: "ttf")`
+    static func openSans_SemiCondensedExtraBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedExtraBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-Italic", withExtension: "ttf")`
+    static func openSans_SemiCondensedItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-Light", withExtension: "ttf")`
+    static func openSans_SemiCondensedLightTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedLightTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-LightItalic", withExtension: "ttf")`
+    static func openSans_SemiCondensedLightItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedLightItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-Medium", withExtension: "ttf")`
+    static func openSans_SemiCondensedMediumTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedMediumTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-MediumItalic", withExtension: "ttf")`
+    static func openSans_SemiCondensedMediumItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedMediumItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-Regular", withExtension: "ttf")`
+    static func openSans_SemiCondensedRegularTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedRegularTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-SemiBold", withExtension: "ttf")`
+    static func openSans_SemiCondensedSemiBoldTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedSemiBoldTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "OpenSans_SemiCondensed-SemiBoldItalic", withExtension: "ttf")`
+    static func openSans_SemiCondensedSemiBoldItalicTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.openSans_SemiCondensedSemiBoldItalicTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "README", withExtension: "txt")`
+    static func readmeTxt(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.readmeTxt
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "awsconfiguration", withExtension: "json")`
     static func awsconfigurationJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.awsconfigurationJson
       return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.font` struct is generated, and contains static references to 56 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `BarlowCondensed-BlackItalic`.
+    static let barlowCondensedBlackItalic = Rswift.FontResource(fontName: "BarlowCondensed-BlackItalic")
+    /// Font `BarlowCondensed-Black`.
+    static let barlowCondensedBlack = Rswift.FontResource(fontName: "BarlowCondensed-Black")
+    /// Font `BarlowCondensed-BoldItalic`.
+    static let barlowCondensedBoldItalic = Rswift.FontResource(fontName: "BarlowCondensed-BoldItalic")
+    /// Font `BarlowCondensed-Bold`.
+    static let barlowCondensedBold = Rswift.FontResource(fontName: "BarlowCondensed-Bold")
+    /// Font `BarlowCondensed-ExtraBoldItalic`.
+    static let barlowCondensedExtraBoldItalic = Rswift.FontResource(fontName: "BarlowCondensed-ExtraBoldItalic")
+    /// Font `BarlowCondensed-ExtraBold`.
+    static let barlowCondensedExtraBold = Rswift.FontResource(fontName: "BarlowCondensed-ExtraBold")
+    /// Font `BarlowCondensed-ExtraLightItalic`.
+    static let barlowCondensedExtraLightItalic = Rswift.FontResource(fontName: "BarlowCondensed-ExtraLightItalic")
+    /// Font `BarlowCondensed-ExtraLight`.
+    static let barlowCondensedExtraLight = Rswift.FontResource(fontName: "BarlowCondensed-ExtraLight")
+    /// Font `BarlowCondensed-Italic`.
+    static let barlowCondensedItalic = Rswift.FontResource(fontName: "BarlowCondensed-Italic")
+    /// Font `BarlowCondensed-LightItalic`.
+    static let barlowCondensedLightItalic = Rswift.FontResource(fontName: "BarlowCondensed-LightItalic")
+    /// Font `BarlowCondensed-Light`.
+    static let barlowCondensedLight = Rswift.FontResource(fontName: "BarlowCondensed-Light")
+    /// Font `BarlowCondensed-MediumItalic`.
+    static let barlowCondensedMediumItalic = Rswift.FontResource(fontName: "BarlowCondensed-MediumItalic")
+    /// Font `BarlowCondensed-Medium`.
+    static let barlowCondensedMedium = Rswift.FontResource(fontName: "BarlowCondensed-Medium")
+    /// Font `BarlowCondensed-Regular`.
+    static let barlowCondensedRegular = Rswift.FontResource(fontName: "BarlowCondensed-Regular")
+    /// Font `BarlowCondensed-SemiBoldItalic`.
+    static let barlowCondensedSemiBoldItalic = Rswift.FontResource(fontName: "BarlowCondensed-SemiBoldItalic")
+    /// Font `BarlowCondensed-SemiBold`.
+    static let barlowCondensedSemiBold = Rswift.FontResource(fontName: "BarlowCondensed-SemiBold")
+    /// Font `BarlowCondensed-ThinItalic`.
+    static let barlowCondensedThinItalic = Rswift.FontResource(fontName: "BarlowCondensed-ThinItalic")
+    /// Font `BarlowCondensed-Thin`.
+    static let barlowCondensedThin = Rswift.FontResource(fontName: "BarlowCondensed-Thin")
+    /// Font `OpenSans-BoldItalic`.
+    static let openSansBoldItalic = Rswift.FontResource(fontName: "OpenSans-BoldItalic")
+    /// Font `OpenSans-Bold`.
+    static let openSansBold = Rswift.FontResource(fontName: "OpenSans-Bold")
+    /// Font `OpenSans-ExtraBoldItalic`.
+    static let openSansExtraBoldItalic = Rswift.FontResource(fontName: "OpenSans-ExtraBoldItalic")
+    /// Font `OpenSans-ExtraBold`.
+    static let openSansExtraBold = Rswift.FontResource(fontName: "OpenSans-ExtraBold")
+    /// Font `OpenSans-LightItalic`.
+    static let openSansLightItalic = Rswift.FontResource(fontName: "OpenSans-LightItalic")
+    /// Font `OpenSans-Light`.
+    static let openSansLight = Rswift.FontResource(fontName: "OpenSans-Light")
+    /// Font `OpenSans-MediumItalic`.
+    static let openSansMediumItalic = Rswift.FontResource(fontName: "OpenSans-MediumItalic")
+    /// Font `OpenSans-Medium`.
+    static let openSansMedium = Rswift.FontResource(fontName: "OpenSans-Medium")
+    /// Font `OpenSans-SemiBoldItalic`.
+    static let openSansSemiBoldItalic = Rswift.FontResource(fontName: "OpenSans-SemiBoldItalic")
+    /// Font `OpenSans-SemiBold`.
+    static let openSansSemiBold = Rswift.FontResource(fontName: "OpenSans-SemiBold")
+    /// Font `OpenSansCondensed-BoldItalic`.
+    static let openSansCondensedBoldItalic = Rswift.FontResource(fontName: "OpenSansCondensed-BoldItalic")
+    /// Font `OpenSansCondensed-Bold`.
+    static let openSansCondensedBold = Rswift.FontResource(fontName: "OpenSansCondensed-Bold")
+    /// Font `OpenSansCondensed-ExtraBoldItalic`.
+    static let openSansCondensedExtraBoldItalic = Rswift.FontResource(fontName: "OpenSansCondensed-ExtraBoldItalic")
+    /// Font `OpenSansCondensed-ExtraBold`.
+    static let openSansCondensedExtraBold = Rswift.FontResource(fontName: "OpenSansCondensed-ExtraBold")
+    /// Font `OpenSansCondensed-Italic`.
+    static let openSansCondensedItalic = Rswift.FontResource(fontName: "OpenSansCondensed-Italic")
+    /// Font `OpenSansCondensed-LightItalic`.
+    static let openSansCondensedLightItalic = Rswift.FontResource(fontName: "OpenSansCondensed-LightItalic")
+    /// Font `OpenSansCondensed-Light`.
+    static let openSansCondensedLight = Rswift.FontResource(fontName: "OpenSansCondensed-Light")
+    /// Font `OpenSansCondensed-MediumItalic`.
+    static let openSansCondensedMediumItalic = Rswift.FontResource(fontName: "OpenSansCondensed-MediumItalic")
+    /// Font `OpenSansCondensed-Medium`.
+    static let openSansCondensedMedium = Rswift.FontResource(fontName: "OpenSansCondensed-Medium")
+    /// Font `OpenSansCondensed-Regular`.
+    static let openSansCondensedRegular = Rswift.FontResource(fontName: "OpenSansCondensed-Regular")
+    /// Font `OpenSansCondensed-SemiBoldItalic`.
+    static let openSansCondensedSemiBoldItalic = Rswift.FontResource(fontName: "OpenSansCondensed-SemiBoldItalic")
+    /// Font `OpenSansCondensed-SemiBold`.
+    static let openSansCondensedSemiBold = Rswift.FontResource(fontName: "OpenSansCondensed-SemiBold")
+    /// Font `OpenSansSemiCondensed-BoldItalic`.
+    static let openSansSemiCondensedBoldItalic = Rswift.FontResource(fontName: "OpenSansSemiCondensed-BoldItalic")
+    /// Font `OpenSansSemiCondensed-Bold`.
+    static let openSansSemiCondensedBold = Rswift.FontResource(fontName: "OpenSansSemiCondensed-Bold")
+    /// Font `OpenSansSemiCondensed-ExtraBoldItalic`.
+    static let openSansSemiCondensedExtraBoldItalic = Rswift.FontResource(fontName: "OpenSansSemiCondensed-ExtraBoldItalic")
+    /// Font `OpenSansSemiCondensed-ExtraBold`.
+    static let openSansSemiCondensedExtraBold = Rswift.FontResource(fontName: "OpenSansSemiCondensed-ExtraBold")
+    /// Font `OpenSansSemiCondensed-Italic`.
+    static let openSansSemiCondensedItalic = Rswift.FontResource(fontName: "OpenSansSemiCondensed-Italic")
+    /// Font `OpenSansSemiCondensed-LightItalic`.
+    static let openSansSemiCondensedLightItalic = Rswift.FontResource(fontName: "OpenSansSemiCondensed-LightItalic")
+    /// Font `OpenSansSemiCondensed-Light`.
+    static let openSansSemiCondensedLight = Rswift.FontResource(fontName: "OpenSansSemiCondensed-Light")
+    /// Font `OpenSansSemiCondensed-MediumItalic`.
+    static let openSansSemiCondensedMediumItalic = Rswift.FontResource(fontName: "OpenSansSemiCondensed-MediumItalic")
+    /// Font `OpenSansSemiCondensed-Medium`.
+    static let openSansSemiCondensedMedium = Rswift.FontResource(fontName: "OpenSansSemiCondensed-Medium")
+    /// Font `OpenSansSemiCondensed-Regular`.
+    static let openSansSemiCondensedRegular = Rswift.FontResource(fontName: "OpenSansSemiCondensed-Regular")
+    /// Font `OpenSansSemiCondensed-SemiBoldItalic`.
+    static let openSansSemiCondensedSemiBoldItalic = Rswift.FontResource(fontName: "OpenSansSemiCondensed-SemiBoldItalic")
+    /// Font `OpenSansSemiCondensed-SemiBold`.
+    static let openSansSemiCondensedSemiBold = Rswift.FontResource(fontName: "OpenSansSemiCondensed-SemiBold")
+
+    /// `UIFont(name: "BarlowCondensed-Black", size: ...)`
+    static func barlowCondensedBlack(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedBlack, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-BlackItalic", size: ...)`
+    static func barlowCondensedBlackItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedBlackItalic, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-Bold", size: ...)`
+    static func barlowCondensedBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedBold, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-BoldItalic", size: ...)`
+    static func barlowCondensedBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-ExtraBold", size: ...)`
+    static func barlowCondensedExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedExtraBold, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-ExtraBoldItalic", size: ...)`
+    static func barlowCondensedExtraBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedExtraBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-ExtraLight", size: ...)`
+    static func barlowCondensedExtraLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedExtraLight, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-ExtraLightItalic", size: ...)`
+    static func barlowCondensedExtraLightItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedExtraLightItalic, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-Italic", size: ...)`
+    static func barlowCondensedItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedItalic, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-Light", size: ...)`
+    static func barlowCondensedLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedLight, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-LightItalic", size: ...)`
+    static func barlowCondensedLightItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedLightItalic, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-Medium", size: ...)`
+    static func barlowCondensedMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedMedium, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-MediumItalic", size: ...)`
+    static func barlowCondensedMediumItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedMediumItalic, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-Regular", size: ...)`
+    static func barlowCondensedRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedRegular, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-SemiBold", size: ...)`
+    static func barlowCondensedSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedSemiBold, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-SemiBoldItalic", size: ...)`
+    static func barlowCondensedSemiBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedSemiBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-Thin", size: ...)`
+    static func barlowCondensedThin(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedThin, size: size)
+    }
+
+    /// `UIFont(name: "BarlowCondensed-ThinItalic", size: ...)`
+    static func barlowCondensedThinItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: barlowCondensedThinItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-Bold", size: ...)`
+    static func openSansBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-BoldItalic", size: ...)`
+    static func openSansBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-ExtraBold", size: ...)`
+    static func openSansExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansExtraBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-ExtraBoldItalic", size: ...)`
+    static func openSansExtraBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansExtraBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-Light", size: ...)`
+    static func openSansLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansLight, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-LightItalic", size: ...)`
+    static func openSansLightItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansLightItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-Medium", size: ...)`
+    static func openSansMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansMedium, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-MediumItalic", size: ...)`
+    static func openSansMediumItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansMediumItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-SemiBold", size: ...)`
+    static func openSansSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSans-SemiBoldItalic", size: ...)`
+    static func openSansSemiBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-Bold", size: ...)`
+    static func openSansCondensedBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-BoldItalic", size: ...)`
+    static func openSansCondensedBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-ExtraBold", size: ...)`
+    static func openSansCondensedExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedExtraBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-ExtraBoldItalic", size: ...)`
+    static func openSansCondensedExtraBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedExtraBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-Italic", size: ...)`
+    static func openSansCondensedItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-Light", size: ...)`
+    static func openSansCondensedLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedLight, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-LightItalic", size: ...)`
+    static func openSansCondensedLightItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedLightItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-Medium", size: ...)`
+    static func openSansCondensedMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedMedium, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-MediumItalic", size: ...)`
+    static func openSansCondensedMediumItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedMediumItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-Regular", size: ...)`
+    static func openSansCondensedRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedRegular, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-SemiBold", size: ...)`
+    static func openSansCondensedSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedSemiBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansCondensed-SemiBoldItalic", size: ...)`
+    static func openSansCondensedSemiBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansCondensedSemiBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-Bold", size: ...)`
+    static func openSansSemiCondensedBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-BoldItalic", size: ...)`
+    static func openSansSemiCondensedBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-ExtraBold", size: ...)`
+    static func openSansSemiCondensedExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedExtraBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-ExtraBoldItalic", size: ...)`
+    static func openSansSemiCondensedExtraBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedExtraBoldItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-Italic", size: ...)`
+    static func openSansSemiCondensedItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-Light", size: ...)`
+    static func openSansSemiCondensedLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedLight, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-LightItalic", size: ...)`
+    static func openSansSemiCondensedLightItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedLightItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-Medium", size: ...)`
+    static func openSansSemiCondensedMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedMedium, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-MediumItalic", size: ...)`
+    static func openSansSemiCondensedMediumItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedMediumItalic, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-Regular", size: ...)`
+    static func openSansSemiCondensedRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedRegular, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-SemiBold", size: ...)`
+    static func openSansSemiCondensedSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedSemiBold, size: size)
+    }
+
+    /// `UIFont(name: "OpenSansSemiCondensed-SemiBoldItalic", size: ...)`
+    static func openSansSemiCondensedSemiBoldItalic(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: openSansSemiCondensedSemiBoldItalic, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.barlowCondensedBlack(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-Black' could not be loaded, is 'BarlowCondensed-Black.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedBlackItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-BlackItalic' could not be loaded, is 'BarlowCondensed-BlackItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-Bold' could not be loaded, is 'BarlowCondensed-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-BoldItalic' could not be loaded, is 'BarlowCondensed-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-ExtraBold' could not be loaded, is 'BarlowCondensed-ExtraBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedExtraBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-ExtraBoldItalic' could not be loaded, is 'BarlowCondensed-ExtraBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedExtraLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-ExtraLight' could not be loaded, is 'BarlowCondensed-ExtraLight.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedExtraLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-ExtraLightItalic' could not be loaded, is 'BarlowCondensed-ExtraLightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-Italic' could not be loaded, is 'BarlowCondensed-Italic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-Light' could not be loaded, is 'BarlowCondensed-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-LightItalic' could not be loaded, is 'BarlowCondensed-LightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-Medium' could not be loaded, is 'BarlowCondensed-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedMediumItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-MediumItalic' could not be loaded, is 'BarlowCondensed-MediumItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-Regular' could not be loaded, is 'BarlowCondensed-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-SemiBold' could not be loaded, is 'BarlowCondensed-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedSemiBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-SemiBoldItalic' could not be loaded, is 'BarlowCondensed-SemiBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-Thin' could not be loaded, is 'BarlowCondensed-Thin.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.barlowCondensedThinItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'BarlowCondensed-ThinItalic' could not be loaded, is 'BarlowCondensed-ThinItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-Bold' could not be loaded, is 'OpenSans-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-BoldItalic' could not be loaded, is 'OpenSans-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-ExtraBold' could not be loaded, is 'OpenSans-ExtraBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansExtraBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-ExtraBoldItalic' could not be loaded, is 'OpenSans-ExtraBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-Light' could not be loaded, is 'OpenSans-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-LightItalic' could not be loaded, is 'OpenSans-LightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-Medium' could not be loaded, is 'OpenSans-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansMediumItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-MediumItalic' could not be loaded, is 'OpenSans-MediumItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-SemiBold' could not be loaded, is 'OpenSans-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSans-SemiBoldItalic' could not be loaded, is 'OpenSans-SemiBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-Bold' could not be loaded, is 'OpenSans_Condensed-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-BoldItalic' could not be loaded, is 'OpenSans_Condensed-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-ExtraBold' could not be loaded, is 'OpenSans_Condensed-ExtraBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedExtraBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-ExtraBoldItalic' could not be loaded, is 'OpenSans_Condensed-ExtraBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-Italic' could not be loaded, is 'OpenSans_Condensed-Italic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-Light' could not be loaded, is 'OpenSans_Condensed-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-LightItalic' could not be loaded, is 'OpenSans_Condensed-LightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-Medium' could not be loaded, is 'OpenSans_Condensed-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedMediumItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-MediumItalic' could not be loaded, is 'OpenSans_Condensed-MediumItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-Regular' could not be loaded, is 'OpenSans_Condensed-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-SemiBold' could not be loaded, is 'OpenSans_Condensed-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansCondensedSemiBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansCondensed-SemiBoldItalic' could not be loaded, is 'OpenSans_Condensed-SemiBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-Bold' could not be loaded, is 'OpenSans_SemiCondensed-Bold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-BoldItalic' could not be loaded, is 'OpenSans_SemiCondensed-BoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-ExtraBold' could not be loaded, is 'OpenSans_SemiCondensed-ExtraBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedExtraBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-ExtraBoldItalic' could not be loaded, is 'OpenSans_SemiCondensed-ExtraBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-Italic' could not be loaded, is 'OpenSans_SemiCondensed-Italic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-Light' could not be loaded, is 'OpenSans_SemiCondensed-Light.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedLightItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-LightItalic' could not be loaded, is 'OpenSans_SemiCondensed-LightItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-Medium' could not be loaded, is 'OpenSans_SemiCondensed-Medium.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedMediumItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-MediumItalic' could not be loaded, is 'OpenSans_SemiCondensed-MediumItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-Regular' could not be loaded, is 'OpenSans_SemiCondensed-Regular.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-SemiBold' could not be loaded, is 'OpenSans_SemiCondensed-SemiBold.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.openSansSemiCondensedSemiBoldItalic(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'OpenSansSemiCondensed-SemiBoldItalic' could not be loaded, is 'OpenSans_SemiCondensed-SemiBoldItalic.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}

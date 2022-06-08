@@ -10,7 +10,7 @@ import Foundation
 struct Preview: Codable {
     let stringUrl: String?
     let title: String?
-    let description: String?
+    let message: String?
     let contentType: String!
     
     var type: PreviewContentType {

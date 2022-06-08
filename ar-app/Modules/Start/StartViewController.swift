@@ -31,7 +31,7 @@ private extension StartViewController {
     // MARK: - Navigation
     func showPreview() {
         guard let controller = PreviewViewController.instantiate(onSuccess: { [weak self] in
-            self?.showHome()
+            self?.showTabBarMenu()
         }, onShowLogin: { [weak self] in
             self?.showLogin()
         }) else { fatalError(R.string.localizable.previewFatalError()) }
@@ -76,6 +76,9 @@ private extension StartViewController {
                             }
                         }
                     }
+                } else if let _ = AWSMobileClient.default().username {
+                    AWSMobileClient.default().signOut()
+                    self?.showLogin()
                 } else {
                     AWSMobileClient.default().signOut()
                     self?.showPreview()
