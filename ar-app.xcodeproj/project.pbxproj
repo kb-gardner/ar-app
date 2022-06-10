@@ -34,7 +34,7 @@
 		D28A8F2B2846457900EF4A15 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */; };
 		D28A8F2D2846468A00EF4A15 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */; };
 		D28A8F30284651BD00EF4A15 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2F284651BD00EF4A15 /* LineTextField.swift */; };
-		D28A8F332846540600EF4A15 /* LineTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28A8F322846540600EF4A15 /* LineTextField.xib */; };
+		D28A8F332846540600EF4A15 /* LineTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28A8F322846540600EF4A15 /* LineTextView.xib */; };
 		D28CF54A284510AE0057C231 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF549284510AE0057C231 /* MenuViewController.swift */; };
 		D28CF54C284510C50057C231 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF54B284510C50057C231 /* MenuViewController.storyboard */; };
 		D28CF550284520190057C231 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF54F284520190057C231 /* AddProjectViewController.swift */; };
@@ -174,7 +174,7 @@
 		D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		D28A8F2F284651BD00EF4A15 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
-		D28A8F322846540600EF4A15 /* LineTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineTextField.xib; sourceTree = "<group>"; };
+		D28A8F322846540600EF4A15 /* LineTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineTextView.xib; sourceTree = "<group>"; };
 		D28CF549284510AE0057C231 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D28CF54B284510C50057C231 /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		D28CF54F284520190057C231 /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
@@ -417,7 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				D28A8F2F284651BD00EF4A15 /* LineTextField.swift */,
-				D28A8F322846540600EF4A15 /* LineTextField.xib */,
+				D28A8F322846540600EF4A15 /* LineTextView.xib */,
 			);
 			path = LineTextField;
 			sourceTree = "<group>";
@@ -939,7 +939,7 @@
 				D2EB89762850E38E00AC2FBD /* OpenSans_SemiCondensed-Bold.ttf in Resources */,
 				D2C062752847A1930022A6DD /* awsconfiguration.json in Resources */,
 				D2EB898A2850E38E00AC2FBD /* OpenSans_Condensed-ExtraBoldItalic.ttf in Resources */,
-				D28A8F332846540600EF4A15 /* LineTextField.xib in Resources */,
+				D28A8F332846540600EF4A15 /* LineTextView.xib in Resources */,
 				D28A8F2D2846468A00EF4A15 /* MenuTableViewCell.xib in Resources */,
 				D2EB89872850E38E00AC2FBD /* OpenSans_Condensed-BoldItalic.ttf in Resources */,
 				D2EB89972850E38E00AC2FBD /* OpenSans-BoldItalic.ttf in Resources */,

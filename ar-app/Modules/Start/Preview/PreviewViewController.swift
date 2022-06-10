@@ -32,6 +32,7 @@ class PreviewViewController: UIViewController {
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        requestPreviews()
     }
     
     override func viewDidLoad() {
@@ -41,8 +42,6 @@ class PreviewViewController: UIViewController {
         previewCollection.register(R.nib.previewCollectionViewCell)
         getStartedButton.layer.cornerRadius = 8
         signInButton.layer.cornerRadius = 8
-        
-        requestPreviews()
     }
 }
 
@@ -82,7 +81,7 @@ private extension PreviewViewController {
     }
 }
 
-extension PreviewViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PreviewViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         previews.count
     }
@@ -91,6 +90,10 @@ extension PreviewViewController: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.previewCollectionViewCell, for: indexPath)!
         cell.setup(preview: previews[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

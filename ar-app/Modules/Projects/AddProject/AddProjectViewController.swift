@@ -32,10 +32,10 @@ class AddProjectViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameView.setup(textSize: 14, textColor: UIColor.black, title: "Project Name", value: nil) { [weak self] text in
+        nameView.setup(title: "Project Name", value: nil) { [weak self] text in
             self?.name = text
         }
-        addressView.setup(textSize: 14, textColor: UIColor.black, title: "Address", value: nil) { [weak self] text in
+        addressView.setup(title: "Address", value: nil) { [weak self] text in
             self?.address = text
         }
     }

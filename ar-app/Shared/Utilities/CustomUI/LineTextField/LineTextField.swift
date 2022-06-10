@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LineTextView: UIView {
+final class LineTextView: UIView {
     private var onEndEditing: ((String?)->())?
     
     @IBOutlet var titleLabel: UILabel!
@@ -18,13 +18,14 @@ class LineTextView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        textView.delegate = self
+        frame = superview!.frame
+        center = CGPoint(x: superview!.frame.size.width  / 2,
+                                     y: superview!.frame.size.height / 2)
     }
     
-    func setup(textSize: CGFloat, textColor: UIColor, title: String?, value: String?, onEndEditing: ((String?)->())?) {
+    func setup(title: String?, value: String?, onEndEditing: ((String?)->())?) {
+        textView.delegate = self
         titleLabel.text = title
-        textView.textColor = textColor
-        textView.font = UIFont(name: "Helvetica Neue", size: textSize)
         self.onEndEditing = onEndEditing
         if let value = value {
             textView.text = value
@@ -33,17 +34,19 @@ class LineTextView: UIView {
     }
     
     func openTextView() {
+        titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 12)
         titleTopLayoutConstraint.isActive = true
         titleBottomLayoutConstraint.isActive = false
-        UIView.animate(withDuration: 0.3) { [weak self] in
+        UIView.animate(withDuration: 0.1) { [weak self] in
             self?.layoutIfNeeded()
         }
     }
     
     func closeTextView() {
+        titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 15)
         titleTopLayoutConstraint.isActive = false
         titleBottomLayoutConstraint.isActive = true
-        UIView.animate(withDuration: 0.3) { [weak self] in
+        UIView.animate(withDuration: 0.1) { [weak self] in
             self?.layoutIfNeeded()
         }
     }

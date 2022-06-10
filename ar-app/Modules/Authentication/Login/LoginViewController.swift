@@ -60,7 +60,7 @@ private extension LoginViewController {
     
     // MARK: - Requests
     func requestLogin() {
-        guard FieldValidation.validateFields(email: emailField, password: passwordField, completion: { alert in
+        guard FieldValidation.validateFields(email: emailField.text, password: passwordField.text, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
         showHUD()

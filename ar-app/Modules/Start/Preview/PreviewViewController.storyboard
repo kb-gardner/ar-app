@@ -20,17 +20,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vde-t9-VOM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envisage-free" translatesAutoresizingMaskIntoConstraints="NO" id="vde-t9-VOM">
                                 <rect key="frame" x="107" y="84" width="200" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WgP-yH-e4X"/>
                                     <constraint firstAttribute="width" constant="200" id="xJZ-Uf-pTt"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aem-Pj-2yX">
-                                <rect key="frame" x="0.0" y="184" width="414" height="403"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aem-Pj-2yX">
+                                <rect key="frame" x="0.0" y="184" width="414" height="448"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8gP-yf-4ns">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8gP-yf-4ns">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -39,15 +39,15 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqL-Ut-7A3">
-                                <rect key="frame" x="0.0" y="587" width="414" height="275"/>
+                                <rect key="frame" x="0.0" y="632" width="414" height="230"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-Hs-Iii">
-                                        <rect key="frame" x="141" y="20" width="132.5" height="26"/>
+                                        <rect key="frame" x="141" y="10" width="132.5" height="26"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" red="0.070588235289999995" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL5-N8-p9E">
-                                        <rect key="frame" x="82" y="85" width="250" height="50"/>
+                                        <rect key="frame" x="82" y="67" width="250" height="50"/>
                                         <color key="backgroundColor" red="0.0078431372549019607" green="0.32156862745098036" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JWy-Mh-cA9"/>
@@ -61,7 +61,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUN-yu-FPS">
-                                        <rect key="frame" x="82" y="155" width="250" height="50"/>
+                                        <rect key="frame" x="82" y="137" width="250" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="pcr-1g-Gjp"/>
@@ -81,17 +81,18 @@
                                     <constraint firstItem="JzX-Hs-Iii" firstAttribute="centerX" secondItem="QqL-Ut-7A3" secondAttribute="centerX" id="4dn-9G-i5j"/>
                                     <constraint firstItem="eUN-yu-FPS" firstAttribute="centerX" secondItem="kL5-N8-p9E" secondAttribute="centerX" id="Bm1-Xm-7T1"/>
                                     <constraint firstItem="eUN-yu-FPS" firstAttribute="top" secondItem="kL5-N8-p9E" secondAttribute="bottom" constant="20" id="KGB-FO-aNE"/>
-                                    <constraint firstItem="JzX-Hs-Iii" firstAttribute="top" secondItem="QqL-Ut-7A3" secondAttribute="top" constant="20" id="aAX-Ja-78n"/>
+                                    <constraint firstItem="kL5-N8-p9E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JzX-Hs-Iii" secondAttribute="bottom" constant="20" id="ZmG-Ym-XCi"/>
+                                    <constraint firstItem="JzX-Hs-Iii" firstAttribute="top" secondItem="QqL-Ut-7A3" secondAttribute="top" constant="10" id="aAX-Ja-78n"/>
                                     <constraint firstItem="kL5-N8-p9E" firstAttribute="centerX" secondItem="QqL-Ut-7A3" secondAttribute="centerX" id="j64-Q6-wA4"/>
                                     <constraint firstItem="eUN-yu-FPS" firstAttribute="width" secondItem="kL5-N8-p9E" secondAttribute="width" id="p5A-x0-iCr"/>
-                                    <constraint firstItem="kL5-N8-p9E" firstAttribute="centerY" secondItem="QqL-Ut-7A3" secondAttribute="centerY" multiplier="0.8" id="tbv-9A-4gD"/>
+                                    <constraint firstItem="kL5-N8-p9E" firstAttribute="centerY" secondItem="QqL-Ut-7A3" secondAttribute="centerY" multiplier="0.8" priority="500" id="tbv-9A-4gD"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="aem-Pj-2yX" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.45" id="AVt-Kk-lRb"/>
+                            <constraint firstItem="aem-Pj-2yX" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.5" id="AVt-Kk-lRb"/>
                             <constraint firstItem="QqL-Ut-7A3" firstAttribute="top" secondItem="aem-Pj-2yX" secondAttribute="bottom" id="GF6-9J-B6U"/>
                             <constraint firstItem="QqL-Ut-7A3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="May-st-rh4"/>
                             <constraint firstItem="aem-Pj-2yX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="RMY-c2-Hu2"/>
@@ -115,4 +116,7 @@
             <point key="canvasLocation" x="141" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="envisage-free" width="200" height="200"/>
+    </resources>
 </document>

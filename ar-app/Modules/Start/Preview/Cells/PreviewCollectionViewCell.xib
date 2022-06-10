@@ -18,50 +18,60 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PreviewCollectionViewCell" id="2cH-Mb-Wo3" customClass="PreviewCollectionViewCell" customModule="ar_app" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="415" height="483"/>
+            <rect key="frame" x="0.0" y="0.0" width="415" height="499"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LH7-kF-KZX">
-                <rect key="frame" x="0.0" y="0.0" width="415" height="483"/>
+                <rect key="frame" x="0.0" y="0.0" width="415" height="499"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vh2-eQ-zgJ">
-                        <rect key="frame" x="40" y="0.0" width="335" height="335"/>
+                        <rect key="frame" x="41.5" y="0.0" width="332" height="374.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Vh2-eQ-zgJ" secondAttribute="height" multiplier="1:1" id="FaY-Sq-bto"/>
-                        </constraints>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rFZ-1n-6KF">
+                        <rect key="frame" x="41.5" y="0.0" width="332" height="374.5"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dh-ut-SXa">
-                        <rect key="frame" x="151.5" y="355" width="112.5" height="25"/>
+                        <rect key="frame" x="151.5" y="394.5" width="112.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="aRb-be-fOn"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content Text... This text is providing a description of what is shown in the content view" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-7O-kMF">
-                        <rect key="frame" x="55" y="400" width="305" height="61.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Content Text... This text is providing a description of what is shown in the content view" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-7O-kMF">
+                        <rect key="frame" x="41.5" y="429.5" width="332" height="64.5"/>
                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Vh2-eQ-zgJ" firstAttribute="leading" secondItem="LH7-kF-KZX" secondAttribute="leading" constant="40" id="11q-Xo-eiT"/>
-                    <constraint firstAttribute="trailing" secondItem="Vh2-eQ-zgJ" secondAttribute="trailing" constant="40" id="DYM-cM-LUN"/>
-                    <constraint firstItem="Oan-7O-kMF" firstAttribute="top" secondItem="1dh-ut-SXa" secondAttribute="bottom" constant="20" id="H2o-IO-S5P"/>
+                    <constraint firstItem="rFZ-1n-6KF" firstAttribute="top" secondItem="Vh2-eQ-zgJ" secondAttribute="top" id="4ky-IT-jjd"/>
+                    <constraint firstItem="Oan-7O-kMF" firstAttribute="top" secondItem="1dh-ut-SXa" secondAttribute="bottom" constant="10" id="H2o-IO-S5P"/>
+                    <constraint firstAttribute="bottom" secondItem="Oan-7O-kMF" secondAttribute="bottom" constant="5" id="HGa-yZ-wRb"/>
                     <constraint firstItem="1dh-ut-SXa" firstAttribute="top" secondItem="Vh2-eQ-zgJ" secondAttribute="bottom" constant="20" id="L62-IO-8Rs"/>
+                    <constraint firstItem="Vh2-eQ-zgJ" firstAttribute="width" secondItem="LH7-kF-KZX" secondAttribute="width" multiplier="0.8" id="Lam-U7-yzY"/>
+                    <constraint firstItem="rFZ-1n-6KF" firstAttribute="bottom" secondItem="Vh2-eQ-zgJ" secondAttribute="bottom" id="Qvw-Jw-m67"/>
                     <constraint firstItem="Vh2-eQ-zgJ" firstAttribute="top" secondItem="LH7-kF-KZX" secondAttribute="top" id="cdj-n2-SD6"/>
                     <constraint firstItem="1dh-ut-SXa" firstAttribute="centerX" secondItem="Vh2-eQ-zgJ" secondAttribute="centerX" id="e9N-Ku-fvi"/>
+                    <constraint firstItem="Vh2-eQ-zgJ" firstAttribute="height" secondItem="LH7-kF-KZX" secondAttribute="height" multiplier="0.75" priority="500" id="et3-4E-wmG"/>
+                    <constraint firstItem="rFZ-1n-6KF" firstAttribute="leading" secondItem="Vh2-eQ-zgJ" secondAttribute="leading" id="i71-g2-zv2"/>
+                    <constraint firstItem="rFZ-1n-6KF" firstAttribute="trailing" secondItem="Vh2-eQ-zgJ" secondAttribute="trailing" id="oJi-Gc-Ju3"/>
                     <constraint firstItem="Oan-7O-kMF" firstAttribute="centerX" secondItem="1dh-ut-SXa" secondAttribute="centerX" id="ox2-Lc-sPa"/>
-                    <constraint firstItem="Oan-7O-kMF" firstAttribute="width" relation="lessThanOrEqual" secondItem="Vh2-eQ-zgJ" secondAttribute="width" id="pvX-pG-r3S"/>
+                    <constraint firstItem="Oan-7O-kMF" firstAttribute="width" secondItem="Vh2-eQ-zgJ" secondAttribute="width" id="pvX-pG-r3S"/>
+                    <constraint firstItem="Vh2-eQ-zgJ" firstAttribute="centerX" secondItem="LH7-kF-KZX" secondAttribute="centerX" id="rIB-0L-zml"/>
                 </constraints>
             </collectionViewCellContentView>
-            <size key="customSize" width="415" height="483"/>
+            <size key="customSize" width="415" height="499"/>
             <connections>
                 <outlet property="customContentView" destination="Vh2-eQ-zgJ" id="6DI-sd-sCJ"/>
                 <outlet property="descriptionLabel" destination="Oan-7O-kMF" id="1rT-nc-4cQ"/>
+                <outlet property="imageView" destination="rFZ-1n-6KF" id="sqd-IY-QZZ"/>
                 <outlet property="titleLabel" destination="1dh-ut-SXa" id="0y4-xg-O1q"/>
             </connections>
-            <point key="canvasLocation" x="-102" y="84"/>
+            <point key="canvasLocation" x="-102.17391304347827" y="88.727678571428569"/>
         </collectionViewCell>
     </objects>
 </document>

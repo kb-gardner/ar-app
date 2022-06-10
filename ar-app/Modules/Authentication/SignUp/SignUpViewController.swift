@@ -14,14 +14,16 @@ class SignUpViewController: UIViewController {
     private var user = User()
     private var onShowLogin: (()->())?
     private var onSuccess: (()->())?
+    private var password: String?
     
     // MARK: - Outlets
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var emailField: UITextField!
-    @IBOutlet var nameField: UITextField!
-    @IBOutlet var phoneField: UITextField!
-    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var nameView: UIView!
+    @IBOutlet var emailView: UIView!
+    @IBOutlet var phoneView: UIView!
+    @IBOutlet var passwordView: UIView!
     @IBOutlet var termsButton: UIButton!
+    @IBOutlet var termsLabel: UILabel!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var backButton: UIButton!
@@ -46,13 +48,35 @@ class SignUpViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailField.delegate = self
-        nameField.delegate = self
-        phoneField.delegate = self
+        setupTextViews()
+        // do the attributed text for terms label/button
     }
 }
 
 private extension SignUpViewController {
+    func setupTextViews() {
+        let nameField: LineTextView = LineTextView.fromNib()
+        let emailField: LineTextView = LineTextView.fromNib()
+        let phoneField: LineTextView = LineTextView.fromNib()
+        let passwordField: LineTextView = LineTextView.fromNib()
+        nameView.addSubview(nameField)
+        emailView.addSubview(emailField)
+        phoneView.addSubview(phoneField)
+        passwordView.addSubview(passwordField)
+        nameField.setup(title: "Name", value: nil) { [weak self] string in
+            self?.user.name = string
+        }
+        emailField.setup(title: "Email", value: nil) { [weak self] string in
+            self?.user.email = string
+        }
+        phoneField.setup(title: "Phone Number", value: nil) { [weak self] string in
+            self?.user.phone = string
+        }
+        passwordField.setup(title: "New Password", value: nil) { [weak self] string in
+            self?.password = string
+        }
+    }
+    
     // MARK: - Navigation
     func showLogin() {
         onShowLogin?()
@@ -65,7 +89,7 @@ private extension SignUpViewController {
     
     // MARK: - Requests
     func requestSignUp() {
-        guard FieldValidation.validateFields(email: emailField, phone: phoneField, password: passwordField, completion: { alert in
+        guard FieldValidation.validateFields(email: user.email, phone: user.phone, password: password, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
         showHUD()
@@ -76,7 +100,7 @@ private extension SignUpViewController {
         if let email = user.email {
             attributes["email"] = email
         }
-        CognitoNetworkingService.signUp(username: user.email!, password: passwordField.text!, email: user.email!, attributes: attributes) { [weak self] error in
+        CognitoNetworkingService.signUp(username: user.email!, password: password!, email: user.email!, attributes: attributes) { [weak self] error in
             self?.hideHUD()
             DispatchQueue.main.async {
                 if let error = error as? AWSMobileClientError {
@@ -91,11 +115,11 @@ private extension SignUpViewController {
     }
     
     func requestLogin() {
-        guard FieldValidation.validateFields(email: emailField, phone: phoneField, password: passwordField, completion: { alert in
+        guard FieldValidation.validateFields(email: user.email, phone: user.phone, password: password, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
         showHUD()
-        CognitoNetworkingService.login(password: passwordField.text!, email: user.email!) { [weak self] error in
+        CognitoNetworkingService.login(password: password!, email: user.email!) { [weak self] error in
             self?.hideHUD()
             DispatchQueue.main.async {
                 if let error = error as? AWSMobileClientError {
@@ -123,49 +147,6 @@ private extension SignUpViewController {
         }
     }
     
-}
-
-// MARK: - TextField
-extension SignUpViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case emailField:
-            user.email = textField.text
-        case nameField:
-            user.name = textField.text
-        case phoneField:
-            user.phone = textField.text?.cognitoFormattedPhoneNumber
-        default:
-            break
-        }
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        switch textField {
-        case emailField:
-            user.email = textField.text
-        case nameField:
-            user.name = textField.text
-        case phoneField:
-            user.phone = textField.text?.cognitoFormattedPhoneNumber
-        default:
-            break
-        }
-    }
-    
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        switch textField {
-        case emailField:
-            break
-        case nameField:
-            break
-        case phoneField:
-            textField.text = textField.text?.formattedPhoneNumber
-        default:
-            break
-        }
-    }
 }
 
 // MARK: - Instantiation

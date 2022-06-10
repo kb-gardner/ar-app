@@ -69,7 +69,7 @@ private extension ForgotPasswordViewController {
     
     // MARK: - Requests
     func requestCode() {
-        guard FieldValidation.validateFields(email: emailField, completion: { alert in
+        guard FieldValidation.validateFields(email: emailField.text, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }), let email = emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() else { return }
         CognitoNetworkingService.forgotPassword(email: email) { [weak self] error in

@@ -12,11 +12,14 @@ import AVKit
 
 class PreviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet var customContentView: UIView!
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
     override func layoutSubviews() {
         contentView.layer.cornerRadius = 15
+        imageView.layer.cornerRadius = 15
+        imageView.layer.masksToBounds = true
     }
     
     func setup(preview: Preview) {
@@ -24,9 +27,9 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         switch preview.type {
         case .image:
             if let url = URL(string: stringUrl) {
-                let imageView = UIImageView(frame: customContentView.frame)
                 imageView.kf.setImage(with: url)
-                customContentView.addSubview(imageView)
+                imageView.alpha = 1
+                customContentView.alpha = 0
             }
         case .video:
             if let url = URL(string: stringUrl) {
@@ -35,6 +38,8 @@ class PreviewCollectionViewCell: UICollectionViewCell {
                 layer.frame = customContentView.frame
                 customContentView.layer.addSublayer(layer)
                 player.play()
+                imageView.alpha = 0
+                customContentView.alpha = 1
             }
         }
         titleLabel.text = preview.title
