@@ -42,6 +42,9 @@
 		D28CF555284526FE0057C231 /* SpaceARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF554284526FE0057C231 /* SpaceARViewController.swift */; };
 		D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF556284527640057C231 /* SpaceARViewController.storyboard */; };
 		D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */; };
+		D2AED3452857695D007EA80D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED3442857695D007EA80D /* UIColorExtension.swift */; };
+		D2AED34728576E79007EA80D /* TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED34628576E79007EA80D /* TextViewExtension.swift */; };
+		D2AED34928578F07007EA80D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED34828578F07007EA80D /* UIButtonExtension.swift */; };
 		D2B2230D283274F4003D2C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2230C283274F4003D2C2D /* AppDelegate.swift */; };
 		D2B2230F283274F4003D2C2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2230E283274F4003D2C2D /* ViewController.swift */; };
 		D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = D2B22310283274F4003D2C2D /* Experience.rcproject */; };
@@ -182,6 +185,9 @@
 		D28CF554284526FE0057C231 /* SpaceARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceARViewController.swift; sourceTree = "<group>"; };
 		D28CF556284527640057C231 /* SpaceARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpaceARViewController.storyboard; sourceTree = "<group>"; };
 		D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		D2AED3442857695D007EA80D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		D2AED34628576E79007EA80D /* TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExtension.swift; sourceTree = "<group>"; };
+		D2AED34828578F07007EA80D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		D2B22309283274F4003D2C2D /* ar-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ar-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B2230C283274F4003D2C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2B2230E283274F4003D2C2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -629,6 +635,9 @@
 				D2313BFE283BBF18004D6C1C /* StringExtension.swift */,
 				D22D32CB283D02C600E80062 /* UIViewExtension.swift */,
 				D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */,
+				D2AED3442857695D007EA80D /* UIColorExtension.swift */,
+				D2AED34628576E79007EA80D /* TextViewExtension.swift */,
+				D2AED34828578F07007EA80D /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1105,8 +1114,11 @@
 				D2B2235628328FC0003D2C2D /* SpaceAPIService.swift in Sources */,
 				D2B2235C28329F2C003D2C2D /* NSErrorExtension.swift in Sources */,
 				D2C9E9DD284F9468006E3E25 /* ProjectListViewController.swift in Sources */,
+				D2AED3452857695D007EA80D /* UIColorExtension.swift in Sources */,
+				D2AED34728576E79007EA80D /* TextViewExtension.swift in Sources */,
 				D2B2233028327EAD003D2C2D /* PreviewViewController.swift in Sources */,
 				D2B2235228328FAC003D2C2D /* MaterialNetworkingService.swift in Sources */,
+				D2AED34928578F07007EA80D /* UIButtonExtension.swift in Sources */,
 				D231BAE528352B13009DD137 /* Preview.swift in Sources */,
 				D2EB886E2850D4E000AC2FBD /* PreviewNetworkingService.swift in Sources */,
 				D2313BFA283BB90A004D6C1C /* CognitoNetworkingService.swift in Sources */,

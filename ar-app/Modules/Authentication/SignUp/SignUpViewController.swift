@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     private var onShowLogin: (()->())?
     private var onSuccess: (()->())?
     private var password: String?
+    private var termsAgreed = false
     
     // MARK: - Outlets
     @IBOutlet var imageView: UIImageView!
@@ -23,6 +24,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet var phoneView: UIView!
     @IBOutlet var passwordView: UIView!
     @IBOutlet var termsButton: UIButton!
+    @IBOutlet var termsInfoButton: UIButton!
     @IBOutlet var termsLabel: UILabel!
     @IBOutlet var continueButton: UIButton!
     @IBOutlet var loginButton: UIButton!
@@ -33,10 +35,6 @@ class SignUpViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func termsClicked(_ sender: Any) {
-        showTerms()
-    }
-    
     @IBAction func continueClicked(_ sender: Any) {
         requestSignUp()
     }
@@ -45,11 +43,24 @@ class SignUpViewController: UIViewController {
         showLogin()
     }
     
+    @IBAction func termsInfoClicked(_ sender: Any) {
+        showTerms()
+    }
+    
+    @IBAction func termsCheckClicked(_ sender: Any) {
+        if termsAgreed {
+            termsButton.setImage(R.image.checkbox(), for: .normal)
+        } else {
+            termsButton.setImage(R.image.greenCheckMark(), for: .normal)
+        }
+        termsAgreed.toggle()
+    }
+    
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextViews()
-        // do the attributed text for terms label/button
+        continueButton.layer.cornerRadius = 8
     }
 }
 
@@ -63,18 +74,34 @@ private extension SignUpViewController {
         emailView.addSubview(emailField)
         phoneView.addSubview(phoneField)
         passwordView.addSubview(passwordField)
-        nameField.setup(title: "Name", value: nil) { [weak self] string in
+        nameField.setup(title: "Name", value: nil, fieldType: .name) { [weak self] string in
             self?.user.name = string
         }
-        emailField.setup(title: "Email", value: nil) { [weak self] string in
+        emailField.setup(title: "Email", value: nil, fieldType: .email) { [weak self] string in
             self?.user.email = string
         }
-        phoneField.setup(title: "Phone Number", value: nil) { [weak self] string in
+        phoneField.setup(title: "Phone Number", value: nil, fieldType: .phone) { [weak self] string in
             self?.user.phone = string
         }
-        passwordField.setup(title: "New Password", value: nil) { [weak self] string in
+        passwordField.setup(title: "New Password", value: nil, fieldType: .password) { [weak self] string in
             self?.password = string
         }
+    }
+    
+    func validate() -> Bool {
+        if !FieldValidation.validateFields(email: user.email, phone: user.phone, password: password, completion: { alert in
+            if let alert = alert { present(alert, animated: true) }
+        }) {
+            return false
+        }
+        if !termsAgreed {
+            let alert = UIAlertController(title: R.string.localizable.signupTermsError(), message: nil, preferredStyle: .alert)
+            let ok = UIAlertAction(title: R.string.localizable.ok(), style: .default)
+            alert.addAction(ok)
+            present(alert, animated: true)
+            return false
+        }
+        return true
     }
     
     // MARK: - Navigation
@@ -89,9 +116,7 @@ private extension SignUpViewController {
     
     // MARK: - Requests
     func requestSignUp() {
-        guard FieldValidation.validateFields(email: user.email, phone: user.phone, password: password, completion: { alert in
-            if let alert = alert { present(alert, animated: true) }
-        }) else { return }
+        guard validate() else { return }
         showHUD()
         var attributes = [String: String]()
         if let phone = user.phone {

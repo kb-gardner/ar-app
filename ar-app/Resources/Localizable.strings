@@ -54,6 +54,7 @@
 // MARK: - Preview
 
 // MARK: - SignUp
+"signup.terms.error" = "Please agree to the terms and conditions before proceeding";
 
 // MARK: - Login
 

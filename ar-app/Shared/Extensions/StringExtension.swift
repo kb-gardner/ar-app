@@ -28,6 +28,14 @@ extension String {
         digitsOnly.count == 10
     }
     
+    var secure: String {
+        var string = ""
+        for _ in self {
+            string.append("*")
+        }
+        return string
+    }
+    
     var cognitoFormattedPhoneNumber: String {
         return self.first == "+" ? self : "+1\(self.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression))"
     }

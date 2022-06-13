@@ -1186,7 +1186,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 66 images.
+  /// This `R.image` struct is generated, and contains static references to 67 images.
   struct image {
     /// Image `AR-Cancel-Scan`.
     static let arCancelScan = Rswift.ImageResource(bundle: R.hostingBundle, name: "AR-Cancel-Scan")
@@ -1318,6 +1318,8 @@ struct R: Rswift.Validatable {
     static let upArrowOrange = Rswift.ImageResource(bundle: R.hostingBundle, name: "Up-Arrow-Orange")
     /// Image `White-Point-Right-Arrow`.
     static let whitePointRightArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "White-Point-Right-Arrow")
+    /// Image `checkbox`.
+    static let checkbox = Rswift.ImageResource(bundle: R.hostingBundle, name: "checkbox")
     /// Image `envisage-free`.
     static let envisageFree = Rswift.ImageResource(bundle: R.hostingBundle, name: "envisage-free")
 
@@ -1777,6 +1779,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "checkbox", bundle: ..., traitCollection: ...)`
+    static func checkbox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.checkbox, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "envisage-free", bundle: ..., traitCollection: ...)`
     static func envisageFree(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.envisageFree, compatibleWith: traitCollection)
@@ -1862,7 +1871,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 43 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 44 localization keys.
     struct localizable {
       /// Value: Account
       static let accountTitle = Rswift.StringResource(key: "account.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -1934,6 +1943,8 @@ struct R: Rswift.Validatable {
       static let menuIdentifier = Rswift.StringResource(key: "menu.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Ok
       static let ok = Rswift.StringResource(key: "ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Please agree to the terms and conditions before proceeding
+      static let signupTermsError = Rswift.StringResource(key: "signup.terms.error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: PreviewViewController
       static let previewIdentifier = Rswift.StringResource(key: "preview.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: ProjectListViewController
@@ -2406,6 +2417,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("ok", bundle: bundle, comment: "")
       }
 
+      /// Value: Please agree to the terms and conditions before proceeding
+      static func signupTermsError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("signup.terms.error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "signup.terms.error"
+        }
+
+        return NSLocalizedString("signup.terms.error", bundle: bundle, comment: "")
+      }
+
       /// Value: PreviewViewController
       static func previewIdentifier(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -2532,18 +2556,31 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
-    struct _LineTextView: Rswift.NibResourceType {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _LineTextView.validate()
+    }
+
+    struct _LineTextView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "LineTextView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LineTextView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LineTextView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Hide-Password", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Hide-Password' is used in nib 'LineTextView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -2922,7 +2959,9 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Example-House-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Example-House-2' is used in storyboard 'SignUpViewController', but couldn't be loaded.") }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "arrow.backward") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'arrow.backward' is used in storyboard 'SignUpViewController', but couldn't be loaded.") } }
+        if UIKit.UIImage(named: "checkbox", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkbox' is used in storyboard 'SignUpViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "envisage-free", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'envisage-free' is used in storyboard 'SignUpViewController', but couldn't be loaded.") }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "info.circle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'info.circle' is used in storyboard 'SignUpViewController', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.signUpViewController().signUpViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'signUpViewController' could not be loaded from storyboard 'SignUpViewController' as 'SignUpViewController'.") }
