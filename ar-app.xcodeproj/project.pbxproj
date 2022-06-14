@@ -14,8 +14,8 @@
 		D22D32CE283D05D200E80062 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32CD283D05D200E80062 /* HomeViewController.swift */; };
 		D22D32D0283D062E00E80062 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22D32CF283D062E00E80062 /* HomeViewController.storyboard */; };
 		D22D32D3283D193100E80062 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32D2283D193100E80062 /* FieldValidation.swift */; };
-		D22D32D6283D221C00E80062 /* LoginOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32D5283D221C00E80062 /* LoginOptionCollectionViewCell.swift */; };
-		D22D32D8283D222500E80062 /* LoginOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D22D32D7283D222500E80062 /* LoginOptionCollectionViewCell.xib */; };
+		D22D32D6283D221C00E80062 /* LoginOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32D5283D221C00E80062 /* LoginOptionTableViewCell.swift */; };
+		D22D32D8283D222500E80062 /* LoginOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D22D32D7283D222500E80062 /* LoginOptionTableViewCell.xib */; };
 		D2313BFA283BB90A004D6C1C /* CognitoNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2313BF9283BB90A004D6C1C /* CognitoNetworkingService.swift */; };
 		D2313BFF283BBF18004D6C1C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2313BFE283BBF18004D6C1C /* StringExtension.swift */; };
 		D2313C02283BE119004D6C1C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2313C01283BE119004D6C1C /* ResetPasswordViewController.swift */; };
@@ -43,7 +43,7 @@
 		D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF556284527640057C231 /* SpaceARViewController.storyboard */; };
 		D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */; };
 		D2AED3452857695D007EA80D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED3442857695D007EA80D /* UIColorExtension.swift */; };
-		D2AED34728576E79007EA80D /* TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED34628576E79007EA80D /* TextViewExtension.swift */; };
+		D2AED34728576E79007EA80D /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED34628576E79007EA80D /* UITextViewExtension.swift */; };
 		D2AED34928578F07007EA80D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED34828578F07007EA80D /* UIButtonExtension.swift */; };
 		D2B2230D283274F4003D2C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2230C283274F4003D2C2D /* AppDelegate.swift */; };
 		D2B2230F283274F4003D2C2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2230E283274F4003D2C2D /* ViewController.swift */; };
@@ -157,8 +157,8 @@
 		D22D32CD283D05D200E80062 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D22D32CF283D062E00E80062 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		D22D32D2283D193100E80062 /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
-		D22D32D5283D221C00E80062 /* LoginOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionCollectionViewCell.swift; sourceTree = "<group>"; };
-		D22D32D7283D222500E80062 /* LoginOptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginOptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		D22D32D5283D221C00E80062 /* LoginOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionTableViewCell.swift; sourceTree = "<group>"; };
+		D22D32D7283D222500E80062 /* LoginOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginOptionTableViewCell.xib; sourceTree = "<group>"; };
 		D2313BF9283BB90A004D6C1C /* CognitoNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitoNetworkingService.swift; sourceTree = "<group>"; };
 		D2313BFE283BBF18004D6C1C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D2313C01283BE119004D6C1C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		D28CF556284527640057C231 /* SpaceARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpaceARViewController.storyboard; sourceTree = "<group>"; };
 		D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		D2AED3442857695D007EA80D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		D2AED34628576E79007EA80D /* TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewExtension.swift; sourceTree = "<group>"; };
+		D2AED34628576E79007EA80D /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
 		D2AED34828578F07007EA80D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		D2B22309283274F4003D2C2D /* ar-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ar-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B2230C283274F4003D2C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -332,8 +332,8 @@
 		D22D32D4283D220800E80062 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D22D32D5283D221C00E80062 /* LoginOptionCollectionViewCell.swift */,
-				D22D32D7283D222500E80062 /* LoginOptionCollectionViewCell.xib */,
+				D22D32D5283D221C00E80062 /* LoginOptionTableViewCell.swift */,
+				D22D32D7283D222500E80062 /* LoginOptionTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -636,7 +636,7 @@
 				D22D32CB283D02C600E80062 /* UIViewExtension.swift */,
 				D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */,
 				D2AED3442857695D007EA80D /* UIColorExtension.swift */,
-				D2AED34628576E79007EA80D /* TextViewExtension.swift */,
+				D2AED34628576E79007EA80D /* UITextViewExtension.swift */,
 				D2AED34828578F07007EA80D /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
@@ -965,7 +965,7 @@
 				D2B22319283274F5003D2C2D /* LaunchScreen.storyboard in Resources */,
 				D2EB89AB2850E38E00AC2FBD /* BarlowCondensed-SemiBold.ttf in Resources */,
 				D2B223652832AF75003D2C2D /* PreviewViewController.storyboard in Resources */,
-				D22D32D8283D222500E80062 /* LoginOptionCollectionViewCell.xib in Resources */,
+				D22D32D8283D222500E80062 /* LoginOptionTableViewCell.xib in Resources */,
 				D2EB89882850E38E00AC2FBD /* OpenSans_Condensed-MediumItalic.ttf in Resources */,
 				D2EB89982850E38E00AC2FBD /* README.txt in Resources */,
 				D2EB89A02850E38E00AC2FBD /* BarlowCondensed-Bold.ttf in Resources */,
@@ -1115,7 +1115,7 @@
 				D2B2235C28329F2C003D2C2D /* NSErrorExtension.swift in Sources */,
 				D2C9E9DD284F9468006E3E25 /* ProjectListViewController.swift in Sources */,
 				D2AED3452857695D007EA80D /* UIColorExtension.swift in Sources */,
-				D2AED34728576E79007EA80D /* TextViewExtension.swift in Sources */,
+				D2AED34728576E79007EA80D /* UITextViewExtension.swift in Sources */,
 				D2B2233028327EAD003D2C2D /* PreviewViewController.swift in Sources */,
 				D2B2235228328FAC003D2C2D /* MaterialNetworkingService.swift in Sources */,
 				D2AED34928578F07007EA80D /* UIButtonExtension.swift in Sources */,
@@ -1140,7 +1140,7 @@
 				D2B2234228328DE5003D2C2D /* ProjectNetworkingService.swift in Sources */,
 				D2B2235428328FB7003D2C2D /* SpaceNetworkingService.swift in Sources */,
 				D2B2235028328F9C003D2C2D /* MaterialAPIService.swift in Sources */,
-				D22D32D6283D221C00E80062 /* LoginOptionCollectionViewCell.swift in Sources */,
+				D22D32D6283D221C00E80062 /* LoginOptionTableViewCell.swift in Sources */,
 				D28A8F2B2846457900EF4A15 /* MenuTableViewCell.swift in Sources */,
 				D2B22336283284B8003D2C2D /* R.generated.swift in Sources */,
 				D2C9E9E3284F9538006E3E25 /* MaterialListViewController.swift in Sources */,

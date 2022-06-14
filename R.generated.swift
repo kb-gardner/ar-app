@@ -1799,8 +1799,8 @@ struct R: Rswift.Validatable {
   struct nib {
     /// Nib `LineTextView`.
     static let lineTextView = _R.nib._LineTextView()
-    /// Nib `LoginOptionCollectionViewCell`.
-    static let loginOptionCollectionViewCell = _R.nib._LoginOptionCollectionViewCell()
+    /// Nib `LoginOptionTableViewCell`.
+    static let loginOptionTableViewCell = _R.nib._LoginOptionTableViewCell()
     /// Nib `MenuTableViewCell`.
     static let menuTableViewCell = _R.nib._MenuTableViewCell()
     /// Nib `PreviewCollectionViewCell`.
@@ -1815,10 +1815,10 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "LoginOptionCollectionViewCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.loginOptionCollectionViewCell) instead")
-    static func loginOptionCollectionViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.loginOptionCollectionViewCell)
+    /// `UINib(name: "LoginOptionTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.loginOptionTableViewCell) instead")
+    static func loginOptionTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loginOptionTableViewCell)
     }
     #endif
 
@@ -1842,8 +1842,8 @@ struct R: Rswift.Validatable {
       return R.nib.lineTextView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LineTextView
     }
 
-    static func loginOptionCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoginOptionCollectionViewCell? {
-      return R.nib.loginOptionCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoginOptionCollectionViewCell
+    static func loginOptionTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoginOptionTableViewCell? {
+      return R.nib.loginOptionTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoginOptionTableViewCell
     }
 
     static func menuTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MenuTableViewCell? {
@@ -1859,8 +1859,8 @@ struct R: Rswift.Validatable {
 
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `LoginOptionCollectionViewCell`.
-    static let loginOptionCollectionViewCell: Rswift.ReuseIdentifier<LoginOptionCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "LoginOptionCollectionViewCell")
+    /// Reuse identifier `LoginOptionTableViewCell`.
+    static let loginOptionTableViewCell: Rswift.ReuseIdentifier<LoginOptionTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoginOptionTableViewCell")
     /// Reuse identifier `MenuTableViewCell`.
     static let menuTableViewCell: Rswift.ReuseIdentifier<MenuTableViewCell> = Rswift.ReuseIdentifier(identifier: "MenuTableViewCell")
     /// Reuse identifier `PreviewCollectionViewCell`.
@@ -1871,7 +1871,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 44 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 47 localization keys.
     struct localizable {
       /// Value: Account
       static let accountTitle = Rswift.StringResource(key: "account.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -1951,6 +1951,12 @@ struct R: Rswift.Validatable {
       static let projectListIdentifier = Rswift.StringResource(key: "projectList.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Projects
       static let projectListTitle = Rswift.StringResource(key: "projectList.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Sign in with Apple
+      static let loginAppleText = Rswift.StringResource(key: "login.apple.text", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Sign in with Facebook
+      static let loginFacebookText = Rswift.StringResource(key: "login.facebook.text", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Sign in with Google
+      static let loginGoogleText = Rswift.StringResource(key: "login.google.text", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: SignUpViewController
       static let signUpIdentifier = Rswift.StringResource(key: "signUp.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: SpaceARViewController
@@ -2469,6 +2475,45 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("projectList.title", bundle: bundle, comment: "")
       }
 
+      /// Value: Sign in with Apple
+      static func loginAppleText(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login.apple.text", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login.apple.text"
+        }
+
+        return NSLocalizedString("login.apple.text", bundle: bundle, comment: "")
+      }
+
+      /// Value: Sign in with Facebook
+      static func loginFacebookText(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login.facebook.text", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login.facebook.text"
+        }
+
+        return NSLocalizedString("login.facebook.text", bundle: bundle, comment: "")
+      }
+
+      /// Value: Sign in with Google
+      static func loginGoogleText(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login.google.text", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login.google.text"
+        }
+
+        return NSLocalizedString("login.google.text", bundle: bundle, comment: "")
+      }
+
       /// Value: SignUpViewController
       static func signUpIdentifier(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -2586,15 +2631,15 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _LoginOptionCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = LoginOptionCollectionViewCell
+    struct _LoginOptionTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = LoginOptionTableViewCell
 
       let bundle = R.hostingBundle
-      let identifier = "LoginOptionCollectionViewCell"
-      let name = "LoginOptionCollectionViewCell"
+      let identifier = "LoginOptionTableViewCell"
+      let name = "LoginOptionTableViewCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoginOptionCollectionViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoginOptionCollectionViewCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoginOptionTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoginOptionTableViewCell
       }
 
       fileprivate init() {}
@@ -2799,6 +2844,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Example-House-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Example-House-2' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "envisage-free", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'envisage-free' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.loginViewController().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'LoginViewController' as 'LoginViewController'.") }

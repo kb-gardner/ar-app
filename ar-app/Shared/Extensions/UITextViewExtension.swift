@@ -1,5 +1,5 @@
 //
-//  TextViewExtension.swift
+//  UITextViewExtension.swift
 //  ar-app
 //
 //  Created by Kyle Gardner on 6/13/22.
@@ -10,7 +10,7 @@ import UIKit
 
 extension UITextView {
     enum FieldType {
-        case email, password, phone, code, name, address
+        case email, password, phone, code, name, address, none
         
         var keyboardType: UIKeyboardType {
             switch self {
@@ -39,6 +39,8 @@ extension UITextView {
                 return .name
             case .address:
                 return .fullStreetAddress
+            default:
+                return .init(rawValue: "")
             }
         }
         

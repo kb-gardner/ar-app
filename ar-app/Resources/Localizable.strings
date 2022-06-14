@@ -57,6 +57,9 @@
 "signup.terms.error" = "Please agree to the terms and conditions before proceeding";
 
 // MARK: - Login
+"login.apple.text" = "Sign in with Apple";
+"login.google.text" = "Sign in with Google";
+"login.facebook.text" = "Sign in with Facebook";
 
 // MARK: - ForgotPassword
 

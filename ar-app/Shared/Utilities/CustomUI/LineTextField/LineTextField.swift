@@ -38,18 +38,19 @@ final class LineTextView: UIView {
                                      y: superview!.frame.size.height / 2)
     }
     
-    func setup(title: String?, value: String?, fieldType: UITextView.FieldType, onEndEditing: ((String?)->())?) {
+    final func setup(title: String?, value: String?, fieldType: UITextView.FieldType, onEndEditing: ((String?)->())?) {
         textView.delegate = self
         textField.delegate = self
         titleLabel.text = title
         self.onEndEditing = onEndEditing
         self.fieldType = fieldType
-        textView.keyboardType = fieldType.keyboardType
-        textField.keyboardType = fieldType.keyboardType
         textView.textContentType = fieldType.contentType
         textField.textContentType = fieldType.contentType
+        textView.keyboardType = fieldType.keyboardType
+        textField.keyboardType = fieldType.keyboardType
         textView.autocapitalizationType = fieldType.capitalization
         textField.autocapitalizationType = fieldType.capitalization
+        textField.keyboardToolbar.layoutIfNeeded()
         setEyeButton(isPassword: fieldType == .password)
         setSecureTextEntry(isPassword: fieldType == .password)
         setTextEnvironment(canMultiLine: fieldType == .address)

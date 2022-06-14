@@ -83,7 +83,7 @@ private extension SignUpViewController {
         phoneField.setup(title: "Phone Number", value: nil, fieldType: .phone) { [weak self] string in
             self?.user.phone = string
         }
-        passwordField.setup(title: "New Password", value: nil, fieldType: .password) { [weak self] string in
+        passwordField.setup(title: "New Password", value: nil, fieldType: .none) { [weak self] string in
             self?.password = string
         }
     }

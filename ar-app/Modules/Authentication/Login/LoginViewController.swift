@@ -13,14 +13,17 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
     private var onSuccess: (()->())?
     private var onShowSignUp: (()->())?
+    private var loginOptions = [R.string.localizable.loginGoogleText(), R.string.localizable.loginFacebookText(), R.string.localizable.loginAppleText()]
+    private var email: String?
+    private var password: String?
     
     // MARK: - Outlets
-    @IBOutlet var emailField: UITextField!
-    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var emailView: UIView!
+    @IBOutlet var passwordView: UIView!
     @IBOutlet var forgotButton: UIButton!
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var signUpButton: UIButton!
-    @IBOutlet var signInCollection: UICollectionView!
+    @IBOutlet var signInTable: UITableView!
     
     // MARK: - Actions
     @IBAction func forgotClicked(_ sender: Any) {
@@ -38,18 +41,34 @@ class LoginViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        signInCollection.delegate = self
-        signInCollection.dataSource = self
-        signInCollection.register(R.nib.loginOptionCollectionViewCell)
-        signInCollection.reloadData()
+        reloadData()
+        signInTable.register(R.nib.loginOptionTableViewCell)
+        signInTable.delegate = self
+        signInTable.dataSource = self
+        signInTable.reloadData()
+        signInButton.layer.cornerRadius = 8
     }
 }
 
 private extension LoginViewController {
+    func reloadData() {
+        let emailField: LineTextView = LineTextView.fromNib()
+        let passwordField: LineTextView = LineTextView.fromNib()
+        emailView.addSubview(emailField)
+        passwordView.addSubview(passwordField)
+        passwordField.setup(title: "New Password", value: password, fieldType: .none) { [weak self] string in
+            self?.password = string
+        }
+        emailField.setup(title: "Email", value: email, fieldType: .email) { [weak self] string in
+            self?.email = string
+        }
+    }
+    
     // MARK: - Navigation
     func showForgotPassword() {
         guard let controller = ForgotPasswordViewController.instantiate(onSuccess: { [weak self] password in
-            self?.passwordField.text = password
+            self?.password = password
+            self?.reloadData()
         }) else { return }
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -60,11 +79,11 @@ private extension LoginViewController {
     
     // MARK: - Requests
     func requestLogin() {
-        guard FieldValidation.validateFields(email: emailField.text, password: passwordField.text, completion: { alert in
+        guard FieldValidation.validateFields(email: email, password: password, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
         showHUD()
-        CognitoNetworkingService.login(password: self.passwordField.text!, email: self.emailField.text!) { [weak self] error in
+        CognitoNetworkingService.login(password: password!, email: email!) { [weak self] error in
             DispatchQueue.main.async {
                 if let error = error as? AWSMobileClientError {
                     let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
@@ -95,47 +114,53 @@ private extension LoginViewController {
         }
     }
     
+    func requestSignInApple() {}
+    
+    func requestSignInGoogle() {}
+    
+    func requestSignInFacebook() {}
+    
 }
 
-extension LoginViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
     enum LoginOptions: CaseIterable {
-        case apple, google, facebook
+        case google, facebook, apple
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        LoginOptions.allCases.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return LoginOptions.allCases.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loginOptionTableViewCell, for: indexPath)
         switch LoginOptions.allCases[indexPath.row] {
         case .apple:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.loginOptionCollectionViewCell, for: indexPath)!
-            cell.setup(image: R.image.appleIcon())
-            return cell
+            cell?.setup(image: R.image.appleIcon(), text: R.string.localizable.loginAppleText(), width: 200)
         case .google:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.loginOptionCollectionViewCell, for: indexPath)!
-            cell.setup(image: R.image.googleIcon())
-            return cell
+            cell?.setup(image: R.image.googleIcon(), text: R.string.localizable.loginGoogleText(), width: 200)
         case .facebook:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.loginOptionCollectionViewCell, for: indexPath)!
-            cell.setup(image: R.image.facebookIcon())
-            return cell
+            cell?.setup(image: R.image.facebookIcon(), text: R.string.localizable.loginFacebookText(), width: 200)
+        }
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch LoginOptions.allCases[indexPath.row] {
+        case .apple:
+            requestSignInApple()
+        case .google:
+            requestSignInGoogle()
+        case .facebook:
+            requestSignInFacebook()
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch LoginOptions.allCases[indexPath.row] {
-        case .apple:
-            print("")
-        case .google:
-            print("")
-        case .facebook:
-            print("")
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == LoginOptions.allCases.count - 1 {
+            return 30
         }
+        return 40
     }
 }
 

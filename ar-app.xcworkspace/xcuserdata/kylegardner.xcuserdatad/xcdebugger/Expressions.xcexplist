@@ -3,10 +3,37 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "PreviewCollectionViewCell.setup(preview:):PreviewCollectionViewCell.swift">
+         contextName = "UserAPIService.getByEmail(email:):UserAPIService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "HTTPHeaders.default">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in LineTextView.openTextSpace():LineTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self?.textView.textContentType">
+            </PersistentString>
+            <PersistentString
+               value = "self?.textField.textContentType">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "LineTextView.layoutSubviews():LineTextField.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LineTextView.openTextSpace():LineTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textField.textContentType">
+            </PersistentString>
+            <PersistentString
+               value = "textView.textContentType">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #1 in PreviewViewController.requestPreviews():PreviewViewController.swift">
@@ -45,7 +72,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "static UserNetworkingService.getUserByEmail(email:completion:):UserNetworkingService.swift">
+         contextName = "LineTextView.setup(title:value:onEndEditing:):LineTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "frame">
+            </PersistentString>
+            <PersistentString
+               value = "textView.frame">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #2 in SignUpViewController.requestSignUp():SignUpViewController.swift">
@@ -54,10 +89,10 @@
                value = "AWSMobileClient.default().username">
             </PersistentString>
             <PersistentString
-               value = "AWSMobileClient.default().userSub">
+               value = "AWSMobileClient.default().identityId">
             </PersistentString>
             <PersistentString
-               value = "AWSMobileClient.default().identityId">
+               value = "AWSMobileClient.default().userSub">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -76,15 +111,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LineTextView.setup(title:value:onEndEditing:):LineTextField.swift">
+         contextName = "static UserNetworkingService.getUserByEmail(email:completion:):UserNetworkingService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LineTextView.setup(title:value:fieldType:onEndEditing:):LineTextField.swift">
          <PersistentStrings>
             <PersistentString
-               value = "frame">
+               value = "textField.keyboardType">
             </PersistentString>
             <PersistentString
-               value = "textView.frame">
+               value = "textView.textContentType">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PreviewCollectionViewCell.setup(preview:):PreviewCollectionViewCell.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #2 in SignUpViewController.requestLogin():SignUpViewController.swift">
@@ -96,14 +137,6 @@
       </ContextState>
       <ContextState
          contextName = "SignUpViewController.requestSignUp():SignUpViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "UserAPIService.getByEmail(email:):UserAPIService.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "HTTPHeaders.default">
-            </PersistentString>
-         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
