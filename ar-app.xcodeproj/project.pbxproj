@@ -31,6 +31,7 @@
 		D231BAF4283531B3009DD137 /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D231BAF3283531B3009DD137 /* ForgotPasswordViewController.storyboard */; };
 		D231BAF828354FB7009DD137 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231BAF728354FB7009DD137 /* TermsViewController.swift */; };
 		D231BAFA28354FBD009DD137 /* TermsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D231BAF928354FBD009DD137 /* TermsViewController.storyboard */; };
+		D25C9BED285A135E00324C30 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25C9BEC285A135E00324C30 /* UIFontExtension.swift */; };
 		D28A8F2B2846457900EF4A15 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */; };
 		D28A8F2D2846468A00EF4A15 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */; };
 		D28A8F30284651BD00EF4A15 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2F284651BD00EF4A15 /* LineTextField.swift */; };
@@ -174,6 +175,7 @@
 		D231BAF3283531B3009DD137 /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
 		D231BAF728354FB7009DD137 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		D231BAF928354FBD009DD137 /* TermsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsViewController.storyboard; sourceTree = "<group>"; };
+		D25C9BEC285A135E00324C30 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		D28A8F2F284651BD00EF4A15 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -638,6 +640,7 @@
 				D2AED3442857695D007EA80D /* UIColorExtension.swift */,
 				D2AED34628576E79007EA80D /* UITextViewExtension.swift */,
 				D2AED34828578F07007EA80D /* UIButtonExtension.swift */,
+				D25C9BEC285A135E00324C30 /* UIFontExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1116,6 +1119,7 @@
 				D2C9E9DD284F9468006E3E25 /* ProjectListViewController.swift in Sources */,
 				D2AED3452857695D007EA80D /* UIColorExtension.swift in Sources */,
 				D2AED34728576E79007EA80D /* UITextViewExtension.swift in Sources */,
+				D25C9BED285A135E00324C30 /* UIFontExtension.swift in Sources */,
 				D2B2233028327EAD003D2C2D /* PreviewViewController.swift in Sources */,
 				D2B2235228328FAC003D2C2D /* MaterialNetworkingService.swift in Sources */,
 				D2AED34928578F07007EA80D /* UIButtonExtension.swift in Sources */,

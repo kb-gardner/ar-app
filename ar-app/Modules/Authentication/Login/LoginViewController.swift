@@ -56,7 +56,7 @@ private extension LoginViewController {
         let passwordField: LineTextView = LineTextView.fromNib()
         emailView.addSubview(emailField)
         passwordView.addSubview(passwordField)
-        passwordField.setup(title: "New Password", value: password, fieldType: .none) { [weak self] string in
+        passwordField.setup(title: "Password", value: password, fieldType: .password) { [weak self] string in
             self?.password = string
         }
         emailField.setup(title: "Email", value: email, fieldType: .email) { [weak self] string in
@@ -79,7 +79,7 @@ private extension LoginViewController {
     
     // MARK: - Requests
     func requestLogin() {
-        guard FieldValidation.validateFields(email: email, password: password, completion: { alert in
+        guard FieldValidation.validateFields(email: email, password: password, checkEmail: true, checkPassword: true, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) else { return }
         showHUD()

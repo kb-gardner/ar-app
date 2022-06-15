@@ -9,8 +9,20 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    var checkboxGray: UIColor {
+    class var checkboxGray: UIColor {
         return UIColor(hex: "#D0D0D0")
+    }
+    
+    class var menuTextBlue: UIColor {
+        return UIColor(hex: "#50A9B0")
+    }
+    
+    class var menuTextGray: UIColor {
+        return UIColor(hex: "#707070")
+    }
+    
+    class var menuScanDropShadow: UIColor {
+        return UIColor(hex: "#020A2E17")
     }
             
     convenience init(hex: String) {

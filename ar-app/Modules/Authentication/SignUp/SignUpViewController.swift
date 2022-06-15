@@ -83,13 +83,13 @@ private extension SignUpViewController {
         phoneField.setup(title: "Phone Number", value: nil, fieldType: .phone) { [weak self] string in
             self?.user.phone = string
         }
-        passwordField.setup(title: "New Password", value: nil, fieldType: .none) { [weak self] string in
+        passwordField.setup(title: "New Password", value: nil, fieldType: .password) { [weak self] string in
             self?.password = string
         }
     }
     
     func validate() -> Bool {
-        if !FieldValidation.validateFields(email: user.email, phone: user.phone, password: password, completion: { alert in
+        if !FieldValidation.validateFields(email: user.email, phone: user.phone, password: password, checkEmail: true, checkPhone: true, checkPassword: true, completion: { alert in
             if let alert = alert { present(alert, animated: true) }
         }) {
             return false
@@ -140,9 +140,6 @@ private extension SignUpViewController {
     }
     
     func requestLogin() {
-        guard FieldValidation.validateFields(email: user.email, phone: user.phone, password: password, completion: { alert in
-            if let alert = alert { present(alert, animated: true) }
-        }) else { return }
         showHUD()
         CognitoNetworkingService.login(password: password!, email: user.email!) { [weak self] error in
             self?.hideHUD()
@@ -160,7 +157,9 @@ private extension SignUpViewController {
     }
     
     func createUser() {
+        showHUD()
         UserNetworkingService.createUser(user: user) { [weak self] newUser, error in
+            self?.hideHUD()
             DispatchQueue.main.async {
                 if let error = error {
                     print(error)
