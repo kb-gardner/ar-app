@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Order-Button-Shopping-Cart.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Order-Button-Shopping-Cart@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Order-Button-Shopping-Cart@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

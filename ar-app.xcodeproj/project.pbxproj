@@ -85,6 +85,8 @@
 		D2C9E9E5284F958B006E3E25 /* MaterialListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C9E9E4284F958B006E3E25 /* MaterialListViewController.storyboard */; };
 		D2C9E9E7284F9686006E3E25 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C9E9E6284F9686006E3E25 /* AccountViewController.swift */; };
 		D2C9E9E9284F96A7006E3E25 /* AccountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C9E9E8284F96A7006E3E25 /* AccountViewController.storyboard */; };
+		D2DB1342285CECDF0051D0A6 /* UINavigationControllerExtrension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB1341285CECDF0051D0A6 /* UINavigationControllerExtrension.swift */; };
+		D2DB1344285CECFC0051D0A6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB1343285CECFC0051D0A6 /* UIImageExtension.swift */; };
 		D2EB886E2850D4E000AC2FBD /* PreviewNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EB886D2850D4E000AC2FBD /* PreviewNetworkingService.swift */; };
 		D2EB88702850D4EE00AC2FBD /* PreviewAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EB886F2850D4EE00AC2FBD /* PreviewAPIService.swift */; };
 		D2EB89732850E38E00AC2FBD /* OpenSans-Italic-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2EB89332850E38E00AC2FBD /* OpenSans-Italic-VariableFont_wdth,wght.ttf */; };
@@ -230,6 +232,9 @@
 		D2C9E9E4284F958B006E3E25 /* MaterialListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MaterialListViewController.storyboard; sourceTree = "<group>"; };
 		D2C9E9E6284F9686006E3E25 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		D2C9E9E8284F96A7006E3E25 /* AccountViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountViewController.storyboard; sourceTree = "<group>"; };
+		D2DB1341285CECDF0051D0A6 /* UINavigationControllerExtrension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtrension.swift; sourceTree = "<group>"; };
+		D2DB1343285CECFC0051D0A6 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		D2DB1345285CEE2E0051D0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D2EB886D2850D4E000AC2FBD /* PreviewNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNetworkingService.swift; sourceTree = "<group>"; };
 		D2EB886F2850D4EE00AC2FBD /* PreviewAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAPIService.swift; sourceTree = "<group>"; };
 		D2EB89332850E38E00AC2FBD /* OpenSans-Italic-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; };
@@ -485,6 +490,7 @@
 		D2B2230B283274F4003D2C2D /* ar-app */ = {
 			isa = PBXGroup;
 			children = (
+				D2DB1345285CEE2E0051D0A6 /* Info.plist */,
 				D2B2230C283274F4003D2C2D /* AppDelegate.swift */,
 				D2B2230E283274F4003D2C2D /* ViewController.swift */,
 				D2B2232028327AC9003D2C2D /* Shared */,
@@ -641,6 +647,8 @@
 				D2AED34628576E79007EA80D /* UITextViewExtension.swift */,
 				D2AED34828578F07007EA80D /* UIButtonExtension.swift */,
 				D25C9BEC285A135E00324C30 /* UIFontExtension.swift */,
+				D2DB1341285CECDF0051D0A6 /* UINavigationControllerExtrension.swift */,
+				D2DB1343285CECFC0051D0A6 /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1116,6 +1124,7 @@
 				D2B2230D283274F4003D2C2D /* AppDelegate.swift in Sources */,
 				D2B2235628328FC0003D2C2D /* SpaceAPIService.swift in Sources */,
 				D2B2235C28329F2C003D2C2D /* NSErrorExtension.swift in Sources */,
+				D2DB1342285CECDF0051D0A6 /* UINavigationControllerExtrension.swift in Sources */,
 				D2C9E9DD284F9468006E3E25 /* ProjectListViewController.swift in Sources */,
 				D2AED3452857695D007EA80D /* UIColorExtension.swift in Sources */,
 				D2AED34728576E79007EA80D /* UITextViewExtension.swift in Sources */,
@@ -1129,6 +1138,7 @@
 				D231BAF828354FB7009DD137 /* TermsViewController.swift in Sources */,
 				D2EB88702850D4EE00AC2FBD /* PreviewAPIService.swift in Sources */,
 				D28CF550284520190057C231 /* AddProjectViewController.swift in Sources */,
+				D2DB1344285CECFC0051D0A6 /* UIImageExtension.swift in Sources */,
 				D2B2234E28328F8D003D2C2D /* TierNetworkingService.swift in Sources */,
 				D2313C02283BE119004D6C1C /* ResetPasswordViewController.swift in Sources */,
 				D2B2234028328D95003D2C2D /* Tier.swift in Sources */,
@@ -1302,12 +1312,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HU4LXRUQMU;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ar-app/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1334,12 +1346,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HU4LXRUQMU;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ar-app/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

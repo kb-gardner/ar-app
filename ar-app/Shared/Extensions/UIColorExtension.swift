@@ -21,6 +21,10 @@ extension UIColor {
         return UIColor(hex: "#707070")
     }
     
+    class var menuImageGray: UIColor {
+        return UIColor(hex: "#D0D0D0")
+    }
+    
     class var menuScanDropShadow: UIColor {
         return UIColor(hex: "#020A2E17")
     }

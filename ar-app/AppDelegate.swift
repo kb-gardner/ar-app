@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationController = UINavigationController(rootViewController: controller)
             window?.rootViewController = navigationController
         }
-        
         // Keyboard Manager
         IQKeyboardManager.shared.enable = true
         

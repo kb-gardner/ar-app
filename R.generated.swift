@@ -1270,6 +1270,8 @@ struct R: Rswift.Validatable {
     static let homeActive = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home-Active")
     /// Image `Home`.
     static let home = Rswift.ImageResource(bundle: R.hostingBundle, name: "Home")
+    /// Image `Light-Grey-Point-Up`.
+    static let lightGreyPointUp = Rswift.ImageResource(bundle: R.hostingBundle, name: "Light-Grey-Point-Up")
     /// Image `Materials-Active`.
     static let materialsActive = Rswift.ImageResource(bundle: R.hostingBundle, name: "Materials-Active")
     /// Image `Materials`.
@@ -1320,8 +1322,6 @@ struct R: Rswift.Validatable {
     static let whitePointRightArrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "White-Point-Right-Arrow")
     /// Image `checkbox`.
     static let checkbox = Rswift.ImageResource(bundle: R.hostingBundle, name: "checkbox")
-    /// Image `envisage-free`.
-    static let envisageFree = Rswift.ImageResource(bundle: R.hostingBundle, name: "envisage-free")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "AR-Cancel-Scan", bundle: ..., traitCollection: ...)`
@@ -1611,6 +1611,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Light-Grey-Point-Up", bundle: ..., traitCollection: ...)`
+    static func lightGreyPointUp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lightGreyPointUp, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Materials", bundle: ..., traitCollection: ...)`
     static func materials(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.materials, compatibleWith: traitCollection)
@@ -1785,12 +1792,17 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "envisage-free", bundle: ..., traitCollection: ...)`
-    static func envisageFree(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.envisageFree, compatibleWith: traitCollection)
+    fileprivate init() {}
+  }
+
+  /// This `R.info` struct is generated, and contains static references to 1 properties.
+  struct info {
+    struct uiApplicationSceneManifest {
+      static let _key = "UIApplicationSceneManifest"
+      static let uiApplicationSupportsMultipleScenes = false
+
+      fileprivate init() {}
     }
-    #endif
 
     fileprivate init() {}
   }
