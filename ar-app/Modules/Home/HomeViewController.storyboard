@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BarlowCondensed-SemiBold.ttf">
+            <string>BarlowCondensed-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -55,11 +60,11 @@
                                 <rect key="frame" x="15" y="94" width="384" height="275"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R99-ku-gYU">
-                                        <rect key="frame" x="0.0" y="4.5" width="84.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="2" width="65" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="COF-1j-KWk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="BarlowCondensed-SemiBold" family="Barlow Condensed" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -70,13 +75,13 @@
                                             <constraint firstAttribute="height" constant="30" id="cnd-1A-T7O"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Add-Material-Space-ProjectDetailScreen"/>
                                         <connections>
                                             <action selector="addProjectClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vME-Ti-lc3"/>
                                         </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-US-8oD">
-                                        <rect key="frame" x="0.0" y="45.5" width="384" height="229.5"/>
+                                        <rect key="frame" x="0.0" y="43" width="384" height="232"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sCd-bM-XmQ">
                                             <size key="itemSize" width="200" height="200"/>
@@ -96,7 +101,7 @@
                                     <constraint firstAttribute="bottom" secondItem="8Yo-US-8oD" secondAttribute="bottom" id="QIM-dW-4Gv"/>
                                     <constraint firstAttribute="height" constant="275" id="Riw-Rm-KAp"/>
                                     <constraint firstItem="R99-ku-gYU" firstAttribute="leading" secondItem="gSn-0l-nif" secondAttribute="leading" id="TN9-G1-ciF"/>
-                                    <constraint firstItem="R99-ku-gYU" firstAttribute="centerY" secondItem="ubQ-2U-Spz" secondAttribute="centerY" id="lD8-0s-I0W"/>
+                                    <constraint firstItem="R99-ku-gYU" firstAttribute="centerY" secondItem="ubQ-2U-Spz" secondAttribute="centerY" constant="-2.75" id="lD8-0s-I0W"/>
                                     <constraint firstItem="ubQ-2U-Spz" firstAttribute="top" secondItem="gSn-0l-nif" secondAttribute="top" id="rHr-Om-qkh"/>
                                 </constraints>
                             </view>
@@ -104,11 +109,11 @@
                                 <rect key="frame" x="15" y="389" width="384" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPACES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahk-54-e4X">
-                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="VVs-oC-8UR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="BarlowCondensed-SemiBold" family="Barlow Condensed" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -139,11 +144,11 @@
                                 <rect key="frame" x="15" y="659" width="384" height="203"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MATERIALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZw-GY-dTc">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="69" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Igg-wH-d7a"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="BarlowCondensed-SemiBold" family="Barlow Condensed" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -221,7 +226,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add-Material-Space-ProjectDetailScreen" width="48" height="48"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>

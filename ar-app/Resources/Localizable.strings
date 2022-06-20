@@ -6,6 +6,8 @@
   
 */
 "ok" = "Ok";
+"available" = "Available";
+"not_available" = "Not Available";
 
 // MARK: - Instantiation
 "start.identifier" = "StartViewController";

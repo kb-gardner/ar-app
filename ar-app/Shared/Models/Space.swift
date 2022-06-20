@@ -7,4 +7,9 @@
 
 import Foundation
 
-struct Space: Codable {}
+struct Space: Codable {
+    var id: String?
+    var name: String?
+    var imageUrl: String?
+    var projectId: String?
+}

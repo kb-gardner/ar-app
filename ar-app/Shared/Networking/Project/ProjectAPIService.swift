@@ -10,20 +10,24 @@ import Alamofire
 import SwiftyJSON
 
 class ProjectAPIService {
-    func list(params: Parameters) -> DataRequest? {
-        return nil
+    func get(id: String) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "projects/\(id)", method: .get, headers: HTTPHeaders.default)
     }
     
-    func get(id: String) -> DataRequest? {
-        return nil
+    func list(params: Parameters) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "projects", method: .get, parameters: params, headers: HTTPHeaders.default)
     }
     
-    func save(params: Parameters) -> DataRequest? {
-        return nil
+    func update(id: String, params: Parameters) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "projects/\(id)", method: .put, parameters: params, encoding: JSONEncoding.default, headers: HTTPHeaders.default)
     }
     
-    func delete(id: String) -> DataRequest? {
-        return nil
+    func create(params: Parameters) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "projects", method: .post, parameters: params, encoding: JSONEncoding.default, headers: HTTPHeaders.default)
+    }
+    
+    func delete(id: String) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "projects/\(id)", method: .delete, headers: HTTPHeaders.default)
     }
     
 }

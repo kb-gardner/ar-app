@@ -1807,8 +1807,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
+    /// Nib `HomeCollectionViewCell`.
+    static let homeCollectionViewCell = _R.nib._HomeCollectionViewCell()
     /// Nib `LineTextView`.
     static let lineTextView = _R.nib._LineTextView()
     /// Nib `LoginOptionTableViewCell`.
@@ -1817,6 +1819,14 @@ struct R: Rswift.Validatable {
     static let menuTableViewCell = _R.nib._MenuTableViewCell()
     /// Nib `PreviewCollectionViewCell`.
     static let previewCollectionViewCell = _R.nib._PreviewCollectionViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "HomeCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.homeCollectionViewCell) instead")
+    static func homeCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.homeCollectionViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "LineTextView", in: bundle)`
@@ -1850,6 +1860,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func homeCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeCollectionViewCell? {
+      return R.nib.homeCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeCollectionViewCell
+    }
+
     static func lineTextView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LineTextView? {
       return R.nib.lineTextView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LineTextView
     }
@@ -1869,8 +1883,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `HomeCollectionViewCell`.
+    static let homeCollectionViewCell: Rswift.ReuseIdentifier<HomeCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "HomeCollectionViewCell")
     /// Reuse identifier `LoginOptionTableViewCell`.
     static let loginOptionTableViewCell: Rswift.ReuseIdentifier<LoginOptionTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoginOptionTableViewCell")
     /// Reuse identifier `MenuTableViewCell`.
@@ -1883,7 +1899,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 47 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 49 localization keys.
     struct localizable {
       /// Value: Account
       static let accountTitle = Rswift.StringResource(key: "account.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -1893,6 +1909,8 @@ struct R: Rswift.Validatable {
       static let addMaterialIdentifier = Rswift.StringResource(key: "addMaterial.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: AddProjectViewController
       static let addProjectIdentifier = Rswift.StringResource(key: "addProject.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Available
+      static let available = Rswift.StringResource(key: "available", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Could not instantiate AccountViewController
       static let accountFatalError = Rswift.StringResource(key: "account.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Could not instantiate AddMaterialViewController
@@ -1953,6 +1971,8 @@ struct R: Rswift.Validatable {
       static let tabMenuIdentifier = Rswift.StringResource(key: "tabMenu.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: MenuViewController
       static let menuIdentifier = Rswift.StringResource(key: "menu.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Not Available
+      static let not_available = Rswift.StringResource(key: "not_available", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Ok
       static let ok = Rswift.StringResource(key: "ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Please agree to the terms and conditions before proceeding
@@ -2030,6 +2050,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("addProject.identifier", bundle: bundle, comment: "")
+      }
+
+      /// Value: Available
+      static func available(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "available"
+        }
+
+        return NSLocalizedString("available", bundle: bundle, comment: "")
       }
 
       /// Value: Could not instantiate AccountViewController
@@ -2422,6 +2455,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("menu.identifier", bundle: bundle, comment: "")
       }
 
+      /// Value: Not Available
+      static func not_available(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("not_available", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "not_available"
+        }
+
+        return NSLocalizedString("not_available", bundle: bundle, comment: "")
+      }
+
       /// Value: Ok
       static func ok(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -2623,7 +2669,29 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _HomeCollectionViewCell.validate()
       try _LineTextView.validate()
+    }
+
+    struct _HomeCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = HomeCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "HomeCollectionViewCell"
+      let name = "HomeCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeCollectionViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "More-Home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'More-Home' is used in nib 'HomeCollectionViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Shopping-Cart", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Shopping-Cart' is used in nib 'HomeCollectionViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
     }
 
     struct _LineTextView: Rswift.NibResourceType, Rswift.Validatable {
@@ -2818,8 +2886,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Add-Material-Space-ProjectDetailScreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Add-Material-Space-ProjectDetailScreen' is used in storyboard 'HomeViewController', but couldn't be loaded.") }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "line.3.horizontal") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'line.3.horizontal' is used in storyboard 'HomeViewController', but couldn't be loaded.") } }
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "plus") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'plus' is used in storyboard 'HomeViewController', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.homeViewController().homeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'HomeViewController' as 'HomeViewController'.") }

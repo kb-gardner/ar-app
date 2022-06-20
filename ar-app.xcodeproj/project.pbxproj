@@ -43,6 +43,8 @@
 		D28CF555284526FE0057C231 /* SpaceARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF554284526FE0057C231 /* SpaceARViewController.swift */; };
 		D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF556284527640057C231 /* SpaceARViewController.storyboard */; };
 		D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */; };
+		D2A6EDED2860A3FC00F577F2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A6EDEC2860A3FC00F577F2 /* HomeCollectionViewCell.swift */; };
+		D2A6EDF12860A7AD00F577F2 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A6EDF02860A7AD00F577F2 /* HomeCollectionViewCell.xib */; };
 		D2AED3452857695D007EA80D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED3442857695D007EA80D /* UIColorExtension.swift */; };
 		D2AED34728576E79007EA80D /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED34628576E79007EA80D /* UITextViewExtension.swift */; };
 		D2AED34928578F07007EA80D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED34828578F07007EA80D /* UIButtonExtension.swift */; };
@@ -189,6 +191,8 @@
 		D28CF554284526FE0057C231 /* SpaceARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceARViewController.swift; sourceTree = "<group>"; };
 		D28CF556284527640057C231 /* SpaceARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpaceARViewController.storyboard; sourceTree = "<group>"; };
 		D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		D2A6EDEC2860A3FC00F577F2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2A6EDF02860A7AD00F577F2 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D2AED3442857695D007EA80D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D2AED34628576E79007EA80D /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
 		D2AED34828578F07007EA80D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -469,6 +473,15 @@
 			path = Project;
 			sourceTree = "<group>";
 		};
+		D2A6EDEB2860A3D300F577F2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2A6EDEC2860A3FC00F577F2 /* HomeCollectionViewCell.swift */,
+				D2A6EDF02860A7AD00F577F2 /* HomeCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D2B22300283274F4003D2C2D = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +592,7 @@
 		D2B2232528327C51003D2C2D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D2A6EDEB2860A3D300F577F2 /* Cells */,
 				D22D32CD283D05D200E80062 /* HomeViewController.swift */,
 				D22D32CF283D062E00E80062 /* HomeViewController.storyboard */,
 			);
@@ -1019,6 +1033,7 @@
 				D2EB89772850E38E00AC2FBD /* OpenSans_SemiCondensed-Light.ttf in Resources */,
 				D2EB89822850E38E00AC2FBD /* OpenSans_Condensed-SemiBold.ttf in Resources */,
 				D2EB898C2850E38E00AC2FBD /* OpenSans-SemiBold.ttf in Resources */,
+				D2A6EDF12860A7AD00F577F2 /* HomeCollectionViewCell.xib in Resources */,
 				D231BAE3283526BD009DD137 /* PreviewCollectionViewCell.xib in Resources */,
 				D2EB899C2850E38E00AC2FBD /* BarlowCondensed-ThinItalic.ttf in Resources */,
 				D2EB899D2850E38E00AC2FBD /* BarlowCondensed-BlackItalic.ttf in Resources */,
@@ -1135,6 +1150,7 @@
 				D231BAE528352B13009DD137 /* Preview.swift in Sources */,
 				D2EB886E2850D4E000AC2FBD /* PreviewNetworkingService.swift in Sources */,
 				D2313BFA283BB90A004D6C1C /* CognitoNetworkingService.swift in Sources */,
+				D2A6EDED2860A3FC00F577F2 /* HomeCollectionViewCell.swift in Sources */,
 				D231BAF828354FB7009DD137 /* TermsViewController.swift in Sources */,
 				D2EB88702850D4EE00AC2FBD /* PreviewAPIService.swift in Sources */,
 				D28CF550284520190057C231 /* AddProjectViewController.swift in Sources */,

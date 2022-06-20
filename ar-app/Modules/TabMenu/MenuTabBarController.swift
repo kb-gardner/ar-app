@@ -14,6 +14,7 @@ class MenuTabBarController: UITabBarController {
     // MARK: - Properties
     
     // MARK: - Outlets
+    @IBOutlet var customTabBar: CustomTabBar!
     
     // MARK: - Actions
     
@@ -29,10 +30,8 @@ class MenuTabBarController: UITabBarController {
         let materialListNav = generateNavigationController(controller: materialList, title: R.string.localizable.materialListTitle(), icon: R.image.materials(), selectedIcon: R.image.materialsActive(), 20)
         let accountNav = generateNavigationController(controller: account, title: R.string.localizable.accountTitle(), icon: R.image.account(), selectedIcon: R.image.accountActive(), 0)
         viewControllers = [homeNav, projectListNav, materialListNav, accountNav]
-//        tabBar.tintColor = .menuTextBlue
-//        tabBar.backgroundColor = .white
-        tabBar.frame.size.height = 73
-        tabBar.frame.origin.y = view.frame.height - 73
+        customTabBar.frame.size.height = 73
+        customTabBar.frame.origin.y = view.frame.height - 73
         setupScanButton()
     }
 }
@@ -58,7 +57,9 @@ private extension MenuTabBarController {
         button.layer.shadowOpacity = 0.25
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowRadius = 3
-        tabBar.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = true
+        customTabBar.addSubview(button)
+        customTabBar.bringSubviewToFront(button)
         view.layoutIfNeeded()
     }
     
@@ -66,6 +67,19 @@ private extension MenuTabBarController {
     
     // MARK: - Requests
     
+}
+
+class CustomTabBar: UITabBar {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard !clipsToBounds && !isHidden && alpha > 0 else { return nil }
+        for member in subviews.reversed() {
+            let subPoint = member.convert(point, from: self)
+            guard let result = member.hitTest(subPoint, with: event)
+            else { continue }
+            return result
+        }
+        return nil
+    }
 }
 
 // MARK: - Properties

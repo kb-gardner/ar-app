@@ -43,6 +43,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        projectsCollection.register(R.nib.homeCollectionViewCell)
+        spacesCollection.register(R.nib.homeCollectionViewCell)
+        materialsCollection.register(R.nib.homeCollectionViewCell)
         projectsCollection.delegate = self
         projectsCollection.dataSource = self
         materialsCollection.delegate = self
@@ -65,17 +68,50 @@ private extension HomeViewController {
     // MARK: - Requests
     func requestProjects() {
         guard let id = Store.shared.user?.id else { return }
-        ProjectNetworkingService.getProjects()
+        showHUD()
+        ProjectNetworkingService.listProjects(userId: id) { [weak self] projects, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.projects = projects ?? []
+                    self?.projectsCollection.reloadData()
+                }
+            }
+        }
     }
     
     func requestSpaces() {
         guard let id = Store.shared.user?.id else { return }
-        SpaceNetworkingService.getSpaces()
+        showHUD()
+        SpaceNetworkingService.listSpaces(userId: id) { [weak self] spaces, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.spaces = spaces ?? []
+                    self?.spacesCollection.reloadData()
+                }
+            }
+        }
     }
     
     func requestMaterials() {
         guard let id = Store.shared.user?.id else { return }
-        MaterialNetworkingService.getMaterials()
+        showHUD()
+        MaterialNetworkingService.listMaterials(userId: id) { [weak self] materials, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.materials = materials ?? []
+                    self?.materialsCollection.reloadData()
+                }
+            }
+        }
     }
     
 }
@@ -96,16 +132,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.homeCollectionViewCell, for: indexPath)!
         switch collectionView {
         case projectsCollection:
-            return UICollectionViewCell()
+            let project = projects[indexPath.row]
+            cell.setup(cellType: .project, imageUrl: project.imageUrl, title: project.name, subtitle: "\(spaces.filter({$0.projectId == project.id}).count)")
         case spacesCollection:
-            return UICollectionViewCell()
+            let space = spaces[indexPath.row]
+            cell.setup(cellType: .space, imageUrl: space.imageUrl, title: space.name, subtitle: projects.first(where: {$0.id == space.projectId})?.name)
         case materialsCollection:
-            return UICollectionViewCell()
+            let material = materials[indexPath.row]
+            cell.setup(cellType: .material, imageUrl: material.imageUrl, title: material.name, subtitle: material.isAvailableMessage)
         default:
-            return UICollectionViewCell()
+            break
         }
+        return cell
     }
     
 }

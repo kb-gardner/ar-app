@@ -55,9 +55,20 @@ private extension AddProjectViewController {
     // MARK: - Requests
     func saveProject() {
         guard let id = Store.shared.user?.id else { return }
-        let project = Project(name: name, address: address)
-        ProjectNetworkingService.saveProject()
-        showSpaceAR(project: project)
+        let project = Project(name: name, address: address, userId: id)
+        showHUD()
+        ProjectNetworkingService.createProject(project: project) { [weak self] newProject, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    if let newProject = newProject {
+                        self?.showSpaceAR(project: newProject)
+                    }
+                }
+            }
+        }
     }
 }
 
