@@ -36,9 +36,7 @@ class HomeViewController: UIViewController {
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        requestProjects()
-        requestSpaces()
-        requestMaterials()
+        requestCollections()
     }
     
     override func viewDidLoad() {
@@ -66,58 +64,64 @@ private extension HomeViewController {
     func showNewProjectView() {}
     
     // MARK: - Requests
-    func requestProjects() {
+    func requestCollections() {
         guard let id = Store.shared.user?.id else { return }
-        showHUD()
-        ProjectNetworkingService.listProjects(userId: id) { [weak self] projects, error in
-            DispatchQueue.main.async {
-                self?.hideHUD()
+        let group = DispatchGroup()
+        let queue = DispatchQueue.global()
+            showHUD()
+
+        let projectsItem = DispatchWorkItem { [weak self] in
+            group.enter()
+            ProjectNetworkingService.listProjects(userId: id) { [weak self] projects, error in
                 if let error = error {
                     print(error)
                 } else {
                     self?.projects = projects ?? []
-                    self?.projectsCollection.reloadData()
                 }
+                group.leave()
             }
         }
-    }
-    
-    func requestSpaces() {
-        guard let id = Store.shared.user?.id else { return }
-        showHUD()
-        SpaceNetworkingService.listSpaces(userId: id) { [weak self] spaces, error in
-            DispatchQueue.main.async {
-                self?.hideHUD()
+        queue.async(group: group, execute: projectsItem)
+        
+        let spacesItem = DispatchWorkItem { [weak self] in
+            group.enter()
+            SpaceNetworkingService.listSpaces(userId: id) { [weak self] spaces, error in
                 if let error = error {
                     print(error)
                 } else {
                     self?.spaces = spaces ?? []
-                    self?.spacesCollection.reloadData()
                 }
+                group.leave()
             }
         }
-    }
-    
-    func requestMaterials() {
-        guard let id = Store.shared.user?.id else { return }
-        showHUD()
-        MaterialNetworkingService.listMaterials(userId: id) { [weak self] materials, error in
-            DispatchQueue.main.async {
-                self?.hideHUD()
+        queue.async(group: group, execute: spacesItem)
+        
+        let materialsItem = DispatchWorkItem {
+            group.enter()
+            MaterialNetworkingService.listMaterials(userId: id) { [weak self] materials, error in
                 if let error = error {
                     print(error)
                 } else {
                     self?.materials = materials ?? []
-                    self?.materialsCollection.reloadData()
                 }
+                group.leave()
             }
+        }
+        queue.async(group: group, execute: materialsItem)
+
+
+        group.notify(queue: .main) { [weak self] in
+            self?.projectsCollection.reloadData()
+            self?.spacesCollection.reloadData()
+            self?.materialsCollection.reloadData()
+            self?.hideHUD()
         }
     }
     
 }
 
 // MARK: - Collections
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case projectsCollection:
@@ -136,7 +140,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch collectionView {
         case projectsCollection:
             let project = projects[indexPath.row]
-            cell.setup(cellType: .project, imageUrl: project.imageUrl, title: project.name, subtitle: "\(spaces.filter({$0.projectId == project.id}).count)")
+            cell.setup(cellType: .project, imageUrl: project.imageUrl, title: project.name, subtitle: "\(spaces.filter({$0.projectId == project.id}).count) Spaces")
         case spacesCollection:
             let space = spaces[indexPath.row]
             cell.setup(cellType: .space, imageUrl: space.imageUrl, title: space.name, subtitle: projects.first(where: {$0.id == space.projectId})?.name)
@@ -147,6 +151,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             break
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
     }
     
 }

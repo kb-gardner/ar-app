@@ -10,10 +10,10 @@ import Foundation
 class MaterialNetworkingService {
     class func getMaterial(id: String, completion: ((Material?, Error?)->())?) {
         let request = MaterialAPIService().get(id: id).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: Material?.self) { response in
+            switch response.result {
             case.success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(Material?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error. Could not decode Material Object", code: -1))
@@ -21,7 +21,7 @@ class MaterialNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func listMaterials(userId: String, completion: (([Material]?, Error?)->())?) {
@@ -50,10 +50,10 @@ class MaterialNetworkingService {
             return
         }
         let request = MaterialAPIService().create(params: parameters).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: Material?.self) { response in
+            switch response.result {
             case .success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(Material?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error.", code: -1))
@@ -61,7 +61,7 @@ class MaterialNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func updateMaterial(material: Material?, completion:((Material?, Error?)->())?) {
@@ -74,10 +74,10 @@ class MaterialNetworkingService {
             return
         }
         let request = MaterialAPIService().update(id: id, params: parameters).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: Material?.self) { response in
+            switch response.result {
             case .success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(Material?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error.", code: -1))
@@ -85,7 +85,7 @@ class MaterialNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func deleteMaterial(id: String, completion:((Error?)->())?) {

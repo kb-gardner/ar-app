@@ -740,5 +740,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D2473BD-34D2-47AC-9B07-69FAF855CF1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ar-app/Modules/Home/Cells/HomeCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "setup(cellType:imageUrl:title:subtitle:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9D2473BD-34D2-47AC-9B07-69FAF855CF1C - 62d68a943dc39fe2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ar_app.HomeCollectionViewCell.setup(cellType: ar_app.HomeCollectionViewCell.CellType, imageUrl: Swift.Optional&lt;Swift.String&gt;, title: Swift.Optional&lt;Swift.String&gt;, subtitle: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "ar-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kylegardner/Documents/ar-app/ar-app/Modules/Home/Cells/HomeCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "9D2473BD-34D2-47AC-9B07-69FAF855CF1C - 62d68a943dc39fe2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ar_app.HomeCollectionViewCell.setup(cellType: ar_app.HomeCollectionViewCell.CellType, imageUrl: Swift.Optional&lt;Swift.String&gt;, title: Swift.Optional&lt;Swift.String&gt;, subtitle: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "ar-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kylegardner/Documents/ar-app/ar-app/Modules/Home/Cells/HomeCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "440">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

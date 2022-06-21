@@ -10,10 +10,10 @@ import Foundation
 class ProjectNetworkingService {
     class func getProject(id: String, completion: ((Project?, Error?)->())?) {
         let request = ProjectAPIService().get(id: id).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: Project?.self) { response in
+            switch response.result {
             case.success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(Project?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error. Could not decode Project Object", code: -1))
@@ -21,16 +21,16 @@ class ProjectNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func listProjects(userId: String, completion: (([Project]?, Error?)->())?) {
         let params: [String: Any] = ["userId": userId]
         let request = ProjectAPIService().list(params: params).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: [Project]?.self) { response in
+            switch response.result {
             case.success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode([Project]?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error. Could not decode Project Objects", code: -1))
@@ -38,7 +38,7 @@ class ProjectNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func createProject(project: Project?, completion:((Project?, Error?)->())?) {
@@ -50,10 +50,10 @@ class ProjectNetworkingService {
             return
         }
         let request = ProjectAPIService().create(params: parameters).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: Project?.self) { response in
+            switch response.result {
             case .success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(Project?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error.", code: -1))
@@ -61,7 +61,7 @@ class ProjectNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func updateProject(project: Project?, completion:((Project?, Error?)->())?) {
@@ -74,10 +74,10 @@ class ProjectNetworkingService {
             return
         }
         let request = ProjectAPIService().update(id: id, params: parameters).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: Project?.self) { response in
+            switch response.result {
             case .success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(Project?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error.", code: -1))
@@ -85,7 +85,7 @@ class ProjectNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func deleteProject(id: String, completion:((Error?)->())?) {

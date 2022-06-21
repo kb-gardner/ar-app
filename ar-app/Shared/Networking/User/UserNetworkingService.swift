@@ -10,10 +10,10 @@ import Foundation
 class UserNetworkingService {
     class func getUser(id: String, completion: ((User?, Error?)->())?) {
         let request = UserAPIService().get(id: id).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: User?.self) { response in
+            switch response.result {
             case.success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(User?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error. Could not decode User Object", code: -1))
@@ -21,15 +21,15 @@ class UserNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func getUserByEmail(email: String, completion: ((User?, Error?)->())?) {
         let request = UserAPIService().getByEmail(email: email).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: User?.self) { response in
+            switch response.result {
             case.success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(User?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error. Could not decode User Object", code: -1))
@@ -37,7 +37,7 @@ class UserNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func createUser(user: User?, completion:((User?, Error?)->())?) {
@@ -49,10 +49,10 @@ class UserNetworkingService {
             return
         }
         let request = UserAPIService().create(params: parameters).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: User?.self) { response in
+            switch response.result {
             case .success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(User?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error.", code: -1))
@@ -60,7 +60,7 @@ class UserNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func updateUser(user: User?, completion:((User?, Error?)->())?) {
@@ -73,10 +73,10 @@ class UserNetworkingService {
             return
         }
         let request = UserAPIService().update(id: id, params: parameters).validate()
-        request.response(completionHandler: { data in
-            switch data.result {
+        request.responseDecodable(of: User?.self) { response in
+            switch response.result {
             case .success:
-                if let jsonData = data.data, let result = try? JSONDecoder().decode(User?.self, from: jsonData) {
+                if let result = response.value {
                     completion?(result, nil)
                 } else {
                     completion?(nil, NSError.standard(message: "Data error.", code: -1))
@@ -84,7 +84,7 @@ class UserNetworkingService {
             case .failure(let error):
                 completion?(nil, error)
             }
-        })
+        }
     }
     
     class func deleteUser(id: String, completion:((Error?)->())?) {

@@ -17,7 +17,10 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var menuButton: UIButton!
     @IBOutlet var cartButton: UIButton!
+    @IBOutlet var cellView: UIView!
     @IBOutlet var titleTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet var titleLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet var imageHeightConstraint: NSLayoutConstraint!
     
     @IBAction func menuClicked(_ sender: Any) {
         switch cellType {
@@ -43,6 +46,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
         menuButton.isHidden = cellType == .material
         cartButton.isHidden = cellType != .material
         titleTrailingConstraint.isActive = cellType != .material
+        titleLeadingConstraint.constant = cellType == .project ? 13 : cellType == .space ? 10 : 7
+        imageHeightConstraint.constant = cellType == .project ? 10 : cellType == .space ? 5 : 0
+        cellView.layer.cornerRadius = 15
         layoutIfNeeded()
     }
     
