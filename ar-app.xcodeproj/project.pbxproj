@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B52FE3D01C1EB78D61AB2CA0 /* Pods_ar_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D877C839F3992403B7B29A /* Pods_ar_app.framework */; };
+		D20F696D286340FC0003DF24 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F696C286340FC0003DF24 /* UILabelExtension.swift */; };
 		D211C2BC284E246C00189244 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211C2BB284E246C00189244 /* Global.swift */; };
 		D211C2BE284E271E00189244 /* AFSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211C2BD284E271E00189244 /* AFSessionManager.swift */; };
 		D22D32CC283D02C600E80062 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D32CB283D02C600E80062 /* UIViewExtension.swift */; };
@@ -32,6 +33,8 @@
 		D231BAF828354FB7009DD137 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231BAF728354FB7009DD137 /* TermsViewController.swift */; };
 		D231BAFA28354FBD009DD137 /* TermsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D231BAF928354FBD009DD137 /* TermsViewController.storyboard */; };
 		D25C9BED285A135E00324C30 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25C9BEC285A135E00324C30 /* UIFontExtension.swift */; };
+		D2886AB6286348D400E15F27 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2886AB5286348D400E15F27 /* AccountTableViewCell.swift */; };
+		D2886AB828634A8600E15F27 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2886AB728634A8600E15F27 /* AccountTableViewCell.xib */; };
 		D28A8F2B2846457900EF4A15 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */; };
 		D28A8F2D2846468A00EF4A15 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */; };
 		D28A8F30284651BD00EF4A15 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2F284651BD00EF4A15 /* LineTextField.swift */; };
@@ -156,6 +159,7 @@
 		539DD7DBD4CA76A378B7051F /* Pods-ar-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ar-app.debug.xcconfig"; path = "Target Support Files/Pods-ar-app/Pods-ar-app.debug.xcconfig"; sourceTree = "<group>"; };
 		673117DB0812178E824FB6A3 /* Pods-ar-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ar-app.release.xcconfig"; path = "Target Support Files/Pods-ar-app/Pods-ar-app.release.xcconfig"; sourceTree = "<group>"; };
 		78D877C839F3992403B7B29A /* Pods_ar_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ar_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20F696C286340FC0003DF24 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		D211C2BB284E246C00189244 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		D211C2BD284E271E00189244 /* AFSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSessionManager.swift; sourceTree = "<group>"; };
 		D22D32CB283D02C600E80062 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 		D231BAF728354FB7009DD137 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		D231BAF928354FBD009DD137 /* TermsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsViewController.storyboard; sourceTree = "<group>"; };
 		D25C9BEC285A135E00324C30 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		D2886AB5286348D400E15F27 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		D2886AB728634A8600E15F27 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		D28A8F2C2846468A00EF4A15 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		D28A8F2F284651BD00EF4A15 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -413,6 +419,15 @@
 			path = Terms;
 			sourceTree = "<group>";
 		};
+		D2886AB4286348BB00E15F27 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2886AB5286348D400E15F27 /* AccountTableViewCell.swift */,
+				D2886AB728634A8600E15F27 /* AccountTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D28A8F292846456500EF4A15 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +636,7 @@
 		D2B2232828327C69003D2C2D /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				D2886AB4286348BB00E15F27 /* Cells */,
 				D2C9E9E6284F9686006E3E25 /* AccountViewController.swift */,
 				D2C9E9E8284F96A7006E3E25 /* AccountViewController.storyboard */,
 			);
@@ -663,6 +679,7 @@
 				D25C9BEC285A135E00324C30 /* UIFontExtension.swift */,
 				D2DB1341285CECDF0051D0A6 /* UINavigationControllerExtrension.swift */,
 				D2DB1343285CECFC0051D0A6 /* UIImageExtension.swift */,
+				D20F696C286340FC0003DF24 /* UILabelExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1027,6 +1044,7 @@
 				D231BAF4283531B3009DD137 /* ForgotPasswordViewController.storyboard in Resources */,
 				D2EB89742850E38E00AC2FBD /* OpenSans_SemiCondensed-MediumItalic.ttf in Resources */,
 				D2EB89842850E38E00AC2FBD /* OpenSans_Condensed-Bold.ttf in Resources */,
+				D2886AB828634A8600E15F27 /* AccountTableViewCell.xib in Resources */,
 				D2EB89942850E38E00AC2FBD /* OpenSans-Medium.ttf in Resources */,
 				D2EB89932850E38E00AC2FBD /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				D2EB89992850E38E00AC2FBD /* LICENSE.txt in Resources */,
@@ -1152,7 +1170,9 @@
 				D2313BFA283BB90A004D6C1C /* CognitoNetworkingService.swift in Sources */,
 				D2A6EDED2860A3FC00F577F2 /* HomeCollectionViewCell.swift in Sources */,
 				D231BAF828354FB7009DD137 /* TermsViewController.swift in Sources */,
+				D20F696D286340FC0003DF24 /* UILabelExtension.swift in Sources */,
 				D2EB88702850D4EE00AC2FBD /* PreviewAPIService.swift in Sources */,
+				D2886AB6286348D400E15F27 /* AccountTableViewCell.swift in Sources */,
 				D28CF550284520190057C231 /* AddProjectViewController.swift in Sources */,
 				D2DB1344285CECFC0051D0A6 /* UIImageExtension.swift in Sources */,
 				D2B2234E28328F8D003D2C2D /* TierNetworkingService.swift in Sources */,

@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        requestCollections()
+        requestCollections(animated: animated)
     }
     
     override func viewDidLoad() {
@@ -64,11 +64,11 @@ private extension HomeViewController {
     func showNewProjectView() {}
     
     // MARK: - Requests
-    func requestCollections() {
+    func requestCollections(animated: Bool) {
         guard let id = Store.shared.user?.id else { return }
         let group = DispatchGroup()
         let queue = DispatchQueue.global()
-            showHUD()
+        if animated { showHUD() }
 
         let projectsItem = DispatchWorkItem { [weak self] in
             group.enter()

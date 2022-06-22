@@ -8,6 +8,7 @@
 "ok" = "Ok";
 "available" = "Available";
 "not_available" = "Not Available";
+"none" = "None";
 
 // MARK: - Instantiation
 "start.identifier" = "StartViewController";
@@ -74,3 +75,12 @@
 "projectList.title" = "Projects";
 "materialList.title" = "Materials";
 "account.title" = "Account";
+
+// MARK: - Account
+"account.subscription.title" = "subscription";
+"account.accountName.title" = "account name";
+"account.address.title" = "address";
+"account.logout.title" = "log out";
+
+// MARK: - Tier
+"tier.free.title" = "Free Tier";

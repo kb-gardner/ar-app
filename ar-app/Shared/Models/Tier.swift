@@ -7,4 +7,8 @@
 
 import Foundation
 
-struct Tier: Codable {}
+struct Tier: Codable {
+    let id: String?
+    let name: String?
+    let rate: Double?
+}

@@ -59,7 +59,6 @@ private extension MenuTabBarController {
         button.layer.shadowRadius = 3
         button.translatesAutoresizingMaskIntoConstraints = true
         customTabBar.addSubview(button)
-        customTabBar.bringSubviewToFront(button)
         view.layoutIfNeeded()
     }
     

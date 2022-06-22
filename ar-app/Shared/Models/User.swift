@@ -12,4 +12,6 @@ struct User: Codable {
     var name: String?
     var email: String?
     var phone: String?
+    var tierId: String?
+    var address: String?
 }
