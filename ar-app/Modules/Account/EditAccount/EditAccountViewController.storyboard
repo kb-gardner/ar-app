@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BarlowCondensed-SemiBold.ttf">
+            <string>BarlowCondensed-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Edit Account View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EditAccountViewController" id="Y6W-OH-hqX" customClass="EditAccountViewController" customModule="ar_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZA-QM-WEa">
+                                <rect key="frame" x="28" y="23" width="14" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="3zH-C1-HvK"/>
+                                    <constraint firstAttribute="width" constant="14" id="8iH-cy-WRw"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Grey-Close"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Grey-Close"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tph-G3-ASs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIELD TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dw-fV-McD">
+                                <rect key="frame" x="161.5" y="40" width="91" height="27"/>
+                                <fontDescription key="fontDescription" name="BarlowCondensed-SemiBold" family="Barlow Condensed" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="167-kw-ezZ">
+                                <rect key="frame" x="82" y="132" width="250" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="9Xg-Rr-qcN"/>
+                                    <constraint firstAttribute="height" constant="50" id="CVr-1M-QvO"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdV-Bu-WTZ">
+                                <rect key="frame" x="82" y="232" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="V2Y-XW-aJ3"/>
+                                    <constraint firstAttribute="width" constant="250" id="lzD-2s-rck"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <fontDescription key="titleFontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ioV-Qb-MVs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="167-kw-ezZ" firstAttribute="top" secondItem="4Dw-fV-McD" secondAttribute="bottom" constant="65" id="4qb-hX-vv7"/>
+                            <constraint firstItem="EdV-Bu-WTZ" firstAttribute="top" secondItem="167-kw-ezZ" secondAttribute="bottom" constant="50" id="8qO-6g-3a7"/>
+                            <constraint firstItem="167-kw-ezZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Eo7-5Q-gSh"/>
+                            <constraint firstItem="bZA-QM-WEa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="XBG-Un-mvW"/>
+                            <constraint firstItem="4Dw-fV-McD" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="jQV-XY-iDA"/>
+                            <constraint firstItem="EdV-Bu-WTZ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="ptC-ZN-out"/>
+                            <constraint firstItem="4Dw-fV-McD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="40" id="xd1-sj-pMj"/>
+                            <constraint firstItem="bZA-QM-WEa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="23" id="zuG-9d-Vg8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="saveButton" destination="EdV-Bu-WTZ" id="BSZ-px-Y1T"/>
+                        <outlet property="titleLabel" destination="4Dw-fV-McD" id="hWq-Xc-8PL"/>
+                        <outlet property="valueView" destination="167-kw-ezZ" id="oV7-RY-WfQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Grey-Close" width="24" height="24"/>
+    </resources>
+</document>

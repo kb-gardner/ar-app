@@ -45,6 +45,8 @@
 		D28CF5522845206C0057C231 /* AddProjectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */; };
 		D28CF555284526FE0057C231 /* SpaceARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF554284526FE0057C231 /* SpaceARViewController.swift */; };
 		D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF556284527640057C231 /* SpaceARViewController.storyboard */; };
+		D29DD8C42865DEC600266225 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29DD8C32865DEC600266225 /* EditAccountViewController.swift */; };
+		D29DD8C62865DED600266225 /* EditAccountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29DD8C52865DED600266225 /* EditAccountViewController.storyboard */; };
 		D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */; };
 		D2A6EDED2860A3FC00F577F2 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A6EDEC2860A3FC00F577F2 /* HomeCollectionViewCell.swift */; };
 		D2A6EDF12860A7AD00F577F2 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A6EDF02860A7AD00F577F2 /* HomeCollectionViewCell.xib */; };
@@ -196,6 +198,8 @@
 		D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddProjectViewController.storyboard; sourceTree = "<group>"; };
 		D28CF554284526FE0057C231 /* SpaceARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceARViewController.swift; sourceTree = "<group>"; };
 		D28CF556284527640057C231 /* SpaceARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpaceARViewController.storyboard; sourceTree = "<group>"; };
+		D29DD8C32865DEC600266225 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		D29DD8C52865DED600266225 /* EditAccountViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditAccountViewController.storyboard; sourceTree = "<group>"; };
 		D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		D2A6EDEC2860A3FC00F577F2 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2A6EDF02860A7AD00F577F2 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -488,6 +492,15 @@
 			path = Project;
 			sourceTree = "<group>";
 		};
+		D29DD8C22865DEA000266225 /* EditAccount */ = {
+			isa = PBXGroup;
+			children = (
+				D29DD8C32865DEC600266225 /* EditAccountViewController.swift */,
+				D29DD8C52865DED600266225 /* EditAccountViewController.storyboard */,
+			);
+			path = EditAccount;
+			sourceTree = "<group>";
+		};
 		D2A6EDEB2860A3D300F577F2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +649,7 @@
 		D2B2232828327C69003D2C2D /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				D29DD8C22865DEA000266225 /* EditAccount */,
 				D2886AB4286348BB00E15F27 /* Cells */,
 				D2C9E9E6284F9686006E3E25 /* AccountViewController.swift */,
 				D2C9E9E8284F96A7006E3E25 /* AccountViewController.storyboard */,
@@ -1058,6 +1072,7 @@
 				D2EB897C2850E38E00AC2FBD /* OpenSans_SemiCondensed-LightItalic.ttf in Resources */,
 				D2EB89A12850E38E00AC2FBD /* BarlowCondensed-Light.ttf in Resources */,
 				D2EB89902850E38E00AC2FBD /* OpenSans-ExtraBold.ttf in Resources */,
+				D29DD8C62865DED600266225 /* EditAccountViewController.storyboard in Resources */,
 				D2B22314283274F4003D2C2D /* Main.storyboard in Resources */,
 				D2EB89912850E38E00AC2FBD /* OpenSans-LightItalic.ttf in Resources */,
 				D2EB89922850E38E00AC2FBD /* OpenSans-Bold.ttf in Resources */,
@@ -1184,6 +1199,7 @@
 				D211C2BC284E246C00189244 /* Global.swift in Sources */,
 				D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */,
 				D2B2233828328D75003D2C2D /* Project.swift in Sources */,
+				D29DD8C42865DEC600266225 /* EditAccountViewController.swift in Sources */,
 				D28CF54A284510AE0057C231 /* MenuViewController.swift in Sources */,
 				D22D32CC283D02C600E80062 /* UIViewExtension.swift in Sources */,
 				D2B2234528328F23003D2C2D /* ProjectAPIService.swift in Sources */,

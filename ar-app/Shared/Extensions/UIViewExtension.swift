@@ -35,5 +35,13 @@ extension UIView {
         mask.path = path.cgPath
         layer.mask = mask
     }
+    
+    func applyDropShadow(x: CGFloat, y: CGFloat, blur: CGFloat, color: CGColor) {
+        self.layer.masksToBounds = true
+        self.layer.shadowColor = color
+        self.layer.shadowOpacity = 0.25
+        self.layer.shadowOffset = CGSize(width: x, height: y)
+        self.layer.shadowRadius = blur / 2
+    }
 
 }

@@ -43,6 +43,8 @@
 "addMaterial.fatalError" = "Could not instantiate AddMaterialViewController";
 "account.identifier" = "AccountViewController";
 "account.fatalError" = "Could not instantiate AccountViewController";
+"editAccount.identifier" = "EditAccountViewController";
+"editAccount.fatalError" = "Could not instantiate EditAccountViewController";
 
 // MARK: - Validation
 "validation.error.validation.email.title" = "Invalid Email";
@@ -81,6 +83,8 @@
 "account.accountName.title" = "account name";
 "account.address.title" = "address";
 "account.logout.title" = "log out";
+"editAccount.name.title" = "new name";
+"editAccount.address.title" = "new address";
 
 // MARK: - Tier
 "tier.free.title" = "Free Tier";

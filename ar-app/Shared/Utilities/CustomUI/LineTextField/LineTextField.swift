@@ -13,6 +13,7 @@ final class LineTextView: UIView {
     private var showPassword = false
     private var fieldType: UITextView.FieldType!
     private let phoneMask = "(XXX) XXX-XXXX"
+    private var isOpen = false
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleTopLayoutConstraint: NSLayoutConstraint!
@@ -38,6 +39,11 @@ final class LineTextView: UIView {
                                      y: superview!.frame.size.height / 2)
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        if isOpen { openTextSpace() }
+    }
+    
     final func setup(title: String?, value: String?, fieldType: UITextView.FieldType, onEndEditing: ((String?)->())?) {
         textView.delegate = self
         textField.delegate = self
@@ -57,7 +63,7 @@ final class LineTextView: UIView {
         if let value = value {
             textView.text = value
             textField.text = value
-            openTextSpace()
+            isOpen = true
         }
     }
     

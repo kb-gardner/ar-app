@@ -24,6 +24,8 @@ class AccountViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        editView.layer.cornerRadius = 25
+        editView.applyDropShadow(x: -5, y: -5, blur: 10, color: UIColor.menuScanDropShadow.cgColor)
         tableView.register(R.nib.accountTableViewCell)
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,12 +36,19 @@ private extension AccountViewController {
     // MARK: - Navigation
     func showTierSelection() {}
     
-    func openEditView(_ field: AccountInfoRow) {
-        editViewBottomConstraint.isActive = true
-        editViewTopConstraint.isActive = false
-        UIView.animate(withDuration: 0.3) { [weak self] in
-            self?.view.layoutIfNeeded()
-        }
+    func openEditView(_ field: AccountInfoRow, _ value: String?) {
+        guard let controller = EditAccountViewController.instantiate(title: field.title, value: value, fieldType: field.type, onSave: { [weak self] newValue in
+            switch field {
+            case .name:
+                self?.user?.name = newValue
+            case .shippingAddress:
+                self?.user?.address = newValue
+            default:
+                break
+            }
+            self?.saveUser()
+        }) else { return }
+        present(controller, animated: true)
     }
     
     func closeEditView() {
@@ -57,18 +66,39 @@ private extension AccountViewController {
     
     func savePaymentInfo() {}
     
-    func saveUser() {}
+    func saveUser() {
+        showHUD()
+        UserNetworkingService.updateUser(user: user) { [weak self] newUser, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.user = newUser
+                    self?.tableView.reloadData()
+                }
+            }
+        }
+    }
     
-    func logout() {}
+    func logout() {
+        showHUD()
+        CognitoNetworkingService.logout { [weak self] error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    AppDelegate.restartApplication()
+                }
+            }
+        }
+    }
     
 }
 
 // MARK: - Table
 extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
-    enum AccountInfoRow: Int, CaseIterable {
-        case tierName, name, shippingAddress, logout
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         AccountInfoRow.allCases.count
     }
@@ -81,29 +111,48 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.accountTableViewCell, for: indexPath)!
         switch AccountInfoRow.allCases[indexPath.section] {
         case .tierName:
-            cell.setup(title: R.string.localizable.accountSubscriptionTitle().uppercased(), text: tiers.first(where: {$0.id == user?.tierId})?.name ?? R.string.localizable.tierFreeTitle(), buttonType: .upgrade) { [weak self] in
+            cell.setup(title: R.string.localizable.accountSubscriptionTitle().uppercased(), text: tiers.first(where: {$0.id == user?.tierId})?.name ?? R.string.localizable.tierFreeTitle(), buttonType: .upgrade, onSelect: { [weak self] in
                 self?.showTierSelection()
-            }
+            })
         case .name:
-            cell.setup(title: R.string.localizable.accountAccountNameTitle().uppercased(), text: user?.name ?? R.string.localizable.none(), buttonType: .edit) { [weak self] in
-                self?.openEditView(.name)
-            }
+            cell.setup(title: R.string.localizable.accountAccountNameTitle().uppercased(), text: user?.name ?? R.string.localizable.none(), buttonType: .edit, onSelect: { [weak self] in
+                self?.openEditView(.name, self?.user?.name)
+            })
         case .shippingAddress:
-            cell.setup(title: R.string.localizable.accountAddressTitle().uppercased(), text: user?.address ?? R.string.localizable.none(), buttonType: .edit) { [weak self] in
-                self?.openEditView(.shippingAddress)
-            }
+            cell.setup(title: R.string.localizable.accountAddressTitle().uppercased(), text: user?.address ?? R.string.localizable.none(), buttonType: .edit, onSelect: { [weak self] in
+                self?.openEditView(.shippingAddress, self?.user?.address)
+            })
         case .logout:
-            cell.setup(title: R.string.localizable.accountLogoutTitle().uppercased())
+            cell.setup(title: R.string.localizable.accountLogoutTitle().uppercased(), accountRow: .logout, onLogout: { [weak self] in
+                self?.logout()
+            })
         }
         return cell
     }
+}
+
+enum AccountInfoRow: Int, CaseIterable {
+    case tierName, name, shippingAddress, logout
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch AccountInfoRow.allCases[indexPath.row] {
-        case .logout:
-            logout()
+    var title: String {
+        switch self {
+        case .name:
+            return R.string.localizable.editAccountNameTitle()
+        case .shippingAddress:
+            return R.string.localizable.editAccountAddressTitle()
         default:
-            break
+            return "New Value"
+        }
+    }
+    
+    var type: UITextView.FieldType {
+        switch self {
+        case .name:
+            return .name
+        case .shippingAddress:
+            return .address
+        default:
+            return .none
         }
     }
 }

@@ -90,12 +90,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 17 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
   struct storyboard {
     /// Storyboard `AccountViewController`.
     static let accountViewController = _R.storyboard.accountViewController()
     /// Storyboard `AddProjectViewController`.
     static let addProjectViewController = _R.storyboard.addProjectViewController()
+    /// Storyboard `EditAccountViewController`.
+    static let editAccountViewController = _R.storyboard.editAccountViewController()
     /// Storyboard `ForgotPasswordViewController`.
     static let forgotPasswordViewController = _R.storyboard.forgotPasswordViewController()
     /// Storyboard `HomeViewController`.
@@ -138,6 +140,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "AddProjectViewController", bundle: ...)`
     static func addProjectViewController(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.addProjectViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "EditAccountViewController", bundle: ...)`
+    static func editAccountViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.editAccountViewController)
     }
     #endif
 
@@ -1915,7 +1924,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 55 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 59 localization keys.
     struct localizable {
       /// Value: Account
       static let accountTitle = Rswift.StringResource(key: "account.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -1933,6 +1942,8 @@ struct R: Rswift.Validatable {
       static let addMaterialFatalError = Rswift.StringResource(key: "addMaterial.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Could not instantiate AddProjectViewController
       static let addProjectFatalError = Rswift.StringResource(key: "addProject.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Could not instantiate EditAccountViewController
+      static let editAccountFatalError = Rswift.StringResource(key: "editAccount.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Could not instantiate ForgotPasswordViewController
       static let forgotPasswordFatalError = Rswift.StringResource(key: "forgotPassword.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Could not instantiate ForgotPasswordViewController
@@ -1959,6 +1970,8 @@ struct R: Rswift.Validatable {
       static let startFatalError = Rswift.StringResource(key: "start.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Could not instantiate TermsViewController
       static let termsFatalError = Rswift.StringResource(key: "terms.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: EditAccountViewController
+      static let editAccountIdentifier = Rswift.StringResource(key: "editAccount.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Enter a valid email and try again
       static let validationErrorValidationEmailMessage = Rswift.StringResource(key: "validation.error.validation.email.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Enter a valid phone number and try again
@@ -2025,6 +2038,10 @@ struct R: Rswift.Validatable {
       static let accountAddressTitle = Rswift.StringResource(key: "account.address.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: log out
       static let accountLogoutTitle = Rswift.StringResource(key: "account.logout.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: new address
+      static let editAccountAddressTitle = Rswift.StringResource(key: "editAccount.address.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: new name
+      static let editAccountNameTitle = Rswift.StringResource(key: "editAccount.name.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: subscription
       static let accountSubscriptionTitle = Rswift.StringResource(key: "account.subscription.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
@@ -2130,6 +2147,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("addProject.fatalError", bundle: bundle, comment: "")
+      }
+
+      /// Value: Could not instantiate EditAccountViewController
+      static func editAccountFatalError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("editAccount.fatalError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "editAccount.fatalError"
+        }
+
+        return NSLocalizedString("editAccount.fatalError", bundle: bundle, comment: "")
       }
 
       /// Value: Could not instantiate ForgotPasswordViewController
@@ -2299,6 +2329,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("terms.fatalError", bundle: bundle, comment: "")
+      }
+
+      /// Value: EditAccountViewController
+      static func editAccountIdentifier(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("editAccount.identifier", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "editAccount.identifier"
+        }
+
+        return NSLocalizedString("editAccount.identifier", bundle: bundle, comment: "")
       }
 
       /// Value: Enter a valid email and try again
@@ -2730,6 +2773,32 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("account.logout.title", bundle: bundle, comment: "")
       }
 
+      /// Value: new address
+      static func editAccountAddressTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("editAccount.address.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "editAccount.address.title"
+        }
+
+        return NSLocalizedString("editAccount.address.title", bundle: bundle, comment: "")
+      }
+
+      /// Value: new name
+      static func editAccountNameTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("editAccount.name.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "editAccount.name.title"
+        }
+
+        return NSLocalizedString("editAccount.name.title", bundle: bundle, comment: "")
+      }
+
       /// Value: subscription
       static func accountSubscriptionTitle(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -2894,6 +2963,9 @@ struct _R: Rswift.Validatable {
       try addProjectViewController.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try editAccountViewController.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try forgotPasswordViewController.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -2976,6 +3048,27 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.addProjectViewController().addProjectViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'addProjectViewController' could not be loaded from storyboard 'AddProjectViewController' as 'AddProjectViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct editAccountViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let editAccountViewController = StoryboardViewControllerResource<EditAccountViewController>(identifier: "EditAccountViewController")
+      let name = "EditAccountViewController"
+
+      func editAccountViewController(_: Void = ()) -> EditAccountViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: editAccountViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Grey-Close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Grey-Close' is used in storyboard 'EditAccountViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.editAccountViewController().editAccountViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editAccountViewController' could not be loaded from storyboard 'EditAccountViewController' as 'EditAccountViewController'.") }
       }
 
       fileprivate init() {}
