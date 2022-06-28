@@ -45,6 +45,13 @@
 		D28CF5522845206C0057C231 /* AddProjectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */; };
 		D28CF555284526FE0057C231 /* SpaceARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28CF554284526FE0057C231 /* SpaceARViewController.swift */; };
 		D28CF557284527640057C231 /* SpaceARViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28CF556284527640057C231 /* SpaceARViewController.storyboard */; };
+		D2983F16286B26D200E0DDF0 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983F15286B26D200E0DDF0 /* UserDefaultsExtension.swift */; };
+		D2983F18286B28AF00E0DDF0 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983F17286B28AF00E0DDF0 /* AppRouter.swift */; };
+		D2983F1B286B321A00E0DDF0 /* TiersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983F1A286B321A00E0DDF0 /* TiersListViewController.swift */; };
+		D2983F1D286B329000E0DDF0 /* TiersListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2983F1C286B329000E0DDF0 /* TiersListViewController.storyboard */; };
+		D2983F1F286B340600E0DDF0 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983F1E286B340600E0DDF0 /* IntExtension.swift */; };
+		D2983F22286B396E00E0DDF0 /* TierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2983F21286B396E00E0DDF0 /* TierTableViewCell.swift */; };
+		D2983F24286B422A00E0DDF0 /* TierTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2983F23286B422A00E0DDF0 /* TierTableViewCell.xib */; };
 		D29DD8C42865DEC600266225 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29DD8C32865DEC600266225 /* EditAccountViewController.swift */; };
 		D29DD8C62865DED600266225 /* EditAccountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29DD8C52865DED600266225 /* EditAccountViewController.storyboard */; };
 		D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */; };
@@ -198,6 +205,13 @@
 		D28CF5512845206C0057C231 /* AddProjectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddProjectViewController.storyboard; sourceTree = "<group>"; };
 		D28CF554284526FE0057C231 /* SpaceARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceARViewController.swift; sourceTree = "<group>"; };
 		D28CF556284527640057C231 /* SpaceARViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpaceARViewController.storyboard; sourceTree = "<group>"; };
+		D2983F15286B26D200E0DDF0 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		D2983F17286B28AF00E0DDF0 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		D2983F1A286B321A00E0DDF0 /* TiersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiersListViewController.swift; sourceTree = "<group>"; };
+		D2983F1C286B329000E0DDF0 /* TiersListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TiersListViewController.storyboard; sourceTree = "<group>"; };
+		D2983F1E286B340600E0DDF0 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		D2983F21286B396E00E0DDF0 /* TierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierTableViewCell.swift; sourceTree = "<group>"; };
+		D2983F23286B422A00E0DDF0 /* TierTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TierTableViewCell.xib; sourceTree = "<group>"; };
 		D29DD8C32865DEC600266225 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		D29DD8C52865DED600266225 /* EditAccountViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditAccountViewController.storyboard; sourceTree = "<group>"; };
 		D2A3C792284A4FBF00449E7E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -492,6 +506,25 @@
 			path = Project;
 			sourceTree = "<group>";
 		};
+		D2983F19286B31FD00E0DDF0 /* Tiers */ = {
+			isa = PBXGroup;
+			children = (
+				D2983F20286B395C00E0DDF0 /* Cells */,
+				D2983F1A286B321A00E0DDF0 /* TiersListViewController.swift */,
+				D2983F1C286B329000E0DDF0 /* TiersListViewController.storyboard */,
+			);
+			path = Tiers;
+			sourceTree = "<group>";
+		};
+		D2983F20286B395C00E0DDF0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D2983F21286B396E00E0DDF0 /* TierTableViewCell.swift */,
+				D2983F23286B422A00E0DDF0 /* TierTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D29DD8C22865DEA000266225 /* EditAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +566,7 @@
 			children = (
 				D2DB1345285CEE2E0051D0A6 /* Info.plist */,
 				D2B2230C283274F4003D2C2D /* AppDelegate.swift */,
+				D2983F17286B28AF00E0DDF0 /* AppRouter.swift */,
 				D2B2230E283274F4003D2C2D /* ViewController.swift */,
 				D2B2232028327AC9003D2C2D /* Shared */,
 				D2B2231F28327AC1003D2C2D /* Modules */,
@@ -553,6 +587,7 @@
 				D28CF553284526C70057C231 /* SpaceAR */,
 				D2B2232728327C63003D2C2D /* Materials */,
 				D2B2232828327C69003D2C2D /* Account */,
+				D2983F19286B31FD00E0DDF0 /* Tiers */,
 				D2B2232928327C6E003D2C2D /* About */,
 				D2B2232428327B90003D2C2D /* Menu */,
 			);
@@ -694,6 +729,8 @@
 				D2DB1341285CECDF0051D0A6 /* UINavigationControllerExtrension.swift */,
 				D2DB1343285CECFC0051D0A6 /* UIImageExtension.swift */,
 				D20F696C286340FC0003DF24 /* UILabelExtension.swift */,
+				D2983F15286B26D200E0DDF0 /* UserDefaultsExtension.swift */,
+				D2983F1E286B340600E0DDF0 /* IntExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1005,10 +1042,12 @@
 				D2C062752847A1930022A6DD /* awsconfiguration.json in Resources */,
 				D2EB898A2850E38E00AC2FBD /* OpenSans_Condensed-ExtraBoldItalic.ttf in Resources */,
 				D28A8F332846540600EF4A15 /* LineTextView.xib in Resources */,
+				D2983F1D286B329000E0DDF0 /* TiersListViewController.storyboard in Resources */,
 				D28A8F2D2846468A00EF4A15 /* MenuTableViewCell.xib in Resources */,
 				D2EB89872850E38E00AC2FBD /* OpenSans_Condensed-BoldItalic.ttf in Resources */,
 				D2EB89972850E38E00AC2FBD /* OpenSans-BoldItalic.ttf in Resources */,
 				D22D32D0283D062E00E80062 /* HomeViewController.storyboard in Resources */,
+				D2983F24286B422A00E0DDF0 /* TierTableViewCell.xib in Resources */,
 				D2EB89832850E38E00AC2FBD /* OpenSans_Condensed-LightItalic.ttf in Resources */,
 				D2EB89962850E38E00AC2FBD /* OpenSans-Regular.ttf in Resources */,
 				D2EB899A2850E38E00AC2FBD /* OpenSans-VariableFont_wdth,wght.ttf in Resources */,
@@ -1166,6 +1205,7 @@
 				D2B2235828328FD0003D2C2D /* UserNetworkingService.swift in Sources */,
 				D211C2BE284E271E00189244 /* AFSessionManager.swift in Sources */,
 				D22D32D3283D193100E80062 /* FieldValidation.swift in Sources */,
+				D2983F16286B26D200E0DDF0 /* UserDefaultsExtension.swift in Sources */,
 				D28A8F30284651BD00EF4A15 /* LineTextField.swift in Sources */,
 				D2B2235F2832A891003D2C2D /* Store.swift in Sources */,
 				D231BAF2283531AA009DD137 /* ForgotPasswordViewController.swift in Sources */,
@@ -1179,12 +1219,15 @@
 				D25C9BED285A135E00324C30 /* UIFontExtension.swift in Sources */,
 				D2B2233028327EAD003D2C2D /* PreviewViewController.swift in Sources */,
 				D2B2235228328FAC003D2C2D /* MaterialNetworkingService.swift in Sources */,
+				D2983F1B286B321A00E0DDF0 /* TiersListViewController.swift in Sources */,
 				D2AED34928578F07007EA80D /* UIButtonExtension.swift in Sources */,
 				D231BAE528352B13009DD137 /* Preview.swift in Sources */,
 				D2EB886E2850D4E000AC2FBD /* PreviewNetworkingService.swift in Sources */,
 				D2313BFA283BB90A004D6C1C /* CognitoNetworkingService.swift in Sources */,
 				D2A6EDED2860A3FC00F577F2 /* HomeCollectionViewCell.swift in Sources */,
 				D231BAF828354FB7009DD137 /* TermsViewController.swift in Sources */,
+				D2983F1F286B340600E0DDF0 /* IntExtension.swift in Sources */,
+				D2983F18286B28AF00E0DDF0 /* AppRouter.swift in Sources */,
 				D20F696D286340FC0003DF24 /* UILabelExtension.swift in Sources */,
 				D2EB88702850D4EE00AC2FBD /* PreviewAPIService.swift in Sources */,
 				D2886AB6286348D400E15F27 /* AccountTableViewCell.swift in Sources */,
@@ -1193,6 +1236,7 @@
 				D2B2234E28328F8D003D2C2D /* TierNetworkingService.swift in Sources */,
 				D2313C02283BE119004D6C1C /* ResetPasswordViewController.swift in Sources */,
 				D2B2234028328D95003D2C2D /* Tier.swift in Sources */,
+				D2983F22286B396E00E0DDF0 /* TierTableViewCell.swift in Sources */,
 				D2B2233A28328D7E003D2C2D /* User.swift in Sources */,
 				D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */,
 				D2C9E9E7284F9686006E3E25 /* AccountViewController.swift in Sources */,

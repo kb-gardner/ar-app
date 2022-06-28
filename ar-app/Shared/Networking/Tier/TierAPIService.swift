@@ -10,20 +10,12 @@ import Alamofire
 import SwiftyJSON
 
 class TierAPIService {
-    func list(params: Parameters) -> DataRequest? {
-        return nil
+    func get(id: String) -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "tiers/\(id)", method: .get, headers: HTTPHeaders.default)
     }
     
-    func get(id: String) -> DataRequest? {
-        return nil
-    }
-    
-    func save(params: Parameters) -> DataRequest? {
-        return nil
-    }
-    
-    func delete(id: String) -> DataRequest? {
-        return nil
+    func list() -> DataRequest {
+        return AFSessionManager.sharedManager.request(Global.ServerAPI.url + "tiers", method: .get, headers: HTTPHeaders.default)
     }
     
 }

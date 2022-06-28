@@ -33,7 +33,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="arrow.backward" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="Back-Arrow-Green" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -204,7 +204,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.9489523768" green="0.94921404119999997" blue="0.94142097229999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="j8G-xq-nDH" secondAttribute="trailing" id="BLz-67-Bft"/>
                             <constraint firstItem="5SG-67-ESb" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Q5F-14-106"/>
@@ -240,8 +240,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back-Arrow-Green" width="63" height="63"/>
         <image name="Example-House-2" width="350" height="225"/>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="checkbox" width="50" height="50"/>
         <image name="envisage-free" width="200" height="200"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>

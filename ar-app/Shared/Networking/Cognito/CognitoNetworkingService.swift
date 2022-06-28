@@ -66,13 +66,7 @@ class CognitoNetworkingService {
         }
     }
     
-    class func logout(completion: ((Error?)->())?) {
-        AWSMobileClient.default().signOut { error in
-            if let error = error {
-                completion?(error)
-            } else {
-                completion?(nil)
-            }
-        }
+    class func logout() {
+        AWSMobileClient.default().signOut()
     }
 }

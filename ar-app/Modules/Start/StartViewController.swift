@@ -28,60 +28,22 @@ class StartViewController: UIViewController {
 }
 
 private extension StartViewController {
-    // MARK: - Navigation
-    func showPreview() {
-        guard let controller = PreviewViewController.instantiate(onSuccess: { [weak self] in
-            self?.showTabBarMenu()
-        }, onShowLogin: { [weak self] in
-            self?.showLogin()
-        }) else { fatalError(R.string.localizable.previewFatalError()) }
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    func showHome() {
-        guard let controller = HomeViewController.instantiate() else { return }
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    func showTabBarMenu() {
-        guard let controller = MenuTabBarController.instantiate() else { return }
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    func showLogin() {
-        guard let controller = LoginViewController.instantiate(onSuccess: { [weak self] in
-            self?.showTabBarMenu()
-        }, onShowSignUp: { [weak self] in
-            self?.showPreview()
-        }) else { return }
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
     // MARK: - Requests
     func requestUser() {
-        CognitoNetworkingService.initSession { [weak self] error in
-            DispatchQueue.main.async {
-                if let id = AWSMobileClient.default().userSub {
-                    UserNetworkingService.getUser(id: id) { user, error in
-                        if let error = error {
-                            print(error)
-                            AWSMobileClient.default().signOut()
-                            self?.showPreview()
-                        } else {
-                            Store.shared.user = user
-                            if AWSMobileClient.default().isSignedIn {
-                                self?.showTabBarMenu()
-                            } else {
-                                self?.showLogin()
-                            }
-                        }
-                    }
-                } else if let _ = AWSMobileClient.default().username {
-                    AWSMobileClient.default().signOut()
-                    self?.showLogin()
+        print(UserDefaults.hasAuth)
+        print(UserDefaults.isAuth)
+        CognitoNetworkingService.initSession { _ in
+            guard let id = AWSMobileClient.default().userSub else {
+                AppRouter.shared.logout()
+                return
+            }
+            UserNetworkingService.getUser(id: id) { user, error in
+                if let error = error {
+                    print(error)
+                    AppRouter.shared.logout()
                 } else {
-                    AWSMobileClient.default().signOut()
-                    self?.showPreview()
+                    Store.shared.user = user
+                    AppRouter.shared.showAppropriateView()
                 }
             }
         }

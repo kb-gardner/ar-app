@@ -45,6 +45,8 @@
 "account.fatalError" = "Could not instantiate AccountViewController";
 "editAccount.identifier" = "EditAccountViewController";
 "editAccount.fatalError" = "Could not instantiate EditAccountViewController";
+"tiersList.identifier" = "TiersListViewController";
+"tiersList.fatalError" = "Could not instantiate TiersListViewController";
 
 // MARK: - Validation
 "validation.error.validation.email.title" = "Invalid Email";

@@ -90,7 +90,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 18 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 19 storyboards.
   struct storyboard {
     /// Storyboard `AccountViewController`.
     static let accountViewController = _R.storyboard.accountViewController()
@@ -128,6 +128,8 @@ struct R: Rswift.Validatable {
     static let startViewController = _R.storyboard.startViewController()
     /// Storyboard `TermsViewController`.
     static let termsViewController = _R.storyboard.termsViewController()
+    /// Storyboard `TiersListViewController`.
+    static let tiersListViewController = _R.storyboard.tiersListViewController()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "AccountViewController", bundle: ...)`
@@ -252,6 +254,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "TermsViewController", bundle: ...)`
     static func termsViewController(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.termsViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "TiersListViewController", bundle: ...)`
+    static func tiersListViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.tiersListViewController)
     }
     #endif
 
@@ -1816,7 +1825,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `AccountTableViewCell`.
     static let accountTableViewCell = _R.nib._AccountTableViewCell()
@@ -1830,6 +1839,8 @@ struct R: Rswift.Validatable {
     static let menuTableViewCell = _R.nib._MenuTableViewCell()
     /// Nib `PreviewCollectionViewCell`.
     static let previewCollectionViewCell = _R.nib._PreviewCollectionViewCell()
+    /// Nib `TierTableViewCell`.
+    static let tierTableViewCell = _R.nib._TierTableViewCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AccountTableViewCell", in: bundle)`
@@ -1879,6 +1890,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TierTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.tierTableViewCell) instead")
+    static func tierTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tierTableViewCell)
+    }
+    #endif
+
     static func accountTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AccountTableViewCell? {
       return R.nib.accountTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AccountTableViewCell
     }
@@ -1903,10 +1922,14 @@ struct R: Rswift.Validatable {
       return R.nib.previewCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PreviewCollectionViewCell
     }
 
+    static func tierTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TierTableViewCell? {
+      return R.nib.tierTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TierTableViewCell
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AccountTableViewCell`.
     static let accountTableViewCell: Rswift.ReuseIdentifier<AccountTableViewCell> = Rswift.ReuseIdentifier(identifier: "AccountTableViewCell")
@@ -1918,13 +1941,15 @@ struct R: Rswift.Validatable {
     static let menuTableViewCell: Rswift.ReuseIdentifier<MenuTableViewCell> = Rswift.ReuseIdentifier(identifier: "MenuTableViewCell")
     /// Reuse identifier `PreviewCollectionViewCell`.
     static let previewCollectionViewCell: Rswift.ReuseIdentifier<PreviewCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PreviewCollectionViewCell")
+    /// Reuse identifier `TierTableViewCell`.
+    static let tierTableViewCell: Rswift.ReuseIdentifier<TierTableViewCell> = Rswift.ReuseIdentifier(identifier: "TierTableViewCell")
 
     fileprivate init() {}
   }
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 59 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 61 localization keys.
     struct localizable {
       /// Value: Account
       static let accountTitle = Rswift.StringResource(key: "account.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -1970,6 +1995,8 @@ struct R: Rswift.Validatable {
       static let startFatalError = Rswift.StringResource(key: "start.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Could not instantiate TermsViewController
       static let termsFatalError = Rswift.StringResource(key: "terms.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Could not instantiate TiersListViewController
+      static let tiersListFatalError = Rswift.StringResource(key: "tiersList.fatalError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: EditAccountViewController
       static let editAccountIdentifier = Rswift.StringResource(key: "editAccount.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Enter a valid email and try again
@@ -2030,6 +2057,8 @@ struct R: Rswift.Validatable {
       static let startIdentifier = Rswift.StringResource(key: "start.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: TermsViewController
       static let termsIdentifier = Rswift.StringResource(key: "terms.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: TiersListViewController
+      static let tiersListIdentifier = Rswift.StringResource(key: "tiersList.identifier", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Your password must contain at least 8 characters including 1 uppercase letter, 1 number, and 1 symbol
       static let validationErrorValidationPasswordMessage = Rswift.StringResource(key: "validation.error.validation.password.message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: account name
@@ -2329,6 +2358,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("terms.fatalError", bundle: bundle, comment: "")
+      }
+
+      /// Value: Could not instantiate TiersListViewController
+      static func tiersListFatalError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tiersList.fatalError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tiersList.fatalError"
+        }
+
+        return NSLocalizedString("tiersList.fatalError", bundle: bundle, comment: "")
       }
 
       /// Value: EditAccountViewController
@@ -2721,6 +2763,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("terms.identifier", bundle: bundle, comment: "")
       }
 
+      /// Value: TiersListViewController
+      static func tiersListIdentifier(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tiersList.identifier", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tiersList.identifier"
+        }
+
+        return NSLocalizedString("tiersList.identifier", bundle: bundle, comment: "")
+      }
+
       /// Value: Your password must contain at least 8 characters including 1 uppercase letter, 1 number, and 1 symbol
       static func validationErrorValidationPasswordMessage(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -2847,6 +2902,7 @@ struct _R: Rswift.Validatable {
       try _AccountTableViewCell.validate()
       try _HomeCollectionViewCell.validate()
       try _LineTextView.validate()
+      try _TierTableViewCell.validate()
     }
 
     struct _AccountTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
@@ -2949,6 +3005,26 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _TierTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = TierTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "TierTableViewCell"
+      let name = "TierTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TierTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TierTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Small-Green-Check-Mark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Small-Green-Check-Mark' is used in nib 'TierTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
@@ -3009,6 +3085,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try termsViewController.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try tiersListViewController.validate()
       #endif
     }
 
@@ -3306,8 +3385,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Back-Arrow-Green", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back-Arrow-Green' is used in storyboard 'SignUpViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Example-House-2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Example-House-2' is used in storyboard 'SignUpViewController', but couldn't be loaded.") }
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "arrow.backward") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'arrow.backward' is used in storyboard 'SignUpViewController', but couldn't be loaded.") } }
         if UIKit.UIImage(named: "checkbox", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkbox' is used in storyboard 'SignUpViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "envisage-free", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'envisage-free' is used in storyboard 'SignUpViewController', but couldn't be loaded.") }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "info.circle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'info.circle' is used in storyboard 'SignUpViewController', but couldn't be loaded.") } }
@@ -3374,6 +3453,27 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.termsViewController().termsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'termsViewController' could not be loaded from storyboard 'TermsViewController' as 'TermsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct tiersListViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "TiersListViewController"
+      let tiersListViewController = StoryboardViewControllerResource<TiersListViewController>(identifier: "TiersListViewController")
+
+      func tiersListViewController(_: Void = ()) -> TiersListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: tiersListViewController)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Grey-Close", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Grey-Close' is used in storyboard 'TiersListViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.tiersListViewController().tiersListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'tiersListViewController' could not be loaded from storyboard 'TiersListViewController' as 'TiersListViewController'.") }
       }
 
       fileprivate init() {}

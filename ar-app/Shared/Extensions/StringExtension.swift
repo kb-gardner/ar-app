@@ -23,6 +23,10 @@ extension String {
       let ssnRegext = "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
       return ssn.range(of: ssnRegext, options: .regularExpression, range: nil, locale: nil) != nil && !self.isEmpty
     }
+    
+    var int: Int? {
+        return Int(self)
+    }
 
     var isValidPhoneNumber: Bool {
         digitsOnly.count == 10

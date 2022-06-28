@@ -32,7 +32,6 @@ class PreviewViewController: UIViewController {
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        requestPreviews()
     }
     
     override func viewDidLoad() {
@@ -42,6 +41,7 @@ class PreviewViewController: UIViewController {
         previewCollection.register(R.nib.previewCollectionViewCell)
         getStartedButton.layer.cornerRadius = 8
         signInButton.layer.cornerRadius = 8
+        requestPreviews()
     }
 }
 

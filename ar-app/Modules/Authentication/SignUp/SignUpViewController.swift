@@ -78,7 +78,7 @@ private extension SignUpViewController {
             self?.user.name = string
         }
         emailField.setup(title: "Email", value: nil, fieldType: .email) { [weak self] string in
-            self?.user.email = string
+            self?.user.email = string?.lowercased()
         }
         phoneField.setup(title: "Phone Number", value: nil, fieldType: .phone) { [weak self] string in
             self?.user.phone = string

@@ -34,7 +34,10 @@ class AccountViewController: UIViewController {
 
 private extension AccountViewController {
     // MARK: - Navigation
-    func showTierSelection() {}
+    func showTierSelection() {
+        guard let controller = TiersListViewController.instantiate() else { return }
+        present(controller, animated: true)
+    }
     
     func openEditView(_ field: AccountInfoRow, _ value: String?) {
         guard let controller = EditAccountViewController.instantiate(title: field.title, value: value, fieldType: field.type, onSave: { [weak self] newValue in
@@ -60,8 +63,6 @@ private extension AccountViewController {
     }
     
     // MARK: - Requests
-    func tiersRequest() {}
-    
     func saveTier() {}
     
     func savePaymentInfo() {}
@@ -76,20 +77,6 @@ private extension AccountViewController {
                 } else {
                     self?.user = newUser
                     self?.tableView.reloadData()
-                }
-            }
-        }
-    }
-    
-    func logout() {
-        showHUD()
-        CognitoNetworkingService.logout { [weak self] error in
-            DispatchQueue.main.async {
-                self?.hideHUD()
-                if let error = error {
-                    print(error)
-                } else {
-                    AppDelegate.restartApplication()
                 }
             }
         }
@@ -123,8 +110,8 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource {
                 self?.openEditView(.shippingAddress, self?.user?.address)
             })
         case .logout:
-            cell.setup(title: R.string.localizable.accountLogoutTitle().uppercased(), accountRow: .logout, onLogout: { [weak self] in
-                self?.logout()
+            cell.setup(title: R.string.localizable.accountLogoutTitle().uppercased(), accountRow: .logout, onLogout: {
+                AppRouter.shared.logout()
             })
         }
         return cell

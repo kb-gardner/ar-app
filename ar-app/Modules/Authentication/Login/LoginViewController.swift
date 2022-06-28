@@ -60,7 +60,7 @@ private extension LoginViewController {
             self?.password = string
         }
         emailField.setup(title: "Email", value: email, fieldType: .email) { [weak self] string in
-            self?.email = string
+            self?.email = string?.lowercased()
         }
     }
     

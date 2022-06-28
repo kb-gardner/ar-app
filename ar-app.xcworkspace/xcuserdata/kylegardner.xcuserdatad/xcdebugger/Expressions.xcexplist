@@ -3,15 +3,15 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in closure #2 in SignUpViewController.requestLogin():SignUpViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "AWSMobileClient.default().userSub">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "PreviewCollectionViewCell.setup(preview:):PreviewCollectionViewCell.swift">
       </ContextState>
       <ContextState
-         contextName = "SignUpViewController.requestSignUp():SignUpViewController.swift">
+         contextName = "MenuTabBarController.viewDidLayoutSubviews():MenuTabBarController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewControllers!">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "LineTextView.layoutSubviews():LineTextField.swift">
@@ -28,10 +28,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MenuTabBarController.viewDidLayoutSubviews():MenuTabBarController.swift">
+         contextName = "UserAPIService.getByEmail(email:):UserAPIService.swift">
          <PersistentStrings>
             <PersistentString
-               value = "viewControllers!">
+               value = "HTTPHeaders.default">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -89,10 +89,10 @@
                value = "AWSMobileClient.default().username">
             </PersistentString>
             <PersistentString
-               value = "AWSMobileClient.default().userSub">
+               value = "AWSMobileClient.default().identityId">
             </PersistentString>
             <PersistentString
-               value = "AWSMobileClient.default().identityId">
+               value = "AWSMobileClient.default().userSub">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -125,6 +125,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #2 in SignUpViewController.requestLogin():SignUpViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AWSMobileClient.default().userSub">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignUpViewController.requestSignUp():SignUpViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in LineTextView.openTextSpace():LineTextField.swift">
          <PersistentStrings>
             <PersistentString
@@ -132,17 +143,6 @@
             </PersistentString>
             <PersistentString
                value = "self?.textField.textContentType">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PreviewCollectionViewCell.setup(preview:):PreviewCollectionViewCell.swift">
-      </ContextState>
-      <ContextState
-         contextName = "UserAPIService.getByEmail(email:):UserAPIService.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "HTTPHeaders.default">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
