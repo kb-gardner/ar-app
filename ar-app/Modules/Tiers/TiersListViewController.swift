@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 class TiersListViewController: UIViewController {
     // MARK: - Properties
@@ -46,7 +47,7 @@ private extension TiersListViewController {
                 if let error = error {
                     print(error)
                 } else {
-                    self?.tiers = tiers ?? []
+                    self?.tiers = tiers?.sorted(by: {($0.rate ?? 0) < ($1.rate ?? 0)}) ?? []
                     self?.tableView.reloadData()
                 }
             }
@@ -63,12 +64,13 @@ extension TiersListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tier = tiers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.tierTableViewCell, for: indexPath)!
-        cell.setup(title: tier.name, image: tier.image, price: tier.rate ?? 0, billingCycle: tier.billingCycle, summary: tier.summary, isRecommended: tier.isRecommended)
+        cell.setup(title: tier.name?.titlecased, image: tier.image, price: tier.rate?.rounded(toPlaces: 2) ?? 0, billingCycle: tier.billingCycle, summary: tier.summary, isRecommended: tier.isRecommended)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // show either pop-up summary or apple subscription integration?
+        tableView.deselectRow(at: indexPath, animated: false)
         let cell = tableView.cellForRow(at: indexPath)
         cell?.contentView.pulsate()
         showSummary()

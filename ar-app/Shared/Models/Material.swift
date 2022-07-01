@@ -12,7 +12,16 @@ struct Material: Codable {
     var name: String?
     var imageUrl: String?
     var userId: String?
-    var isAvailable: Bool? = false
+    var isAvailable: Bool?
+    var bestPrice: Double?
+    var storeName: String?
+    var amountType: String?
+    var color: String?
+    var height: Int?
+    var width: Int?
+    var measurementType: String?
+    var summary: String?
+    var isFavorite: Bool? = false
     
     var isAvailableMessage: String {
         return isAvailable == true ? R.string.localizable.available() : R.string.localizable.not_available()

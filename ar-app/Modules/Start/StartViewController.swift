@@ -30,8 +30,6 @@ class StartViewController: UIViewController {
 private extension StartViewController {
     // MARK: - Requests
     func requestUser() {
-        print(UserDefaults.hasAuth)
-        print(UserDefaults.isAuth)
         CognitoNetworkingService.initSession { _ in
             guard let id = AWSMobileClient.default().userSub else {
                 AppRouter.shared.logout()

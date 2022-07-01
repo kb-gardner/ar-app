@@ -12,4 +12,8 @@ extension UIButton {
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         return bounds.insetBy(dx: -20, dy: -20).contains(point)
     }
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        pulsate()
+    }
 }

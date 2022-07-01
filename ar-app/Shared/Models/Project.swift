@@ -18,4 +18,5 @@ struct Project: Codable {
     var createdAt: Int?
     var userId: String?
     var imageUrl: String?
+    var priceEstimate: Double?
 }

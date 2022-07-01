@@ -4,20 +4,77 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BarlowCondensed-SemiBold.ttf">
+            <string>BarlowCondensed-SemiBold</string>
+        </array>
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Material List View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MaterialListViewController" id="Y6W-OH-hqX" customClass="MaterialListViewController" customModule="ar_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                    <view key="view" contentMode="scaleToFill" id="mbL-Q1-N4u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MATERIALS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbd-ff-8XK">
+                                <rect key="frame" x="15" y="100" width="84" height="26.5"/>
+                                <fontDescription key="fontDescription" name="BarlowCondensed-SemiBold" family="Barlow Condensed" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpace">
+                                        <real key="value" value="1.4299999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rN-xm-MXT">
+                                <rect key="frame" x="349" y="89" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2eY-vm-NfS"/>
+                                    <constraint firstAttribute="width" constant="50" id="c1m-pa-CPg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Small-Scan-Material"/>
+                                <connections>
+                                    <action selector="scanClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sDI-Wp-7Kb"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="By8-um-xdx">
+                                <rect key="frame" x="15" y="146.5" width="384" height="715.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMe-ad-occ">
+                                <rect key="frame" x="130" y="57" width="154" height="28"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d1z-P7-rT3"/>
+                        <color key="backgroundColor" red="0.9489523768" green="0.94921404119999997" blue="0.94142097229999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="YMe-ad-occ" firstAttribute="top" secondItem="mbL-Q1-N4u" secondAttribute="top" constant="57" id="5JA-py-gsO"/>
+                            <constraint firstItem="d1z-P7-rT3" firstAttribute="bottom" secondItem="By8-um-xdx" secondAttribute="bottom" id="66k-eY-hP8"/>
+                            <constraint firstItem="Jbd-ff-8XK" firstAttribute="top" secondItem="mbL-Q1-N4u" secondAttribute="top" constant="100" id="7JL-uO-T97"/>
+                            <constraint firstItem="7rN-xm-MXT" firstAttribute="top" secondItem="mbL-Q1-N4u" secondAttribute="top" constant="89" id="7Ui-dU-pKd"/>
+                            <constraint firstItem="d1z-P7-rT3" firstAttribute="trailing" secondItem="By8-um-xdx" secondAttribute="trailing" constant="15" id="AYZ-QQ-otV"/>
+                            <constraint firstItem="By8-um-xdx" firstAttribute="leading" secondItem="d1z-P7-rT3" secondAttribute="leading" constant="15" id="W8f-kJ-yje"/>
+                            <constraint firstItem="YMe-ad-occ" firstAttribute="centerX" secondItem="d1z-P7-rT3" secondAttribute="centerX" id="aEC-YL-q6L"/>
+                            <constraint firstItem="By8-um-xdx" firstAttribute="top" secondItem="Jbd-ff-8XK" secondAttribute="bottom" constant="20" id="jcz-Ra-Krx"/>
+                            <constraint firstItem="Jbd-ff-8XK" firstAttribute="leading" secondItem="d1z-P7-rT3" secondAttribute="leading" constant="15" id="ySQ-Ld-mRS"/>
+                            <constraint firstItem="d1z-P7-rT3" firstAttribute="trailing" secondItem="7rN-xm-MXT" secondAttribute="trailing" constant="15" id="z7f-tS-dli"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="By8-um-xdx" id="1cS-hZ-KQj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,8 +82,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="Small-Scan-Material" width="63" height="63"/>
     </resources>
 </document>

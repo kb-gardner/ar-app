@@ -31,12 +31,16 @@
 "tabMenu.fatalError" = "Could not instantiate MenuTabBarController";
 "home.identifier" = "HomeViewController";
 "home.fatalError" = "Could not instantiate HomeViewController";
+"project.identifier" = "ProjectViewController";
+"project.fatalError" = "Could not instantiate ProjectViewController";
 "projectList.identifier" = "ProjectListViewController";
 "projectList.fatalError" = "Could not instantiate ProjectListViewController";
 "addProject.identifier" = "AddProjectViewController";
 "addProject.fatalError" = "Could not instantiate AddProjectViewController";
 "spaceAR.identifier" = "SpaceARViewController";
 "spaceAR.fatalError" = "Could not instantiate SpaceARViewController";
+"material.identifier" = "MaterialViewController";
+"material.fatalError" = "Could not instantiate MaterialViewController";
 "materialList.identifier" = "MaterialListViewController";
 "materialList.fatalError" = "Could not instantiate MaterialListViewController";
 "addMaterial.identifier" = "AddMaterialViewController";

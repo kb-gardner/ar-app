@@ -157,6 +157,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.contentView.pulsate()
+    }
+    
 }
 
 

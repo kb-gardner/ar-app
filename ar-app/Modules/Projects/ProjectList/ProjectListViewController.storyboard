@@ -6,6 +6,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BarlowCondensed-SemiBold.ttf">
+            <string>BarlowCondensed-SemiBold</string>
+        </array>
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Project List View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -14,13 +22,66 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4q4-JG-8SL">
+                                <rect key="frame" x="15" y="100" width="79.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="BarlowCondensed-SemiBold" family="Barlow Condensed" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpace">
+                                        <real key="value" value="1.4299999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGg-PW-nH2">
+                                <rect key="frame" x="349" y="89" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dmJ-Wz-tuZ"/>
+                                    <constraint firstAttribute="width" constant="50" id="fbc-Ju-3l0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Orange-Plus-Project-Screen"/>
+                                <connections>
+                                    <action selector="addClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gh0-m9-xBZ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HFv-10-B2s">
+                                <rect key="frame" x="15" y="146.5" width="384" height="715.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fe-02-j5q">
+                                <rect key="frame" x="130" y="57" width="154" height="28"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.9489523768" green="0.94921404119999997" blue="0.94142097229999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="9fe-02-j5q" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="57" id="A7o-s6-u8r"/>
+                            <constraint firstItem="9fe-02-j5q" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="AtJ-c7-T09"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HFv-10-B2s" secondAttribute="trailing" constant="15" id="E1H-7Z-a1K"/>
+                            <constraint firstItem="LGg-PW-nH2" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="89" id="LLh-z7-6ax"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="HFv-10-B2s" secondAttribute="bottom" id="LRt-u8-926"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LGg-PW-nH2" secondAttribute="trailing" constant="15" id="hZN-3W-Xhu"/>
+                            <constraint firstItem="4q4-JG-8SL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="kCb-GE-GWk"/>
+                            <constraint firstItem="HFv-10-B2s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="thu-t9-vcQ"/>
+                            <constraint firstItem="HFv-10-B2s" firstAttribute="top" secondItem="4q4-JG-8SL" secondAttribute="bottom" constant="20" id="vVT-Ym-4cX"/>
+                            <constraint firstItem="4q4-JG-8SL" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="100" id="yfr-36-tdq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="HFv-10-B2s" id="O8d-13-ZYV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Orange-Plus-Project-Screen" width="63" height="63"/>
+    </resources>
 </document>
