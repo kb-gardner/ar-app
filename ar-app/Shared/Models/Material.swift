@@ -17,8 +17,8 @@ struct Material: Codable {
     var storeName: String?
     var amountType: String?
     var color: String?
-    var height: Int?
-    var width: Int?
+    var height: Double?
+    var width: Double?
     var measurementType: String?
     var summary: String?
     var isFavorite: Bool? = false

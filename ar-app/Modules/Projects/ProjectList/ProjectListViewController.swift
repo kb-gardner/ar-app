@@ -76,7 +76,9 @@ extension ProjectListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.contentView.pulsate()
-        // go to project view screen
+        let project = projects[indexPath.row]
+        guard let controller = ProjectViewController.instantiate(project: project) else { return }
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

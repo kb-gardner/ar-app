@@ -24,8 +24,23 @@ class MaterialNetworkingService {
         }
     }
     
-    class func listMaterials(userId: String, completion: (([Material]?, Error?)->())?) {
-        let params: [String: Any] = ["userId": userId]
+    class func listMaterials(userId: String? = nil, projectId: String? = nil, spaceId: String? = nil, color: String? = nil, name: String? = nil, completion: (([Material]?, Error?)->())?) {
+        var params: [String: Any] = ["ftScanKey" : Global.materialFtScanKey]
+        if let userId = userId {
+            params["userId"] = userId
+        }
+        if let projectId = projectId {
+            params["projectId"] = projectId
+        }
+        if let spaceId = spaceId {
+            params["spaceId"] = spaceId
+        }
+        if let color = color {
+            params["color"] = color
+        }
+        if let name = name {
+            params["name"] = name
+        }
         let request = MaterialAPIService().list(params: params).validate()
         request.responseDecodable(of: [Material].self) { response in
             switch response.result {

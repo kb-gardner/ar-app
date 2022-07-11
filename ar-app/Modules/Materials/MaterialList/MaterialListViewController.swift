@@ -37,6 +37,10 @@ class MaterialListViewController: UIViewController {
 
 private extension MaterialListViewController {
     // MARK: - Navigation
+    func showMaterial(material: Material) {
+        guard let controller = MaterialViewController.instantiate(material: material) else { return }
+        navigationController?.pushViewController(controller, animated: true)
+    }
     
     // MARK: - Requests
     func requestMaterials(animated: Bool) {
@@ -76,7 +80,8 @@ extension MaterialListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.contentView.pulsate()
-        // go to material view screen
+        let material = materials[indexPath.row]
+        showMaterial(material: material)
     }
 }
 

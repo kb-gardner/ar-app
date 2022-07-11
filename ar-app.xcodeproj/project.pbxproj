@@ -36,6 +36,12 @@
 		D23EC596286C90310086506F /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23EC595286C90310086506F /* ProjectTableViewCell.swift */; };
 		D23EC598286C91DE0086506F /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D23EC597286C91DE0086506F /* ProjectTableViewCell.xib */; };
 		D25C9BED285A135E00324C30 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25C9BEC285A135E00324C30 /* UIFontExtension.swift */; };
+		D278392D287C49FC00140446 /* ProjectImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D278392C287C49FC00140446 /* ProjectImageCollectionViewCell.swift */; };
+		D278392F287C4AAC00140446 /* ProjectImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D278392E287C4AAC00140446 /* ProjectImageCollectionViewCell.xib */; };
+		D2783931287C4B4E00140446 /* ProjectSpaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783930287C4B4E00140446 /* ProjectSpaceCollectionViewCell.swift */; };
+		D2783933287C4BF200140446 /* ProjectSpaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2783932287C4BF200140446 /* ProjectSpaceCollectionViewCell.xib */; };
+		D2783935287C4D1100140446 /* ProjectMaterialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2783934287C4D1100140446 /* ProjectMaterialCollectionViewCell.swift */; };
+		D2783937287C4D3C00140446 /* ProjectMaterialCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2783936287C4D3C00140446 /* ProjectMaterialCollectionViewCell.xib */; };
 		D2886AB6286348D400E15F27 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2886AB5286348D400E15F27 /* AccountTableViewCell.swift */; };
 		D2886AB828634A8600E15F27 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2886AB728634A8600E15F27 /* AccountTableViewCell.xib */; };
 		D28A8F2B2846457900EF4A15 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */; };
@@ -207,6 +213,12 @@
 		D23EC595286C90310086506F /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		D23EC597286C91DE0086506F /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
 		D25C9BEC285A135E00324C30 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		D278392C287C49FC00140446 /* ProjectImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		D278392E287C4AAC00140446 /* ProjectImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		D2783930287C4B4E00140446 /* ProjectSpaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSpaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2783932287C4BF200140446 /* ProjectSpaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectSpaceCollectionViewCell.xib; sourceTree = "<group>"; };
+		D2783934287C4D1100140446 /* ProjectMaterialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMaterialCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2783936287C4D3C00140446 /* ProjectMaterialCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectMaterialCollectionViewCell.xib; sourceTree = "<group>"; };
 		D2886AB5286348D400E15F27 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		D2886AB728634A8600E15F27 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		D28A8F2A2846457900EF4A15 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -468,6 +480,19 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D278392B287C49E800140446 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D278392C287C49FC00140446 /* ProjectImageCollectionViewCell.swift */,
+				D278392E287C4AAC00140446 /* ProjectImageCollectionViewCell.xib */,
+				D2783930287C4B4E00140446 /* ProjectSpaceCollectionViewCell.swift */,
+				D2783932287C4BF200140446 /* ProjectSpaceCollectionViewCell.xib */,
+				D2783934287C4D1100140446 /* ProjectMaterialCollectionViewCell.swift */,
+				D2783936287C4D3C00140446 /* ProjectMaterialCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		D2886AB4286348BB00E15F27 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +559,7 @@
 		D28CF55828452ABE0057C231 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				D278392B287C49E800140446 /* Cells */,
 				D2F5340B286F2724008314AD /* ProjectViewController.swift */,
 				D2F5340D286F2790008314AD /* ProjectViewController.storyboard */,
 			);
@@ -1105,6 +1131,7 @@
 				D2EB89872850E38E00AC2FBD /* OpenSans_Condensed-BoldItalic.ttf in Resources */,
 				D2EB89972850E38E00AC2FBD /* OpenSans-BoldItalic.ttf in Resources */,
 				D22D32D0283D062E00E80062 /* HomeViewController.storyboard in Resources */,
+				D278392F287C4AAC00140446 /* ProjectImageCollectionViewCell.xib in Resources */,
 				D2983F24286B422A00E0DDF0 /* TierTableViewCell.xib in Resources */,
 				D2EB89832850E38E00AC2FBD /* OpenSans_Condensed-LightItalic.ttf in Resources */,
 				D2EB89962850E38E00AC2FBD /* OpenSans-Regular.ttf in Resources */,
@@ -1125,6 +1152,7 @@
 				D2EB898E2850E38E00AC2FBD /* OpenSans-Italic.ttf in Resources */,
 				D2EB897F2850E38E00AC2FBD /* OpenSans_SemiCondensed-ExtraBoldItalic.ttf in Resources */,
 				D23EC598286C91DE0086506F /* ProjectTableViewCell.xib in Resources */,
+				D2783937287C4D3C00140446 /* ProjectMaterialCollectionViewCell.xib in Resources */,
 				D2EB89A92850E38E00AC2FBD /* OFL.txt in Resources */,
 				D231BAEC28353184009DD137 /* SignUpViewController.storyboard in Resources */,
 				D2EB897E2850E38E00AC2FBD /* OpenSans_SemiCondensed-BoldItalic.ttf in Resources */,
@@ -1156,6 +1184,7 @@
 				D231BAFA28354FBD009DD137 /* TermsViewController.storyboard in Resources */,
 				D2EB89A32850E38E00AC2FBD /* BarlowCondensed-Medium.ttf in Resources */,
 				D2EB89AD2850E38E00AC2FBD /* BarlowCondensed-ExtraBold.ttf in Resources */,
+				D2783933287C4BF200140446 /* ProjectSpaceCollectionViewCell.xib in Resources */,
 				D231BAF4283531B3009DD137 /* ForgotPasswordViewController.storyboard in Resources */,
 				D2EB89742850E38E00AC2FBD /* OpenSans_SemiCondensed-MediumItalic.ttf in Resources */,
 				D2EB89842850E38E00AC2FBD /* OpenSans_Condensed-Bold.ttf in Resources */,
@@ -1261,6 +1290,7 @@
 				D2B2230F283274F4003D2C2D /* ViewController.swift in Sources */,
 				D22D32CE283D05D200E80062 /* HomeViewController.swift in Sources */,
 				D2B2234C28328F82003D2C2D /* TierAPIService.swift in Sources */,
+				D278392D287C49FC00140446 /* ProjectImageCollectionViewCell.swift in Sources */,
 				D2313BFF283BBF18004D6C1C /* StringExtension.swift in Sources */,
 				D231BAE12835202A009DD137 /* PreviewCollectionViewCell.swift in Sources */,
 				D2B2232E28327D15003D2C2D /* StartViewController.swift in Sources */,
@@ -1305,6 +1335,7 @@
 				D2983F22286B396E00E0DDF0 /* TierTableViewCell.swift in Sources */,
 				D2B2233A28328D7E003D2C2D /* User.swift in Sources */,
 				D2B22311283274F4003D2C2D /* Experience.rcproject in Sources */,
+				D2783931287C4B4E00140446 /* ProjectSpaceCollectionViewCell.swift in Sources */,
 				D2C9E9E7284F9686006E3E25 /* AccountViewController.swift in Sources */,
 				D211C2BC284E246C00189244 /* Global.swift in Sources */,
 				D2A3C793284A4FBF00449E7E /* UIViewControllerExtension.swift in Sources */,
@@ -1316,6 +1347,7 @@
 				D2B2234528328F23003D2C2D /* ProjectAPIService.swift in Sources */,
 				D2B2234228328DE5003D2C2D /* ProjectNetworkingService.swift in Sources */,
 				D2B2235428328FB7003D2C2D /* SpaceNetworkingService.swift in Sources */,
+				D2783935287C4D1100140446 /* ProjectMaterialCollectionViewCell.swift in Sources */,
 				D2F53408286F26B1008314AD /* MaterialViewController.swift in Sources */,
 				D2B2235028328F9C003D2C2D /* MaterialAPIService.swift in Sources */,
 				D22D32D6283D221C00E80062 /* LoginOptionTableViewCell.swift in Sources */,

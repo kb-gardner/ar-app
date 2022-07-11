@@ -44,7 +44,7 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="Up-Arrow-Orange"/>
                         <connections>
-                            <action selector="buttonClicked:" destination="QPE-ub-vMn" eventType="touchUpInside" id="DNd-td-3wS"/>
+                            <action selector="buttonClicked:" destination="QPE-ub-vMn" eventType="touchUpInside" id="cYm-FO-Se8"/>
                         </connections>
                     </button>
                 </subviews>

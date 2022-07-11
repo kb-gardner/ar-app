@@ -1843,7 +1843,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
   struct nib {
     /// Nib `AccountTableViewCell`.
     static let accountTableViewCell = _R.nib._AccountTableViewCell()
@@ -1861,6 +1861,12 @@ struct R: Rswift.Validatable {
     static let menuTableViewCell = _R.nib._MenuTableViewCell()
     /// Nib `PreviewCollectionViewCell`.
     static let previewCollectionViewCell = _R.nib._PreviewCollectionViewCell()
+    /// Nib `ProjectImageCollectionViewCell`.
+    static let projectImageCollectionViewCell = _R.nib._ProjectImageCollectionViewCell()
+    /// Nib `ProjectMaterialCollectionViewCell`.
+    static let projectMaterialCollectionViewCell = _R.nib._ProjectMaterialCollectionViewCell()
+    /// Nib `ProjectSpaceCollectionViewCell`.
+    static let projectSpaceCollectionViewCell = _R.nib._ProjectSpaceCollectionViewCell()
     /// Nib `ProjectTableViewCell`.
     static let projectTableViewCell = _R.nib._ProjectTableViewCell()
     /// Nib `TierTableViewCell`.
@@ -1931,6 +1937,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ProjectImageCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.projectImageCollectionViewCell) instead")
+    static func projectImageCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.projectImageCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ProjectMaterialCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.projectMaterialCollectionViewCell) instead")
+    static func projectMaterialCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.projectMaterialCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ProjectSpaceCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.projectSpaceCollectionViewCell) instead")
+    static func projectSpaceCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.projectSpaceCollectionViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "ProjectTableViewCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.projectTableViewCell) instead")
     static func projectTableViewCell(_: Void = ()) -> UIKit.UINib {
@@ -1978,6 +2008,18 @@ struct R: Rswift.Validatable {
       return R.nib.previewCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PreviewCollectionViewCell
     }
 
+    static func projectImageCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProjectImageCollectionViewCell? {
+      return R.nib.projectImageCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProjectImageCollectionViewCell
+    }
+
+    static func projectMaterialCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProjectMaterialCollectionViewCell? {
+      return R.nib.projectMaterialCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProjectMaterialCollectionViewCell
+    }
+
+    static func projectSpaceCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProjectSpaceCollectionViewCell? {
+      return R.nib.projectSpaceCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProjectSpaceCollectionViewCell
+    }
+
     static func projectTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProjectTableViewCell? {
       return R.nib.projectTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProjectTableViewCell
     }
@@ -1989,7 +2031,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 9 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 12 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `AccountTableViewCell`.
     static let accountTableViewCell: Rswift.ReuseIdentifier<AccountTableViewCell> = Rswift.ReuseIdentifier(identifier: "AccountTableViewCell")
@@ -2005,6 +2047,12 @@ struct R: Rswift.Validatable {
     static let menuTableViewCell: Rswift.ReuseIdentifier<MenuTableViewCell> = Rswift.ReuseIdentifier(identifier: "MenuTableViewCell")
     /// Reuse identifier `PreviewCollectionViewCell`.
     static let previewCollectionViewCell: Rswift.ReuseIdentifier<PreviewCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PreviewCollectionViewCell")
+    /// Reuse identifier `ProjectImageCollectionViewCell`.
+    static let projectImageCollectionViewCell: Rswift.ReuseIdentifier<ProjectImageCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "ProjectImageCollectionViewCell")
+    /// Reuse identifier `ProjectMaterialCollectionViewCell`.
+    static let projectMaterialCollectionViewCell: Rswift.ReuseIdentifier<ProjectMaterialCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "ProjectMaterialCollectionViewCell")
+    /// Reuse identifier `ProjectSpaceCollectionViewCell`.
+    static let projectSpaceCollectionViewCell: Rswift.ReuseIdentifier<ProjectSpaceCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "ProjectSpaceCollectionViewCell")
     /// Reuse identifier `ProjectTableViewCell`.
     static let projectTableViewCell: Rswift.ReuseIdentifier<ProjectTableViewCell> = Rswift.ReuseIdentifier(identifier: "ProjectTableViewCell")
     /// Reuse identifier `TierTableViewCell`.
@@ -3174,6 +3222,48 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _ProjectImageCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ProjectImageCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ProjectImageCollectionViewCell"
+      let name = "ProjectImageCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProjectImageCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProjectImageCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ProjectMaterialCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ProjectMaterialCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ProjectMaterialCollectionViewCell"
+      let name = "ProjectMaterialCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProjectMaterialCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProjectMaterialCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ProjectSpaceCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ProjectSpaceCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ProjectSpaceCollectionViewCell"
+      let name = "ProjectSpaceCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProjectSpaceCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProjectSpaceCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _ProjectTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
       typealias ReusableType = ProjectTableViewCell
 
@@ -3479,6 +3569,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Back-Arrow-Green", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back-Arrow-Green' is used in storyboard 'MaterialViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Favorite-Not-Selected-Large", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Favorite-Not-Selected-Large' is used in storyboard 'MaterialViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "More-Detail-Screens", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'More-Detail-Screens' is used in storyboard 'MaterialViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.materialViewController().materialViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'materialViewController' could not be loaded from storyboard 'MaterialViewController' as 'MaterialViewController'.") }
@@ -3582,6 +3675,10 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "Add-Note-Orange", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Add-Note-Orange' is used in storyboard 'ProjectViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Back-Arrow-Green", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back-Arrow-Green' is used in storyboard 'ProjectViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "More-Detail-Screens", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'More-Detail-Screens' is used in storyboard 'ProjectViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Orange-Plus-Home", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Orange-Plus-Home' is used in storyboard 'ProjectViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.projectViewController().projectViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'projectViewController' could not be loaded from storyboard 'ProjectViewController' as 'ProjectViewController'.") }

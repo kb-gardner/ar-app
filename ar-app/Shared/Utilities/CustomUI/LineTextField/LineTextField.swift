@@ -153,6 +153,8 @@ extension LineTextView: UITextFieldDelegate {
         return true
     }
     
+    
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.hasText {
             switch fieldType {

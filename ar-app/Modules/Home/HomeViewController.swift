@@ -63,6 +63,18 @@ private extension HomeViewController {
     
     func showNewProjectView() {}
     
+    func showProject(project: Project) {
+        guard let controller = ProjectViewController.instantiate(project: project) else { return }
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func showMaterial(material: Material) {
+        guard let controller = MaterialViewController.instantiate(material: material) else { return }
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func showSpaceAR(space: Space) {}
+    
     // MARK: - Requests
     func requestCollections(animated: Bool) {
         guard let id = Store.shared.user?.id else { return }
@@ -160,6 +172,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.contentView.pulsate()
+        switch collectionView {
+        case projectsCollection:
+            let project = projects[indexPath.row]
+            showProject(project: project)
+        case spacesCollection:
+            let space = spaces[indexPath.row]
+            showSpaceAR(space: space)
+        case materialsCollection:
+            let material = materials[indexPath.row]
+            showMaterial(material: material)
+        default:
+            break
+        }
     }
     
 }

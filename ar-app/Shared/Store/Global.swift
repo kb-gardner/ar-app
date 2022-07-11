@@ -18,4 +18,6 @@ class Global {
         }
     }
     
+    static var materialFtScanKey = "can-scan"
+    
 }

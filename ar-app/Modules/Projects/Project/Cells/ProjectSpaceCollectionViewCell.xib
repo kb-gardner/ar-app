@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProjectSpaceCollectionViewCell" id="8Je-G6-bgk" customClass="ProjectSpaceCollectionViewCell" customModule="ar_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="85" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C72-K5-ngn">
+                <rect key="frame" x="0.0" y="0.0" width="85" height="110"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sJW-rg-4SM">
+                        <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="Aij-sa-zvC"/>
+                            <constraint firstAttribute="height" constant="85" id="BlQ-sQ-Hdr"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Space Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x45-pE-4Nm">
+                        <rect key="frame" x="0.0" y="85" width="85" height="25"/>
+                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="12"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="x45-pE-4Nm" secondAttribute="bottom" id="HQe-cN-CFp"/>
+                    <constraint firstItem="x45-pE-4Nm" firstAttribute="top" secondItem="sJW-rg-4SM" secondAttribute="bottom" id="TT0-0J-nHD"/>
+                    <constraint firstItem="sJW-rg-4SM" firstAttribute="centerX" secondItem="C72-K5-ngn" secondAttribute="centerX" id="YVd-T9-GHb"/>
+                    <constraint firstItem="sJW-rg-4SM" firstAttribute="top" secondItem="C72-K5-ngn" secondAttribute="top" id="kas-29-FA7"/>
+                    <constraint firstItem="x45-pE-4Nm" firstAttribute="leading" secondItem="C72-K5-ngn" secondAttribute="leading" id="t7T-tu-v1g"/>
+                    <constraint firstAttribute="trailing" secondItem="x45-pE-4Nm" secondAttribute="trailing" id="weZ-j8-a5G"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="279" height="172"/>
+            <connections>
+                <outlet property="nameLabel" destination="x45-pE-4Nm" id="pfC-od-MGZ"/>
+                <outlet property="spaceImageView" destination="sJW-rg-4SM" id="lEh-9N-yqw"/>
+            </connections>
+            <point key="canvasLocation" x="61.594202898550726" y="31.473214285714285"/>
+        </collectionViewCell>
+    </objects>
+</document>

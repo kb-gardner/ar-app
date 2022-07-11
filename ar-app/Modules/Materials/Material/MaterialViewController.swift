@@ -16,6 +16,8 @@ class MaterialViewController: UIViewController {
     private var materialOptions = [Material]()
     
     // MARK: - Outlets
+    @IBOutlet var scrollContentView: UIView!
+    @IBOutlet var scrollViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var materialImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
@@ -27,8 +29,22 @@ class MaterialViewController: UIViewController {
     @IBOutlet var similarCollection: UICollectionView!
     
     // MARK: - Actions
+    @IBAction func backClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func favoriteClicked(_ sender: Any) {
+        material.isFavorite?.toggle()
+        favoriteButton.setImage(material.isFavorite == true ? R.image.favoriteSelectedLarge() : R.image.favoriteNotSelectedLarge(), for: .normal)
+    }
     
     // MARK: - Methods
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        requestMaterialOptions()
+        requestSimilarMaterials()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         optionsCollection.register(R.nib.materialCollectionViewCell)
@@ -37,6 +53,7 @@ class MaterialViewController: UIViewController {
         optionsCollection.dataSource = self
         similarCollection.delegate = self
         similarCollection.dataSource = self
+        materialImageView.layer.cornerRadius = 15
         reloadData()
     }
 }
@@ -48,8 +65,8 @@ private extension MaterialViewController {
         }
         nameLabel.text = material.name
         priceLabel.text = "$\(material.bestPrice?.rounded(toPlaces: 2) ?? 0.00)"
-        amountTypeLabel.text = material.amountType
-        colorSizeLabel.text = "\(material.color ?? "No Color Specified") - \(material.width ?? 0)\(material.measurementType ?? "") x \(material.height ?? 0)\(material.measurementType ?? "")"
+        amountTypeLabel.text = "/\(material.amountType ?? "No Grouping Specified")"
+        colorSizeLabel.text = "\(material.color?.titlecased ?? "No Color Specified") - \(material.width?.rounded(toPlaces: 2) ?? 0)\(material.measurementType ?? "") x \(material.height?.rounded(toPlaces: 2) ?? 0)\(material.measurementType ?? "")"
         summaryLabel.text = material.summary
         favoriteButton.setImage(material.isFavorite == true ? R.image.favoriteSelectedLarge() : R.image.favoriteNotSelectedLarge(), for: .normal)
     }
@@ -58,11 +75,33 @@ private extension MaterialViewController {
     
     // MARK: - Requests
     func requestSimilarMaterials() {
-        
+        showHUD()
+        MaterialNetworkingService.listMaterials(color: material.color) { [weak self] materials, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.similarMaterials = materials ?? []
+                    self?.similarCollection.reloadData()
+                }
+            }
+        }
     }
     
     func requestMaterialOptions() {
-        
+        showHUD()
+        MaterialNetworkingService.listMaterials(name: material.name) { [weak self] materials, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.materialOptions = materials ?? []
+                    self?.optionsCollection.reloadData()
+                }
+            }
+        }
     }
 }
 
@@ -83,16 +122,41 @@ extension MaterialViewController: UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.materialCollectionViewCell, for: indexPath)!
         switch collectionView {
         case optionsCollection:
+            let material = materialOptions[indexPath.row]
+            cell.setup(imageUrl: material.imageUrl, storeName: material.storeName, price: material.bestPrice?.rounded(toPlaces: 2) ?? 0, amountType: material.amountType) { [weak self] in
+                // add to cart
+            }
             return cell
         case similarCollection:
+            let material = similarMaterials[indexPath.row]
+            cell.setup(imageUrl: material.imageUrl, storeName: material.storeName, price: material.bestPrice?.rounded(toPlaces: 2) ?? 0, amountType: material.amountType) { [weak self] in
+                // add to cart
+            }
             return cell
         default:
             return UICollectionViewCell()
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case optionsCollection:
+            let material = materialOptions[indexPath.row]
+            self.material = material
+            reloadData()
+        case similarCollection:
+            let material = similarMaterials[indexPath.row]
+            self.material = material
+            reloadData()
+        default:
+            break
+        }
+        requestMaterialOptions()
+        requestSimilarMaterials()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 125, height: 125)
+        return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
     }
 }
 
