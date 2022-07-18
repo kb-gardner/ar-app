@@ -34,6 +34,10 @@ class MenuTabBarController: UITabBarController {
         customTabBar.frame.origin.y = view.frame.height - 73
         setupScanButton()
     }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        tabBar.pulsate()
+    }
 }
 
 private extension MenuTabBarController {

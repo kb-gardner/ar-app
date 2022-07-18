@@ -7,6 +7,7 @@
 
 import Foundation
 import AWSMobileClient
+import AWSCognitoIdentityProvider
 
 class CognitoNetworkingService {
     class func signUp(username: String, password: String, email: String, attributes: [String: String], completion: @escaping ((Error?)->())) {
@@ -28,6 +29,8 @@ class CognitoNetworkingService {
             }
         }
     }
+    
+    class func federatedLogin() {}
     
     class func forgotPassword(email: String, completion: @escaping ((Error?)->())) {
         AWSMobileClient.default().forgotPassword(username: email) { result, error in

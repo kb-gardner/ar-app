@@ -24,8 +24,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sJW-rg-4SM">
                         <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="85" id="Aij-sa-zvC"/>
-                            <constraint firstAttribute="height" constant="85" id="BlQ-sQ-Hdr"/>
+                            <constraint firstAttribute="width" secondItem="sJW-rg-4SM" secondAttribute="height" multiplier="1:1" id="jdS-r5-B1O"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Space Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x45-pE-4Nm">
@@ -36,9 +35,11 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="sJW-rg-4SM" firstAttribute="leading" secondItem="C72-K5-ngn" secondAttribute="leading" id="7zb-pF-0Ch"/>
                     <constraint firstAttribute="bottom" secondItem="x45-pE-4Nm" secondAttribute="bottom" id="HQe-cN-CFp"/>
                     <constraint firstItem="x45-pE-4Nm" firstAttribute="top" secondItem="sJW-rg-4SM" secondAttribute="bottom" id="TT0-0J-nHD"/>
                     <constraint firstItem="sJW-rg-4SM" firstAttribute="centerX" secondItem="C72-K5-ngn" secondAttribute="centerX" id="YVd-T9-GHb"/>
+                    <constraint firstAttribute="trailing" secondItem="sJW-rg-4SM" secondAttribute="trailing" id="cm0-Yf-lqr"/>
                     <constraint firstItem="sJW-rg-4SM" firstAttribute="top" secondItem="C72-K5-ngn" secondAttribute="top" id="kas-29-FA7"/>
                     <constraint firstItem="x45-pE-4Nm" firstAttribute="leading" secondItem="C72-K5-ngn" secondAttribute="leading" id="t7T-tu-v1g"/>
                     <constraint firstAttribute="trailing" secondItem="x45-pE-4Nm" secondAttribute="trailing" id="weZ-j8-a5G"/>

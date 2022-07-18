@@ -75,7 +75,7 @@
          contextName = "closure #1 in closure #1 in PreviewViewController.requestPreviews():PreviewViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in static UserNetworkingService.getUserByEmail(email:completion:):UserNetworkingService.swift">
+         contextName = "closure #1 in closure #1 in ProjectViewController.requestSpaces():ProjectViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #1 in LoginViewController.requestUser():LoginViewController.swift">
@@ -86,7 +86,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in ProjectViewController.requestSpaces():ProjectViewController.swift">
+         contextName = "closure #1 in static UserNetworkingService.getUserByEmail(email:completion:):UserNetworkingService.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in static UserNetworkingService.createUser(user:completion:):UserNetworkingService.swift">
@@ -99,6 +99,17 @@
             </PersistentString>
             <PersistentString
                value = "textView.textContentType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static ResetPasswordViewController.instantiate(email:onSuccess:onFailure:):ResetPasswordViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "R.string.localizable.resetPasswordIdentifier()">
+            </PersistentString>
+            <PersistentString
+               value = "R.storyboard.resetPasswordViewController.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -153,10 +164,10 @@
                value = "AWSMobileClient.default().username">
             </PersistentString>
             <PersistentString
-               value = "AWSMobileClient.default().userSub">
+               value = "AWSMobileClient.default().identityId">
             </PersistentString>
             <PersistentString
-               value = "AWSMobileClient.default().identityId">
+               value = "AWSMobileClient.default().userSub">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

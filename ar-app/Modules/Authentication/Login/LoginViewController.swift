@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import AWSMobileClient
+import AWSFacebookSignIn
+import AWSGoogleSignIn
 
 class LoginViewController: UIViewController {
     // MARK: - Properties
@@ -116,16 +118,41 @@ private extension LoginViewController {
     
     func requestSignInApple() {}
     
-    func requestSignInGoogle() {}
+    func requestSignInGoogle() {
+        showHUD()
+        AWSGoogleSignInProvider().login { [weak self] response, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.onSuccess?()
+                }
+            }
+        }
+    }
     
-    func requestSignInFacebook() {}
+    func requestSignInFacebook() {
+        showHUD()
+        AWSFacebookSignInProvider().login { [weak self] response, error in
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.onSuccess?()
+                }
+            }
+        }
+    }
     
 }
 
+enum LoginOptions: CaseIterable {
+    case google, facebook, apple
+}
+
 extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
-    enum LoginOptions: CaseIterable {
-        case google, facebook, apple
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return LoginOptions.allCases.count
@@ -145,7 +172,8 @@ extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.pulsate()
         switch LoginOptions.allCases[indexPath.row] {
         case .apple:
             requestSignInApple()

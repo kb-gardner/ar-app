@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-envisage-dev-63545-authRole",
+      "UnauthRoleArn": "arn:aws:iam::648634448316:role/amplify-envisage-dev-63545-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::648634448316:role/amplify-envisage-dev-63545-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-envisage-dev-63545-deployment",
+      "UnauthRoleName": "amplify-envisage-dev-63545-unauthRole",
+      "StackName": "amplify-envisage-dev-63545",
+      "StackId": "arn:aws:cloudformation:us-west-2:648634448316:stack/amplify-envisage-dev-63545/26889620-0696-11ed-a29a-02f619755317",
+      "AmplifyAppId": "dg3meujzmh8mb"
+    },
+    "categories": {
+      "auth": {
+        "EnvisageAuth": {
+          "facebookAppId": "1590059598055524",
+          "googleClientId": "232202312813-7r5retmpq7svqho8129hbk599jo3547r.apps.googleusercontent.com",
+          "googleIos": "232202312813-i0ap8f4mhk85led7gqk7i2phaclfo9bd.apps.googleusercontent.com",
+          "appleAppId": "com.kylegardner.Envisage"
+        }
+      }
+    }
+  }
+}

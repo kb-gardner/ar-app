@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Images View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ImagesViewController" id="Y6W-OH-hqX" customClass="ImagesViewController" customModule="ar_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zd-9a-aaS">
+                                <rect key="frame" x="28" y="23" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="PR8-hU-CaV"/>
+                                    <constraint firstAttribute="width" constant="15" id="oBL-ze-yBF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Grey-Close"/>
+                                <connections>
+                                    <action selector="closeClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CjK-RG-4al"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="25U-i6-nfO">
+                                <rect key="frame" x="0.0" y="61" width="414" height="801"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LnN-AC-nXu">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="25U-i6-nfO" secondAttribute="bottom" id="0pe-el-gjs"/>
+                            <constraint firstItem="25U-i6-nfO" firstAttribute="top" secondItem="5zd-9a-aaS" secondAttribute="bottom" constant="23" id="L1z-KI-agU"/>
+                            <constraint firstItem="5zd-9a-aaS" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="23" id="k5W-Zu-D7v"/>
+                            <constraint firstItem="5zd-9a-aaS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="sW4-iH-j06"/>
+                            <constraint firstItem="25U-i6-nfO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wnN-BO-3le"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="25U-i6-nfO" secondAttribute="trailing" id="x4W-EU-395"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="5zd-9a-aaS" id="6wo-P8-dIG"/>
+                        <outlet property="collection" destination="25U-i6-nfO" id="ZRg-V2-EG4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Grey-Close" width="24" height="24"/>
+    </resources>
+</document>

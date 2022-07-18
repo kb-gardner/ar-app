@@ -20,4 +20,6 @@ struct Project: Codable {
     var imageUrl: String?
     var priceEstimate: Double?
     var note: String?
+    var areaSqrFt: Double?
+    var wasteFactorPercent: Int?
 }

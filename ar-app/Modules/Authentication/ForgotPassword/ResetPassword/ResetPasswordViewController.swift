@@ -13,12 +13,15 @@ class ResetPasswordViewController: UIViewController {
     // MARK: - Properties
     private var onSuccess: ((String?)->())?
     private var onFailure: (()->())?
-    private var email: String?
+    private var email: String!
+    private var code: String?
+    private var password: String?
+    private var confirmedPassword: String?
     
     // MARK: - Outlets
-    @IBOutlet var codeField: UITextField!
-    @IBOutlet var passwordField: UITextField!
-    @IBOutlet var confirmField: UITextField!
+    @IBOutlet var codeView: UIView!
+    @IBOutlet var passwordView: UIView!
+    @IBOutlet var confirmView: UIView!
     @IBOutlet var signInButton: UIButton!
     
     // MARK: - Actions
@@ -26,27 +29,49 @@ class ResetPasswordViewController: UIViewController {
         requestPasswordChange()
     }
     
+    @IBAction func closeClicked(_ sender: Any) {
+        onFailure?()
+        dismiss(animated: true)
+    }
+    
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        signInButton.layer.cornerRadius = 8
+        setupTextViews()
     }
 }
 
 private extension ResetPasswordViewController {
+    func setupTextViews() {
+        let codeField: LineTextView = LineTextView.fromNib()
+        codeView.addSubview(codeField)
+        let passwordField: LineTextView = LineTextView.fromNib()
+        passwordView.addSubview(passwordField)
+        let confirmField: LineTextView = LineTextView.fromNib()
+        confirmView.addSubview(confirmField)
+        codeField.setup(title: "Code", value: nil, fieldType: .code) { [weak self] string in
+            self?.code = string?.lowercased()
+        }
+        passwordField.setup(title: "New Password", value: nil, fieldType: .password) { [weak self] string in
+            self?.password = string?.lowercased()
+        }
+        confirmField.setup(title: "Confirm Password", value: nil, fieldType: .password) { [weak self] string in
+            self?.confirmedPassword = string?.lowercased()
+        }
+    }
+    
     // MARK: - Navigation
     
     // MARK: - Requests
     func requestPasswordChange() {
-        guard let email = email,
-              codeField.text?.isEmpty == false,
-              passwordField.text?.isValidPassword == true,
-              confirmField.text?.isValidPassword == true else {
-            let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-            present(alert, animated: true)
-            return
-        }
-        CognitoNetworkingService.submitForgotPasswordCode(email: email, password: passwordField.text!, code: codeField.text!) { [weak self] error in
+        guard FieldValidation.validateFields(password: password, confirmPassword: confirmedPassword, authCode: code, checkPassword: true, checkConfirmPassword: true, checkAuthCode: true, completion: { alert in
+            if let alert = alert { present(alert, animated: true) }
+        }) else { return }
+        showHUD()
+        CognitoNetworkingService.submitForgotPasswordCode(email: email, password: password!, code: code!) { [weak self] error in
             DispatchQueue.main.async {
+                self?.hideHUD()
                 if let error = error as? AWSMobileClientError {
                     let alert = UIAlertController(title: error.errorMessage, message: nil, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .default) { _ in
@@ -54,7 +79,8 @@ private extension ResetPasswordViewController {
                     })
                     self?.present(alert, animated: true)
                 } else {
-                    self?.onSuccess?(self?.passwordField.text)
+                    self?.onSuccess?(self?.password)
+                    self?.dismiss(animated: true)
                 }
             }
         }
@@ -68,6 +94,7 @@ extension ResetPasswordViewController {
         let controller = UIStoryboard(name: R.storyboard.resetPasswordViewController.name, bundle: nil).instantiateViewController(withIdentifier: R.string.localizable.resetPasswordIdentifier()) as? ResetPasswordViewController
         controller?.onSuccess = onSuccess
         controller?.onFailure = onFailure
+        controller?.email = email
         return controller
     }
 }

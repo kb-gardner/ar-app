@@ -1,0 +1,52 @@
+{
+    "UserAgent": "aws-amplify/cli",
+    "Version": "0.1.0",
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-west-2:ef75a6ef-01c6-4a82-8b1a-30e24bc7b6a0",
+                "Region": "us-west-2"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-west-2_52vJzagrt",
+            "AppClientId": "28kvms8pmuv9b0icvi0ug4mijs",
+            "Region": "us-west-2"
+        }
+    },
+    "GoogleSignIn": {
+        "Permissions": "email,profile,openid",
+        "ClientId-WebApp": "232202312813-7r5retmpq7svqho8129hbk599jo3547r.apps.googleusercontent.com",
+        "ClientId-iOS": "232202312813-i0ap8f4mhk85led7gqk7i2phaclfo9bd.apps.googleusercontent.com"
+    },
+    "FacebookSignIn": {
+        "AppId": "1590059598055524",
+        "Permissions": "public_profile"
+    },
+    "Auth": {
+        "Default": {
+            "authenticationFlowType": "USER_SRP_AUTH",
+            "socialProviders": [],
+            "usernameAttributes": [],
+            "signupAttributes": [
+                "EMAIL"
+            ],
+            "passwordProtectionSettings": {
+                "passwordPolicyMinLength": 8,
+                "passwordPolicyCharacters": []
+            },
+            "mfaConfiguration": "OFF",
+            "mfaTypes": [
+                "SMS"
+            ],
+            "verificationMechanisms": [
+                "PHONE_NUMBER"
+            ]
+        }
+    }
+}

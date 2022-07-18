@@ -49,14 +49,13 @@ class EditAccountViewController: UIViewController {
         } else {
             let valueField: LineTextView = LineTextView.fromNib()
             valueView.addSubview(valueField)
-            valueField.setup(title: titleText, value: value, fieldType: fieldType) { [weak self] string in
+            valueField.setup(title: titleText?.titlecased, value: value, fieldType: fieldType) { [weak self] string in
                 self?.value = string
             }
             textView.isHidden = true
             valueView.isHidden = false
             saveButtonTopLineViewConstraint.constant = 50
         }
-        view.layoutIfNeeded()
     }
 }
 
@@ -73,9 +72,14 @@ private extension EditAccountViewController {
 
 extension EditAccountViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        if textView.contentSize.height < 150 {
+        if textView.contentSize.height < 170 {
             textView.sizeToFit()
         }
+        value = textView.text
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        return textView.text.components(separatedBy: " ").count <= 60 || text == ""
     }
 }
 

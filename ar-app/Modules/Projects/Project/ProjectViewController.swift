@@ -23,6 +23,8 @@ class ProjectViewController: UIViewController {
     @IBOutlet var noteLabel: UILabel!
     @IBOutlet var spacesCollection: UICollectionView!
     @IBOutlet var materialsCollection: UICollectionView!
+    @IBOutlet var buildSummaryButton: UIButton!
+    @IBOutlet var orderButton: UIButton!
     
     // MARK: - Actions
     @IBAction func backClicked(_ sender: Any) {
@@ -45,6 +47,14 @@ class ProjectViewController: UIViewController {
         // show add material
     }
     
+    @IBAction func buildSummaryClicked(_ sender: Any) {
+        showBuildSummary()
+    }
+    
+    @IBAction func orderClicked(_ sender: Any) {
+        // show cart
+    }
+    
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -55,7 +65,9 @@ class ProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scheduleButton.layer.cornerRadius = 8
-        noteLabel.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(showNoteEdit)))
+        buildSummaryButton.layer.cornerRadius = 8
+        orderButton.layer.cornerRadius = 8
+        noteLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showNoteEdit)))
         spacesCollection.register(R.nib.projectSpaceCollectionViewCell)
         materialsCollection.register(R.nib.projectMaterialCollectionViewCell)
         projectImageCollection.register(R.nib.projectImageCollectionViewCell)
@@ -85,6 +97,11 @@ private extension ProjectViewController {
         present(controller, animated: true)
     }
     
+    func showBuildSummary() {
+        guard let controller = BuildSummaryViewController.instantiate(project: project) else { return }
+        present(controller, animated: true)
+    }
+    
     func showMaterialList() {
         
     }
@@ -93,8 +110,11 @@ private extension ProjectViewController {
         
     }
     
-    func showImageCollection() {
-        
+    func showImageCollection(imageUrl: String) {
+        project.imageUrls?.removeAll(where: {$0 == imageUrl})
+        project.imageUrls?.insert(imageUrl, at: 0)
+        guard let urls = project.imageUrls, let controller = ImagesViewController.instantiate(imageUrls: urls) else { return }
+        present(controller, animated: true)
     }
     
     // MARK: - Requests
@@ -194,8 +214,8 @@ extension ProjectViewController: UICollectionViewDelegate, UICollectionViewDataS
             guard let controller = MaterialViewController.instantiate(material: material) else { return }
             navigationController?.pushViewController(controller, animated: true)
         case projectImageCollection:
-            let image = project.imageUrls?[indexPath.row]
-            // show images collection screen
+            guard let imageUrl = project.imageUrls?[indexPath.row] else { return }
+            showImageCollection(imageUrl: imageUrl)
         default:
             break
         }
@@ -204,11 +224,11 @@ extension ProjectViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case spacesCollection:
-            return CGSize(width: 85, height: 110)
+            return CGSize(width: materialsCollection.frame.height, height: collectionView.frame.height)
         case materialsCollection:
-            return CGSize(width: 85, height: 85)
+            return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
         case projectImageCollection:
-            return CGSize(width: 240, height: 200)
+            return CGSize(width: 300, height: 170)
         default:
             break
         }
@@ -222,6 +242,11 @@ extension ProjectViewController: UICollectionViewDelegate, UICollectionViewDataS
         default:
             return 20
         }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
+        pageControl.currentPage = Int(pageNumber)
     }
 }
 

@@ -13,5 +13,9 @@ target 'ar-app' do
   pod 'SwiftyJSON'
   pod 'IQKeyboardManagerSwift'
   pod 'SVProgressHUD'
+  pod 'AWSFacebookSignIn'
+  pod 'AWSGoogleSignIn'
+  pod 'GoogleSignIn', '~> 4.0'
+  
 
 end

@@ -11,5 +11,31 @@
 	<string>UIStatusBarStyleDarkContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb1590059598055524</string>
+        <string>com.googleusercontent.apps.232202312813-i0ap8f4mhk85led7gqk7i2phaclfo9bd</string>
+      </array>
+      </dict>
+    </array>
+    
+    <key>FacebookAppID</key>
+    <string>1590059598055524</string>
+    <key>FacebookClientToken</key>
+    <string>2dc245344d28fdf0b584b42065362e9e</string>
+    <key>FacebookDisplayName</key>
+    <string>Envisage</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
 </dict>
 </plist>

@@ -8,11 +8,42 @@ PODS:
   - AWSCognitoIdentityProviderASF (2.27.9):
     - AWSCore (= 2.27.9)
   - AWSCore (2.27.9)
+  - AWSFacebookSignIn (2.27.9):
+    - AWSAuthCore (= 2.27.9)
+    - AWSCore (= 2.27.9)
+    - FBSDKCoreKit (= 9.0)
+    - FBSDKLoginKit (= 9.0)
+  - AWSGoogleSignIn (2.27.9):
+    - AWSAuthCore (= 2.27.9)
+    - AWSCore (= 2.27.9)
   - AWSMobileClient (2.27.9):
     - AWSAuthCore (= 2.27.9)
     - AWSCognitoIdentityProvider (= 2.27.9)
     - AWSCognitoIdentityProviderASF (= 2.27.9)
     - AWSCore (= 2.27.9)
+  - FBSDKCoreKit (9.0.0):
+    - FBSDKCoreKit/Basics (= 9.0.0)
+    - FBSDKCoreKit/Core (= 9.0.0)
+  - FBSDKCoreKit/Basics (9.0.0)
+  - FBSDKCoreKit/Core (9.0.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (9.0.0):
+    - FBSDKLoginKit/Login (= 9.0.0)
+  - FBSDKLoginKit/Login (9.0.0):
+    - FBSDKCoreKit (~> 9.0.0)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.3.2):
+    - GoogleToolboxForMac/Defines (= 2.3.2)
+  - GoogleToolboxForMac/Defines (2.3.2)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.3.2)":
+    - GoogleToolboxForMac/DebugUtils (= 2.3.2)
+    - GoogleToolboxForMac/Defines (= 2.3.2)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.3.2)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.3.2)"
+  - GTMSessionFetcher/Core (1.7.2)
   - IQKeyboardManagerSwift (6.5.10)
   - Kingfisher (7.2.2)
   - R.swift (6.1.0):
@@ -23,7 +54,10 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AWSFacebookSignIn
+  - AWSGoogleSignIn
   - AWSMobileClient
+  - GoogleSignIn (~> 4.0)
   - IQKeyboardManagerSwift
   - Kingfisher
   - R.swift
@@ -37,7 +71,14 @@ SPEC REPOS:
     - AWSCognitoIdentityProvider
     - AWSCognitoIdentityProviderASF
     - AWSCore
+    - AWSFacebookSignIn
+    - AWSGoogleSignIn
     - AWSMobileClient
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
     - IQKeyboardManagerSwift
     - Kingfisher
     - R.swift
@@ -51,7 +92,14 @@ SPEC CHECKSUMS:
   AWSCognitoIdentityProvider: 7b4835e094cec4f35a988c5eabea5b8980fb7953
   AWSCognitoIdentityProviderASF: 3adc532f5f7e3641ea954cd30adc2e7b5768488f
   AWSCore: 3419bcaeec8d7809efa32f0e83f151ef8e93ad78
+  AWSFacebookSignIn: 078043ab602e768aac24470c3062d8a6a81f0df7
+  AWSGoogleSignIn: cf12e147c9fe6b36fe6bfa840ceed2cc1c9f46ed
   AWSMobileClient: f942269e300b23031fbd62892e5642d3cf35cb97
+  FBSDKCoreKit: ac6cc500b8e104bb9a4dd20b1527b5d199123c2e
+  FBSDKLoginKit: e9b6542fdee322333502ab497f628b011dce7d78
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: 8bef7c7c5cf7291c687cf5354f39f9db6399ad34
+  GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
@@ -59,6 +107,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 47d7e13f860569a404cd6f6a153f0662d8391fd4
+PODFILE CHECKSUM: 4353c2732038efd31c25424f2e3869976c7c7d36
 
 COCOAPODS: 1.11.3
